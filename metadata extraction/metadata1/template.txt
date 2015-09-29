@@ -5,7 +5,7 @@ U0:%x[0,0]
 #is word bold
 U1:%x[0,1]
 
-#relative position of text
+#position of text
 U2:%x[0,2]
 
 #size of the font
