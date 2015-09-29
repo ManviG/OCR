@@ -129,11 +129,13 @@ print list(temp_str)
 index = 0
 flag_nw = False
 italic_nw = False
+reg_ex = False
+
 
 while index<(len(dictionary)-1):
     # print dictionary[index]
     l = list(dictionary[index][0])
-    print l
+    # print l
     index2 =0
     while index2<len(l):
         if l[index2] != ".":
@@ -156,56 +158,48 @@ while index<(len(dictionary)-1):
                         if value=="yes":
                             italic_nw = True
                 next_word = list(dictionary[index+1][0])
-                print "next_word =" 
-                print next_word
+                str_nw = "".join(next_word)
+                print "string = " +str_nw
                 idx_nw=0
                 if (next_word[0].isupper()):
                     flag_nw = True
+                
+                regex = re.compile("(\[\d{1,2}\])")
+                result = re.findall(regex, str_nw)
+                if len(result)>0:
+                    reg_ex =True
 
-                if (y1!=y2 and flag_nw==True and italic_nw==False):
-                    # print x1
-                    # print x2
-                    print "new Reference has started...."
-                    # print str(x1) + "  and " + str(x2)
-                    refer_str = "".join(refer_str)
-                    print refer_str
-                    Reference.append(refer_str)
-                    refer_str = []
-                    break
-                    # if (float(x2)<float(xmed)):
-                    #     print x2
-                    #     print xmin
-                    #     if (float(x2)==float(xmin)):
-                    #         print "new Reference has started...."
-                    #         print str(x1) + "  and " + str(x2)
-                    #         refer_str = "".join(refer_str)
-                    #         print refer_str
-                    #         Reference.append(refer_str)
-                    #         refer_str = []
-                    #         break
-                    #     else: 
-                    #         print "same ref continued.. "
-                    #         refer_str.append(l[index2])
-                    # else:
-                    #     print x2
-                    #     print xmin2
-                    #     if (float(x2)==float(xmin2)):
-                    #         print "new Reference has started...."
-                    #         print str(x1) + "  and " + str(x2)
-                    #         refer_str = "".join(refer_str)
-                    #         print refer_str
-                    #         Reference.append(refer_str)
-                    #         refer_str = []
-                    #         break
-                    #     else:
-                    #         print "same ref continued.. "
-                    #         refer_str.append(l[index2])
+                if (y1!=y2):
+                    if reg_ex==True:
+                        print "reg_ex = true"
+                        reg_ex= False
+                        refer_str = "".join(refer_str)
+                        print refer_str
+                        Reference.append(refer_str)
+                        refer_str = []
+                        # break
+                    else:
+                        if (flag_nw==True and italic_nw==False):
+                            print "next word is upper and not italic \n"
+                            # print str(x1) + "  and " + str(x2)
+                            refer_str = "".join(refer_str)
+                            print refer_str
+                            Reference.append(refer_str)
+                            refer_str = []
+                            flag_nw=False
+                            italic_nw= False
+                            break   
+                        else:
+                            # print "same ref continued.. "
+                            # print flag_nw 
+                            # print italic_nw
+                            refer_str.append(l[index2])
+                            flag_nw = False
+
                 else:
-                    print "same ref continued.. "
+                    # print "same ref continued.. "
                     refer_str.append(l[index2])
                     flag_nw = False
-                    italic_nw = False
-
         index2+=1
     try:
         refer_str.append(" ")
@@ -213,6 +207,8 @@ while index<(len(dictionary)-1):
         print "refer_str is not a list anymore. It is a string now."
     index+=1      
 
+
+print "\n\n\n"
 
 for i in Reference:
     print i
