@@ -1,7 +1,8 @@
+author = "barno"
+
 import xml.etree.ElementTree as ET
 
-# Paper to be parsed
-tree = ET.parse('/home/barno/Desktop/nlp/paper5/paper5.xml')
+tree = ET.parse('/home/barno/Desktop/nlp/tfiles/t1.xml')
 root = tree.getroot()
 
 import unicodedata
@@ -27,11 +28,15 @@ for pages in root.findall('PAGE'):
             if(float(token.attrib['font-size'])>max_fs):
                 max_fs=float(token.attrib['font-size'])
 
-f = open('paper5.txt','w')
+f = open('/home/barno/Desktop/nlp/files/t1.txt','w')
 f.write("0\t0\t0\t0\t0\t0\n")
 
 txt = 0;
+count = 0;
 for pages in root.findall('PAGE'):
+    count = count +1
+    if count > 2:
+        break
     for texts in pages.findall('TEXT'):
     	txt = txt + 1;
         for token in texts.findall('TOKEN'):
@@ -48,11 +53,6 @@ for pages in root.findall('PAGE'):
                 f.write(("0\n").encode("utf-8"))
         f.write("0\t0\t0\t0\t0\t0\n\n")
 
-from subprocess import call
+f.write("00\t00\t00\t00\t00\t00\n\n")
 
-f1 = open('config.txt','w')
-
-call(["unidecode","paper5.txt"],stdout=f1)
 f.close()
-
-call(["rm","temp1.txt"])
