@@ -9,7 +9,7 @@ import nltk.data
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
-tree = ET.parse('/home/manvi/Documents/acads/SNLP/Project/different_pdf_tools.xml')
+tree = ET.parse('/home/manvi/Documents/acads/SNLP/Project/OCR/summary_citation_context_works.xml')
 root = tree.getroot()
 
 import unicodedata
@@ -93,10 +93,10 @@ while idx<len(tokens_attrib):
     idx+=1
 
 print "xmin = " + str(xmin)
-# print "xmax = " + str(xmax)
+print "xmax = " + str(xmax)
 
 xmed = (xmin+xmax)/2
-# print xmed
+print xmed
 
 nmin = 600.0
 xmin2 = 0
@@ -128,7 +128,6 @@ temp_str = "manvi123 garg"
 print list(temp_str)
    
 
-#### correct code
 index = 0
 flag_nw = False
 italic_nw = False
@@ -136,9 +135,7 @@ reg_ex = False
 is_ref_numbered = False
 
 while index<(len(dictionary)-1):
-    # print dictionary[index]
     l = list(dictionary[index][0])
-    # print l
     index2 =0
     while index2<len(l):
         if l[index2] != ".":
@@ -163,7 +160,6 @@ while index<(len(dictionary)-1):
 
                 next_word = list(dictionary[index+1][0])
                 str_nw = "".join(next_word)
-                print "string = " +str_nw
                 idx_nw=0
                 if (next_word[0].isupper()):
                     flag_nw = True
@@ -186,24 +182,42 @@ while index<(len(dictionary)-1):
                             flag_nw = False
                             italic_nw = False
                         elif (flag_nw==True and italic_nw==False):
-                            # print str(x1) + "  and " + str(x2)
-                            refer_str = "".join(refer_str)
-                            # print refer_str
-                            Reference.append(refer_str)
-                            refer_str = []
-                            flag_nw=False
-                            italic_nw= False
-                            break   
+                            if (float(x2)<xmed):
+                                if (float(x2)-xmin>1) :
+                                    refer_str.append(l[index2])
+                                    flag_nw = False
+                                    italic_nw = False
+                                else:
+                                    refer_str = "".join(refer_str)
+                                    Reference.append(refer_str)
+                                    refer_str = []
+                                    flag_nw=False
+                                    italic_nw= False
+                            else:
+                                if (float(x2)-xmin2>1):
+                                    refer_str.append(l[index2])
+                                    flag_nw = False
+                                    italic_nw = False
+                                else:
+                                    refer_str = "".join(refer_str)
+                                    Reference.append(refer_str)
+                                    refer_str = []
+                                    flag_nw=False
+                                    italic_nw= False
                         else:
-                            # print "same ref continued.. "
-                            # print flag_nw 
-                            # print italic_nw
                             refer_str.append(l[index2])
                             flag_nw = False
                             italic_nw = False
-
+                elif((float(y1)-float(y2))>50):
+                    print "\n new Reference in next col"
+                    print "current word = " + str(x1) + "  next_word = "+ str(x2)
+                    print "string = " +str_nw
+                    refer_str = "".join(refer_str)
+                    Reference.append(refer_str)
+                    refer_str = []
+                    flag_nw=False
+                    italic_nw= False
                 else:
-                    # print "same ref continued.. "
                     refer_str.append(l[index2])
                     flag_nw = False
                     italic_nw = False
@@ -215,16 +229,11 @@ while index<(len(dictionary)-1):
     index+=1      
 
 
-print "\n\n\n"
+# print "\n\n\n"
 
-for i in Reference:
-    print i
-    print "\n"
-
-
-
-
-
+# for i in Reference:
+#     print i
+#     print "\n"
 
 
 References = [[]]
@@ -240,15 +249,79 @@ ref_list = " ".join(ref)
 
 line = sent_detector.tokenize(ref_list.strip())
 
-print line 
 
+author_name= []
+year_of_pub= []
+paper_name=[]
+journal_name=[]
+
+year_found = False
+req_idx = 1
 for i in Reference:
     line = sent_detector.tokenize(i.strip())
     line2 = sent_detector.sentences_from_text(i.strip() )
-    # print line2
     References.append(line)
-    print len(line)
-    print line
     line3 = [x for x in line if x != "."]
-    idx=0
+    if len(line3)==4:
+        j=0        
+        author_name.append(line3[j])
+        year_of_pub.append(line3[j+1])
+        paper_name.append(line3[j+2])
+        journal_name.append(line3[j+3])
+    else:
+        name_str = []
+        regex = re.compile("(\d{4})")
+        idx=0
+        req_idx = 1
+        while(idx<len(line3)):
+            result = re.findall(regex,line3[idx])
+            if len(result)>0:
+                # print line3[idx]
+                year_found=True
+                req_idx = idx
+                break
+            idx+=1
+        k=0
+        while k<req_idx:
+            # print line3[k]
+            name_str.append(line3[k])
+            k+=1
+        name_str = " ".join(name_str)
+        author_name.append(name_str) 
+        year_of_pub.append(line3[req_idx])
+        paper_name.append(line3[req_idx+1])
+        journal_name.append(line3[req_idx+2])
+
+
+print len(author_name)
+print len(year_of_pub)
+print len(paper_name)
+print len(journal_name)
+
+
+tokenized_dict = zip(author_name[0:1], year_of_pub[0:1], paper_name[0:1],journal_name[0:1])
+
+
+# i = 0 
+# while(i<len(author_name)):
+#     print author_name[i]
+#     print "\n"
+#     i+=1 
+
+# i = 0 
+# while(i<len(year_of_pub)):
+#     print year_of_pub[i]
+#     print "\n"
+#     i+=1            
     
+# i = 0 
+# while(i<len(paper_name)):
+#     print paper_name[i]
+#     print "\n"
+#     i+=1 
+
+# i = 0 
+# while(i<len(journal_name)):
+#     print journal_name[i]
+#     print "\n"
+#     i+=1
