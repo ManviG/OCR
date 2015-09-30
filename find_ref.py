@@ -5,8 +5,11 @@ import re
 import os
 import string
 import sys
+import nltk.data
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
-tree = ET.parse('/home/manvi/Documents/acads/SNLP/Project/OCR/summary_citation_context_works.xml')
+tree = ET.parse('/home/manvi/Documents/acads/SNLP/Project/different_pdf_tools.xml')
 root = tree.getroot()
 
 import unicodedata
@@ -130,7 +133,7 @@ index = 0
 flag_nw = False
 italic_nw = False
 reg_ex = False
-
+is_ref_numbered = False
 
 while index<(len(dictionary)-1):
     # print dictionary[index]
@@ -157,6 +160,7 @@ while index<(len(dictionary)-1):
                     if key=="italic":
                         if value=="yes":
                             italic_nw = True
+
                 next_word = list(dictionary[index+1][0])
                 str_nw = "".join(next_word)
                 print "string = " +str_nw
@@ -168,22 +172,23 @@ while index<(len(dictionary)-1):
                 result = re.findall(regex, str_nw)
                 if len(result)>0:
                     reg_ex =True
+                    is_ref_numbered = True
 
-                if (y1!=y2):
+                if ((float(y2)-float(y1))>1):
                     if reg_ex==True:
-                        print "reg_ex = true"
                         reg_ex= False
                         refer_str = "".join(refer_str)
-                        print refer_str
                         Reference.append(refer_str)
                         refer_str = []
-                        # break
                     else:
-                        if (flag_nw==True and italic_nw==False):
-                            print "next word is upper and not italic \n"
+                        if is_ref_numbered==True:
+                            refer_str.append(l[index2])
+                            flag_nw = False
+                            italic_nw = False
+                        elif (flag_nw==True and italic_nw==False):
                             # print str(x1) + "  and " + str(x2)
                             refer_str = "".join(refer_str)
-                            print refer_str
+                            # print refer_str
                             Reference.append(refer_str)
                             refer_str = []
                             flag_nw=False
@@ -195,11 +200,13 @@ while index<(len(dictionary)-1):
                             # print italic_nw
                             refer_str.append(l[index2])
                             flag_nw = False
+                            italic_nw = False
 
                 else:
                     # print "same ref continued.. "
                     refer_str.append(l[index2])
                     flag_nw = False
+                    italic_nw = False
         index2+=1
     try:
         refer_str.append(" ")
@@ -214,6 +221,34 @@ for i in Reference:
     print i
     print "\n"
 
-                    
 
+
+
+
+
+
+References = [[]]
+
+sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
+
+punkt_param = PunktParameters()
+punkt_param.abbrev_types = set(['pp','Eds','eds','Vol','vol','op','cit', 'proc','syst','inf','knowl','trans','comput',
+                                  'res','oper','commun', 'artif','intell','assoc'])
+sent_detector = PunktSentenceTokenizer(punkt_param)
+
+ref_list = " ".join(ref)
+
+line = sent_detector.tokenize(ref_list.strip())
+
+print line 
+
+for i in Reference:
+    line = sent_detector.tokenize(i.strip())
+    line2 = sent_detector.sentences_from_text(i.strip() )
+    # print line2
+    References.append(line)
+    print len(line)
+    print line
+    line3 = [x for x in line if x != "."]
+    idx=0
     
