@@ -1,9 +1,7 @@
-author = 'priyank'
-
 import xml.etree.ElementTree as ET
 import copy
-
-tree = ET.parse('/home/barno/Desktop/nlp/tfiles/t1.xml')
+filename = raw_input()
+tree = ET.parse(filename+'.xml')
 root = tree.getroot()
 
 import unicodedata
@@ -18,7 +16,7 @@ def isEmail(y):
 	    return "1"
     return "0"
 
-f = open('t1.txt','w')
+f = open(filename + '_mail_parse.txt','w')
 f.write("0\t0\t0\n")
 p = []
 a = []
@@ -36,9 +34,12 @@ for pages in root.findall('PAGE'):
             else:
                 word = token.text
 
-	    if word.find("{")!=-1:
+	    if type(word) is not str:
+		continue
+
+	    if word.find("{")!=-1 or word.find("[")!=-1:
 		bracks+=1
-		print "Found {"
+		#print "Found {/["
 	    if bracks > 0:
 		if(len(word.replace(' ',''))>0):
                     a.append((word.replace(' ','')+"\t").encode("utf-8"))
@@ -52,12 +53,12 @@ for pages in root.findall('PAGE'):
                 f.write((word.replace(' ','')+"\t").encode("utf-8"))
                 f.write((isEmail(token.text.encode("utf-8").replace(' ','')))+"\t")
                 f.write(("0\n").encode("utf-8"))
-	    if word.find("}")!=-1:
+	    if word.find("}")!=-1 or word.find("]")!=-1:
 		bracks -= 1
 		if int(p[len(p)-1][1])==1:		#If it is email
 		    for i in range(len(p)):
 			p[i][1] = "1\t"
-		print p
+		#print p
 		for i in range(len(p)):
 		    for j in p[i]:
 			f.write(str(j))
@@ -67,4 +68,5 @@ for pages in root.findall('PAGE'):
         f.write("0\t0\t0\n")
 
 f.close()
+
 
