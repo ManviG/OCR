@@ -2,11 +2,13 @@ author = "barno"
 
 flag = "0"   # to check if a title is already going on
 end = 0
-with open('final.txt','r') as f:
+with open('/home/barno/Desktop/nlp/files/final.txt','r') as f:
     for line in f:
         abc = line.split()
 
         if len(abc) > 1:  # if not a blank line
+
+        	# print "***" + abc[0]
 
         	if(abc[6]=="00"):
         		print
