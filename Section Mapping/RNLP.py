@@ -7,38 +7,16 @@ import roman
 import math
 
 
-
-files = ["chi1.xml"]
-
-# ,"acl2.xml","acm_journal1.xml","acm_journal2.xml","ACM-sig1.xml","ACM-sig2.xml","ACM-sig3.xml","chi1.xml","chi2.xml"
-# ,"ieee1.xml","ieee2.xml","ieee3.xml"
-# ,"ieee1_journal1.xml","ieee2_journal1.xml","Springer1.xml","Springer2.xml"
-# ,"arxiv1.xml","arxiv2.xml"
-
-# "2010_SAC_Word_Template.xml"
-# "acl.xml"
-# "coli_a_00209.xml"
-# "coli_a_00210.xml"
-# "fftw-paper-ieee.xml"
-# "Rod99.xml"
-# "sping3.xml"
-# "spring2.xml"
-# "test1.xml"
-# "Volatility.xml"
-# "acl1.xml"
-# "acl2.xml"
-# "summarization.xml"
-# "CIKM11-Yan-Citation-Count-Prediction.xml"
-# "different_pdf_tools.xml"
-
-
-
-
-def binary(x):
-    if x == "yes":
-        return "1"
-    return "0"
-
+"""
+Token features as decimals
+Special Sections    - 6
+Single word chunk   - 5
+Tables/Figures      - 0
+Section Number      - 1
+UpperCase token     - 2
+Special Symbols     - 3
+Rest                - 4
+"""
 
 def token_features(y):
     x=y.strip()
@@ -66,7 +44,7 @@ def token_features(y):
             if(val<=20):
                 return "1"
         except:
-            None
+            pass
         if((len(parts[0])==1 and 'A'<=parts[0]<='Z') or (len(parts[0])==3 and parts[0][0]=='(' and parts[0][2]==')' and parts[0][1].isalpha() and parts[0][1].isupper()) or (len(parts[0])==2 and parts[0][1]==')' and parts[0][0].isalpha() and parts[0][0].isupper())):
             if(p_len==1 or (p_len==2 and parts[1]=='')):
                 return "1"
@@ -77,47 +55,47 @@ def token_features(y):
     return "4"
 
 
-pdfcount =0
-for ff in files:
-    tree = ET.parse('/home/blumonkey/PycharmProjects/NLP/'+ff)
+"""
+Main function for section mapping
+includes the pdftoxml file and the Path to the
+file as parameters, path is defaulted to be the
+current directory
+"""
+
+def secmap(ff, path=""):
+    tree = ET.parse(path+ff)
     root = tree.getroot()
 
-    max_fs = 0
-    p_yloc = None
-    y_diff={}
-    fsizes = {}
+    preYLOC = None
+    yDiff={}
+    fontSizes = {}
 
     for pages in root.findall('PAGE'):
-        pre_y=0
+        preYLOC=0
         for texts in pages.findall('TEXT'):
             for token in texts.findall('TOKEN'):
                 try:
-                    # print(token.attrib)
-                    fsizes[round(abs(float(token.attrib['font-size'])))]=fsizes.get(round(abs(float(token.attrib['font-size']))),0)+1
-                    if(p_yloc is None):
-                        p_yloc=float(token.attrib['y'])
-                    if(float(token.attrib['font-size'])>max_fs):
-                        max_fs=float(token.attrib['font-size'])
-                    y_diff[round(abs(float(token.attrib['y'])-pre_y))]=y_diff.get(round(abs(float(token.attrib['y'])-pre_y)),0)+1
-                    pre_y=float(token.attrib['y'])
+                    fontSizes[round(abs(float(token.attrib['font-size'])))]=fontSizes.get(round(abs(float(token.attrib['font-size']))),0)+1
+                    if(preYLOC is None):
+                        preYLOC=float(token.attrib['y'])
+                    yDiff[round(abs(float(token.attrib['y'])-preYLOC))]=yDiff.get(round(abs(float(token.attrib['y'])-preYLOC)),0)+1
+                    preYLOC=float(token.attrib['y'])
                 except:
-                    print "Oops"
-    max_fs = 0
-    for shit in fsizes.keys():
-        # print fsizes[shit]
-        if(max_fs == 0):
-            max_fs = shit
-            continue
-        if(fsizes[shit]>fsizes[max_fs]):
-            max_fs=shit
-    print max_fs
-    print("fsizes!!!")
-    print fsizes
+                    pass
 
-    # exit(0)
-    new_l = sorted(y_diff.iteritems(), key=operator.itemgetter(1), reverse=True)[:7]
+    modalFS = 0
+    # Find Modal Font size
+    for FS in fontSizes.keys():
+        if(modalFS == 0):
+            modalFS = FS
+            continue
+        if(fontSizes[FS]>fontSizes[modalFS]):
+            modalFS=FS
+
+    # Finding modal Y difference
+    new_l = sorted(yDiff.iteritems(), key=operator.itemgetter(1), reverse=True)[:7]
     x_l = []
-    print(new_l)
+    # print(new_l)
     for k in new_l:
         if(k[0]>6.0):
             x_l.append(k)
@@ -130,15 +108,15 @@ for ff in files:
             x_l.append(k)
 
     new_l=x_l
-    print(new_l)
+    # print(new_l)
     del x_l
 
     limit = max([x[0] for x in new_l])+1
     print(limit)
-    # exit(0)
 
 
-
+    # Create new XML file for Chunks
+    preYLOC = None
     xroot = ET.Element("Document")
     chunk = ET.SubElement(xroot, "chunk")
     for pages in root.findall('PAGE'):
@@ -149,69 +127,73 @@ for ff in files:
                 else:
                     word = token.text
                 if(word and len(word.replace(' ',''))>0):
-                    if( abs(float(token.attrib['y'])-p_yloc)>=limit):
+                    if(preYLOC is None):
+                        preYLOC = float(token.attrib['y'])
+                        ET.SubElement(chunk, "token", font_size=token.attrib['font-size'], bold=token.attrib['bold']).text = word
+                        continue
+                    if(abs(float(token.attrib['y'])-preYLOC)>=limit):
                         chunk = ET.SubElement(xroot, "chunk")
-                    p_yloc = float(token.attrib['y'])
+                    preYLOC = float(token.attrib['y'])
                     ET.SubElement(chunk, "token", font_size=token.attrib['font-size'], bold=token.attrib['bold']).text = word
 
     tree = ET.ElementTree(xroot)
-    tree.write(ff+"_res.xml")
-    # print(tree._root)
+    # tree.write(ff+"_res.xml")
 
     newxroot = ET.Element("Document")
-    chunk = ET.SubElement(newxroot, "chunk")
+    ET.SubElement(newxroot, "chunk")
 
-
-    count =0
-    p_fsize = None
+    preFS = None
 
     root = tree.getroot()
 
+    # Refining chunks to strip leading headings
     for chunks in root.findall('chunk'):
         chunk = ET.SubElement(newxroot, "chunk")
-        count =0
+        count = 0
         stat = 0
-        if(len(chunks)>20):stat =1
+        if(len(chunks)>20):
+            stat = 1
         for token in chunks.findall('token'):
-            # print(token.text + " " + token.attrib["font_size"])
-            if(count < 15 and p_fsize is not None and float(token.attrib["font_size"]) < p_fsize and stat==1 ):
+            if(count < 15 and preFS is not None and float(token.attrib["font_size"]) < preFS and stat==1 ):
                 chunk = ET.SubElement(newxroot, "chunk")
                 ET.SubElement(chunk, "token", font_size=token.attrib['font_size'], bold=token.attrib['bold']).text = token.text
             else:
                 ET.SubElement(chunk, "token", font_size=token.attrib['font_size'], bold=token.attrib['bold']).text = token.text
                 count  = count + 1
-            p_fsize = float(token.attrib['font_size'])
+            preFS = float(token.attrib['font_size'])
 
     tree = ET.ElementTree(newxroot)
-    tree.write(ff+"_fin.xml")
+    # tree.write(ff+"_fin.xml")
 
-    f = open(ff.split('.')[0]+'_out_new.txt','w')
+    # Generating the final txt config file
+    f = open(ff.split('.')[0]+'_out.txt','w')
 
     newxroot = tree.getroot()
 
     for achunk in newxroot.findall('chunk'):
         boldness = 0
         fsize = 0
-        tcount = 0
-        bool = None
         tokens = achunk.findall('token')
         if(len(tokens)==0):
             continue
         elif(len(tokens) ==1):
             tok1 = '$$$'
             tok2 = tokens[0].text
-            # bool = tok2
         else:
             tok1 = tokens[0].text
             tok2 = tokens[1].text
-            # bool = tok1
         tcount = len(tokens)
         for t in tokens:
             if(t.attrib['bold']=="yes"):
                 boldness=boldness+1
             fsize = fsize + float(t.attrib['font_size'])
         boldness = round(boldness/tcount,2)
-        fsize = (fsize/tcount)/max_fs
+        fsize = (fsize/tcount)/modalFS
         tcount = math.floor(tcount / 16)
-        print (tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2))
         f.write(tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
+
+    print "Done!"
+
+
+"""Demo Function call"""
+secmap("test.xml")
