@@ -4,23 +4,34 @@ import xml.etree.ElementTree as ET
 import unicodedata
 import operator
 import roman
+import math
 
 
 
-files = ["acl2.xml"]
+files = ["chi1.xml"]
 
-#     ["2010_SAC_Word_Template.xml",
-# "coli_a_00210.xml",
-# "sigproc-sp.xml",
-# "spring2.xml",
-# "acl.xml",
-# "fftw-paper-ieee.xml",
-# "sping3.xml",
-# "test1.xml",
-# "coli_a_00209.xml",
-# "Rod99.xml",
-# "sping.xml",
-# "Volatility.xml"]
+# ,"acl2.xml","acm_journal1.xml","acm_journal2.xml","ACM-sig1.xml","ACM-sig2.xml","ACM-sig3.xml","chi1.xml","chi2.xml"
+# ,"ieee1.xml","ieee2.xml","ieee3.xml"
+# ,"ieee1_journal1.xml","ieee2_journal1.xml","Springer1.xml","Springer2.xml"
+# ,"arxiv1.xml","arxiv2.xml"
+
+# "2010_SAC_Word_Template.xml"
+# "acl.xml"
+# "coli_a_00209.xml"
+# "coli_a_00210.xml"
+# "fftw-paper-ieee.xml"
+# "Rod99.xml"
+# "sping3.xml"
+# "spring2.xml"
+# "test1.xml"
+# "Volatility.xml"
+# "acl1.xml"
+# "acl2.xml"
+# "summarization.xml"
+# "CIKM11-Yan-Citation-Count-Prediction.xml"
+# "different_pdf_tools.xml"
+
+
 
 
 def binary(x):
@@ -32,6 +43,8 @@ def binary(x):
 def token_features(y):
     x=y.strip()
     parts=x.split('.')
+    if(x=="Abstract" or x== "ABSTRACT" or x=="Acknowledgement" or x== "ACKNOWLEDGEMENT" or x=="References" or x== "Reference" or x == "REFERENCE" or x=="REFERENCES" or x=="Acknowledgements" or x== "ACKNOWLEDGEMENTs"):
+        return "6"
     if(x=="$$$"):
         return "5"
     if x=="Table" or x=="TABLE" or x=="Figure" or x=="FIGURE" or x=="Fig.":
@@ -64,9 +77,9 @@ def token_features(y):
     return "4"
 
 
-
+pdfcount =0
 for ff in files:
-    tree = ET.parse('/home/blumonkey/Acads/NLP/test_pdfs/'+ff)
+    tree = ET.parse('/home/blumonkey/PycharmProjects/NLP/'+ff)
     root = tree.getroot()
 
     max_fs = 0
@@ -172,7 +185,7 @@ for ff in files:
     tree = ET.ElementTree(newxroot)
     tree.write(ff+"_fin.xml")
 
-    f = open(ff.split('.')[0]+'_out.txt','w')
+    f = open(ff.split('.')[0]+'_out_new.txt','w')
 
     newxroot = tree.getroot()
 
@@ -197,7 +210,8 @@ for ff in files:
             if(t.attrib['bold']=="yes"):
                 boldness=boldness+1
             fsize = fsize + float(t.attrib['font_size'])
-        boldness = boldness/tcount
+        boldness = round(boldness/tcount,2)
         fsize = (fsize/tcount)/max_fs
-        print (tok1+"\t"+tok2+"\t"+str(tcount)+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2))
-        f.write(tok1+"\t"+tok2+"\t"+str(tcount)+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
+        tcount = math.floor(tcount / 16)
+        print (tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2))
+        f.write(tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
