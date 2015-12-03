@@ -1,10 +1,52 @@
 
 from __future__ import division
+
+import xml
 import xml.etree.ElementTree as ET
 import unicodedata
 import operator
+
+import subprocess
+from xml.dom import minidom
+
 import roman
 import math
+
+
+"""
+Create an XML of headings and sections
+"""
+def generateXML(tree):
+    rt = tree.getroot()
+    ls = rt.findall('chunk')
+    st_chunk = ''
+    sp_length = len(ls)
+    chunk_stat =0
+    xroot = ET.Element("sec_map")
+    new_section = ET.SubElement(xroot, "section")
+    with open("final.txt", "r") as f:
+        count = 0
+        for line in f:
+            cols = line.split('\t')
+            if len(cols)==9 and cols[8] == '1\n':
+                st = ''
+                for token in ls[count].findall('token'):
+                    st = st + token.text+' '
+                st = st.strip('\n')
+                if(chunk_stat == 1):
+                    ET.SubElement(new_section, "chunk").text = st_chunk
+                    chunk_stat = 0
+                    st_chunk = ''
+                new_section = ET.SubElement(xroot, "section")
+                ET.SubElement(new_section, "heading").text = st
+            elif(count<sp_length) :
+                chunk_stat =1
+                for token in ls[count].findall('token'):
+                    st_chunk = st_chunk + token.text+' '
+                st_chunk = st_chunk.strip('\n')
+            count = count + 1
+    return xroot
+
 
 
 """
@@ -175,6 +217,7 @@ def secmap(ff, path=""):
         fsize = 0
         tokens = achunk.findall('token')
         if(len(tokens)==0):
+            f.write('xxx\t0\t0\t0.0\t0\t0\t0\t0\n')
             continue
         elif(len(tokens) ==1):
             tok1 = '$$$'
@@ -193,6 +236,13 @@ def secmap(ff, path=""):
         f.write(tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
 
     print "Done!"
+    f.close()
+    subprocess.call("crf_test -m model " + ff.split('.')[0]+'_out.txt'+" > " + "final.txt", shell=True)
+    secTree = generateXML(tree)
+    cc = ET.tostring(secTree, 'utf-8')
+    reparsed = minidom.parseString(cc)
+    print reparsed.toprettyxml(indent="\t")
+    subprocess.call("rm final.txt", shell=True)
 
 
 """Demo Function call"""
