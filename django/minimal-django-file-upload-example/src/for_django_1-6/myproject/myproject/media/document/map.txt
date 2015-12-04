@@ -1,0 +1,12 @@
+<map>
+	Amit Prakash 
+	amitp@microsoft.com
+<\map>
+<map>
+	Eric Brill 
+	brill@microsoft.com
+<\map>
+<map>
+	Matthew Richardson 
+	mattri@microsoft.com
+<\map>
