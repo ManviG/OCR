@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Tables_Figures>
+	<Tables>
+		<table>Table 1: Basic Results </table>
+		<table>Table 2: Results for individual feature sets. </table>
+		<table>Table 3: Ablation study. Shown is the decrease in accuracy when we train a network that has all but the given set of features. The last line is shows the effect of removing the anchor, PageRank, and domain features, hence a model containing no network or link-based information whatsoever. </table>
+		<table>Table 4: fRank performance as feature sets are added. At each row, the feature set that gave the greatest increase in accuracy was added to the list of features (i.e., we conducted a greedy search over feature sets). </table>
+		<table>Table 6: URL functions used to compute the Popularity feature set. </table>
+		<table>Table 7: Effect of adding backoff to the popularity feature set </table>
+		<table>Table 5: Top ten URLs for PageRank vs. fRank </table>
+	</Tables>
+	<Figures>
+		<figure>Figure 1: Relation between the amount of popularity data and the performance of the popularity feature set. Note the x-axis is a logarithmic scale. </figure>
+	</Figures>
+</Tables_Figures>
+
