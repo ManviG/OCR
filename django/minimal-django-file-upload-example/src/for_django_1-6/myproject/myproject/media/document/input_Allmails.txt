@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<email>
+	mattri@microsoft.com
+</email>
+
+<email>
+	amitp@microsoft.com
+</email>
+
+<email>
+	brill@microsoft.com
+</email>

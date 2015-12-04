@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+-<Reference id="1" >[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. </Reference>
+
+-<Reference id="2" >[2] B. Bartell, G. Cottrell, and R. Belew. Automatic combination of multiple ranked retrieval systems. In Proceedings of the 17th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 1994. </Reference>
+
+-<Reference id="3" >[3] P. Boldi, M. Santini, and S. Vigna. PageRank as a function of the damping factor. In Proceedings of the International World Wide Web Conference, May 2005. </Reference>
+
+-<Reference id="4" >[4] J. Boyan, D. Freitag, and T. Joachims. A machine learning architecture for optimizing web search engines. In AAAI Workshop on Internet Based Information Systems, August 1996. </Reference>
+
+-<Reference id="5" >[5] S. Brin and L. Page. The anatomy of a large-scale hypertextual web search engine. In Proceedings of the Seventh International Wide Web Conference, Brisbane, Australia, 1998. Elsevier. </Reference>
+
+-<Reference id="6" >[6] A. Broder, R. Lempel, F. Maghoul, and J. Pederson. Efficient PageRank approximation via graph aggregation. In Proceedings of the International World Wide Web Conference, May 2004. </Reference>
+
+-<Reference id="7" >[7] C. Burges, T. Shaked, E. Renshaw, A. Lazier, M. Deeds, N. Hamilton, G. Hullender. Learning to rank using gradient descent. In Proceedings of the 22 nd International Conference on Machine Learning, Bonn, Germany, 2005. </Reference>
+
+-<Reference id="8" >[8] D. Carmel, D. Cohen, R. Fagin, E. Farchi, M. Herscovici, Y. S. Maarek, and A. Soffer. Static index pruning for information retrieval systems. In Proceedings of the 24th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, pages 43-50, New Orleans, Louisiana, USA, September 2001. </Reference>
+
+-<Reference id="9" >[9] J. Cho and S. Roy. Impact of search engines on page popularity. In Proceedings of the International World Wide Web Conference, May 2004. </Reference>
+
+-<Reference id="10" >[10] J. Cho, S. Roy, R. Adams. Page Quality: In search of an unbiased web ranking. In Proceedings of the ACM SIGMOD 2005 Conference. Baltimore, Maryland. June 2005. </Reference>
+
+-<Reference id="11" >[11] N. Craswell, S. Robertson, H. Zaragoza, and M. Taylor. Relevance weighting for query independent evidence. In Proceedings of the 28 th Annual Conference on Research and Development in Information Retrieval (SIGIR), August, 2005. </Reference>
+
+-<Reference id="12" >[12] N. Dalvi, P. Domingos, Mausam, S. Sanghai, D. Verma. Adversarial Classification. In Proceedings of the Tenth International Conference on Knowledge Discovery and Data Mining (pp. 99-108), Seattle, WA, 2004. </Reference>
+
+-<Reference id="13" >[13] O. Dekel, C. Manning, and Y. Singer. Log-linear models for label-ranking. In Advances in Neural Information Processing Systems 16. Cambridge, MA: MIT Press, 2003. </Reference>
+
+-<Reference id="14" >[14] S. Fox, K S. Fox, K. Karnawat, M. Mydland, S. T. Dumais and T. White (2005). Evaluating implicit measures to improve the search experiences. In the ACM Transactions on Information Systems, 23(2), pp. 147-168. April 2005. </Reference>
+
+-<Reference id="15" >[15] T. Haveliwala. Efficient computation of PageRank. Stanford University Technical Report, 1999. </Reference>
+
+-<Reference id="16" >[16] T. Haveliwala. Topic-sensitive PageRank. In Proceedings of the International World Wide Web Conference, May 2002. </Reference>
+
+-<Reference id="17" >[17] D. Hawking and N. Craswell. Very large scale retrieval and Web search. In D. Harman and E. Voorhees (eds), The TREC Book. MIT Press. </Reference>
+
+-<Reference id="18" >[18] R. Herbrich, T. Graepel, and K. Obermayer. Support vector learning for ordinal regression. In Proceedings of the Ninth International Conference on Artificial Neural Networks, pp. 97-102. 1999. </Reference>
+
+-<Reference id="19" >[19] M. Ivory and M. Hearst. Statistical profiles of highly-rated Web sites. In Proceedings of the ACM SIGCHI Conference on Human Factors in Computing Systems, 2002. </Reference>
+
+-<Reference id="20" >[20] T. Joachims. Optimizing search engines using clickthrough data. In Proceedings of the ACM Conference on Knowledge Discovery and Data Mining (KDD), 2002. </Reference>
+
+-<Reference id="21" >[21] T. Joachims, L. Granka, B. Pang, H. Hembrooke, and G. Gay. Accurately Interpreting Clickthrough Data as Implicit Feedback. In Proceedings of the Conference on Research and Development in Information Retrieval (SIGIR), 2005. </Reference>
+
+-<Reference id="22" >[22] J. Kleinberg. Authoritative sources in a hyperlinked environment. Journal of the ACM 46:5, pp. 604-32. 1999. </Reference>
+
+-<Reference id="23" >[23] A. Langville and C. Meyer. Deeper inside PageRank. Internet Mathematics 1(3):335-380, 2004. </Reference>
+
+-<Reference id="24" >[24] F. Matthieu and M. Bouklit. The effect of the back button in a random walk: application for PageRank. In Alternate track papers and posters of the Thirteenth International World Wide Web Conference, 2004. </Reference>
+
+-<Reference id="25" >[25] F. McSherry. A uniform approach to accelerated PageRank computation. In Proceedings of the International World Wide Web Conference, May 2005. </Reference>
+
+-<Reference id="26" >[26] Y. Minamide. Static approximation of dynamically generated Web pages. In Proceedings of the International World Wide Web Conference, May 2005. </Reference>
+
+-<Reference id="27" >[27] L. Page, S. Brin, R. Motwani, and T. Winograd. The PageRank citation ranking: Bringing order to the web. Technical report, Stanford University, Stanford, CA, 1998. </Reference>
+
+-<Reference id="28" >[28] S. Pandey and C. Olston. User-centric Web crawling. In Proceedings of the International World Wide Web Conference, May 2005. </Reference>
+
+-<Reference id="29" >[29] M. Richardson and P. Domingos. The intelligent surfer: probabilistic combination of link and content information in PageRank. In Advances in Neural Information Processing Systems 14, pp. 1441-1448. Cambridge, MA: MIT Press, 2002. </Reference>
+
+-<Reference id="30" >[30] C. Sherman. Teoma vs. Google, Round 2. Available from World Wide Web (http://dc.internet.com/news/article.php/ 1002061), 2002. </Reference>
+
+-<Reference id="31" >[31] T. Upstill, N. Craswell, and D. Hawking. Predicting fame and fortune: PageRank or indegree?. In the Eighth Australasian Document Computing Symposium. 2003. </Reference>
+
+-<Reference id="32" >[32] T. Upstill, N. Craswell, and D. Hawking. Query-independent evidence in home page finding. In ACM Transactions on Information Systems. 2003. </Reference>
+
+
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >WA 9805</citation>
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >WA 9805</citation>
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >WA 9805</citation>
+
+<citation ref_id="5"  reference="[5] S. Brin and L. Page. The anatomy of a large-scale hypertextual web search engine. In Proceedings of the Seventh International Wide Web Conference, Brisbane, Australia, 1998. Elsevier. " >PageRank algorithm [5]</citation>
+
+<citation ref_id="27"  reference="[27] L. Page, S. Brin, R. Motwani, and T. Winograd. The PageRank citation ranking: Bringing order to the web. Technical report, Stanford University, Stanford, CA, 1998. " >[27]</citation>
+
+<citation ref_id="32"  reference="[32] T. Upstill, N. Craswell, and D. Hawking. Query-independent evidence in home page finding. In ACM Transactions on Information Systems. 2003. " >PageRank [32]</citation>
+
+<citation ref_id="31"  reference="[31] T. Upstill, N. Craswell, and D. Hawking. Predicting fame and fortune: PageRank or indegree?. In the Eighth Australasian Document Computing Symposium. 2003. " >companies [31]</citation>
+
+<citation ref_id="17"  reference="[17] D. Hawking and N. Craswell. Very large scale retrieval and Web search. In D. Harman and E. Voorhees (eds), The TREC Book. MIT Press. " >but with much less success than had been expected [17]</citation>
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >Amento et al. [1]</citation>
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >WWW 2006</citation>
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >May 2006</citation>
+
+<citation ref_id="12"  reference="[12] N. Dalvi, P. Domingos, Mausam, S. Sanghai, D. Verma. Adversarial Classification. In Proceedings of the Tenth International Conference on Knowledge Discovery and Data Mining (pp. 99-108), Seattle, WA, 2004. " >example, recent work on adversarial classification [12]</citation>
+
+<citation ref_id="25"  reference="[25] F. McSherry. A uniform approach to accelerated PageRank computation. In Proceedings of the International World Wide Web Conference, May 2005. " >[25]</citation>
+
+<citation ref_id="6"  reference="[6] A. Broder, R. Lempel, F. Maghoul, and J. Pederson. Efficient PageRank approximation via graph aggregation. In Proceedings of the International World Wide Web Conference, May 2004. " > and [6]</citation>
+
+<citation ref_id="7"  reference="[7] C. Burges, T. Shaked, E. Renshaw, A. Lazier, M. Deeds, N. Hamilton, G. Hullender. Learning to rank using gradient descent. In Proceedings of the 22 nd International Conference on Machine Learning, Bonn, Germany, 2005. " >Recent work on this ranking problem [7]</citation>
+
+<citation ref_id="13"  reference="[13] O. Dekel, C. Manning, and Y. Singer. Log-linear models for label-ranking. In Advances in Neural Information Processing Systems 16. Cambridge, MA: MIT Press, 2003. " >[13]</citation>
+
+<citation ref_id="18"  reference="[18] R. Herbrich, T. Graepel, and K. Obermayer. Support vector learning for ordinal regression. In Proceedings of the Ninth International Conference on Artificial Neural Networks, pp. 97-102. 1999. " >[18]</citation>
+
+<citation ref_id="7"  reference="[7] C. Burges, T. Shaked, E. Renshaw, A. Lazier, M. Deeds, N. Hamilton, G. Hullender. Learning to rank using gradient descent. In Proceedings of the 22 nd International Conference on Machine Learning, Bonn, Germany, 2005. " >We used RankNet [7]</citation>
+
+<citation ref_id="20"  reference="[20] T. Joachims. Optimizing search engines using clickthrough data. In Proceedings of the ACM Conference on Knowledge Discovery and Data Mining (KDD), 2002. " >dynamic ranking purposes [20]</citation>
+
+<citation ref_id="20"  reference="[20] T. Joachims. Optimizing search engines using clickthrough data. In Proceedings of the ACM Conference on Knowledge Discovery and Data Mining (KDD), 2002. " >[20]</citation>
+
+<citation ref_id="7"  reference="[7] C. Burges, T. Shaked, E. Renshaw, A. Lazier, M. Deeds, N. Hamilton, G. Hullender. Learning to rank using gradient descent. In Proceedings of the 22 nd International Conference on Machine Learning, Bonn, Germany, 2005. " >were taken directly from Burges et al [7]</citation>
+
+<citation ref_id="15"  reference="[15] T. Haveliwala. Efficient computation of PageRank. Stanford University Technical Report, 1999. " >parallelizing the computation [15]</citation>
+
+<citation ref_id="25"  reference="[25] F. McSherry. A uniform approach to accelerated PageRank computation. In Proceedings of the International World Wide Web Conference, May 2005. " >[25]</citation>
+
+<citation ref_id="29"  reference="[29] M. Richardson and P. Domingos. The intelligent surfer: probabilistic combination of link and content information in PageRank. In Advances in Neural Information Processing Systems 14, pp. 1441-1448. Cambridge, MA: MIT Press, 2002. " >PageRank [29]</citation>
+
+<citation ref_id="16"  reference="[16] T. Haveliwala. Topic-sensitive PageRank. In Proceedings of the International World Wide Web Conference, May 2002. " >PageRank [16]</citation>
+
+<citation ref_id="24"  reference="[24] F. Matthieu and M. Bouklit. The effect of the back button in a random walk: application for PageRank. In Alternate track papers and posters of the Thirteenth International World Wide Web Conference, 2004. " >[24]</citation>
+
+<citation ref_id="3"  reference="[3] P. Boldi, M. Santini, and S. Vigna. PageRank as a function of the damping factor. In Proceedings of the International World Wide Web Conference, May 2005. " > and modifying the jump probability [3]</citation>
+
+<citation ref_id="23"  reference="[23] A. Langville and C. Meyer. Deeper inside PageRank. Internet Mathematics 1(3):335-380, 2004. " >Meyer [23]</citation>
+
+<citation ref_id="22"  reference="[22] J. Kleinberg. Authoritative sources in a hyperlinked environment. Journal of the ACM 46:5, pp. 604-32. 1999. " >HITS [22]</citation>
+
+<citation ref_id="30"  reference="[30] C. Sherman. Teoma vs. Google, Round 2. Available from World Wide Web (http://dc.internet.com/news/article.php/ 1002061), 2002. " >used by the Teoma search engine [30]</citation>
+
+<citation ref_id="1"  reference="[1] B. Amento, L. Terveen, and W. Hill. Does authority mean quality? Predicting expert quality ratings of Web documents. In Proceedings of the 23 rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 2000. " >comparably to PageRank [1]</citation>
+
+<citation ref_id="8"  reference="[8] D. Carmel, D. Cohen, R. Fagin, E. Farchi, M. Herscovici, Y. S. Maarek, and A. Soffer. Static index pruning for information retrieval systems. In Proceedings of the 24th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, pages 43-50, New Orleans, Louisiana, USA, September 2001. " >Carmel et al. [8]</citation>
+<citation ref_id="28"  reference="[28] S. Pandey and C. Olston. User-centric Web crawling. In Proceedings of the International World Wide Web Conference, May 2005. " >Olston [28]</citation>
+
+<citation ref_id="9"  reference="[9] J. Cho and S. Roy. Impact of search engines on page popularity. In Proceedings of the International World Wide Web Conference, May 2004. " >at large [9]</citation>
+
+<citation ref_id="10"  reference="[10] J. Cho, S. Roy, R. Adams. Page Quality: In search of an unbiased web ranking. In Proceedings of the ACM SIGMOD 2005 Conference. Baltimore, Maryland. June 2005. " >Cho et al. [10]</citation>
+<citation ref_id="19"  reference="[19] M. Ivory and M. Hearst. Statistical profiles of highly-rated Web sites. In Proceedings of the ACM SIGCHI Conference on Human Factors in Computing Systems, 2002. " >Hearst [19]</citation>
+
+<citation ref_id="21"  reference="[21] T. Joachims, L. Granka, B. Pang, H. Hembrooke, and G. Gay. Accurately Interpreting Clickthrough Data as Implicit Feedback. In Proceedings of the Conference on Research and Development in Information Retrieval (SIGIR), 2005. " >Joachims et al. [21]</citation>
+<citation ref_id="11"  reference="[11] N. Craswell, S. Robertson, H. Zaragoza, and M. Taylor. Relevance weighting for query independent evidence. In Proceedings of the 28 th Annual Conference on Research and Development in Information Retrieval (SIGIR), August, 2005. " >Craswell et al. [11]</citation>
+<citation ref_id="4"  reference="[4] J. Boyan, D. Freitag, and T. Joachims. A machine learning architecture for optimizing web search engines. In AAAI Workshop on Internet Based Information Systems, August 1996. " >Boyan et al. [4]</citation>
+<citation ref_id="2"  reference="[2] B. Bartell, G. Cottrell, and R. Belew. Automatic combination of multiple ranked retrieval systems. In Proceedings of the 17th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, 1994. " >Bartell et al. [2]</citation>
+<citation ref_id="26"  reference="[26] Y. Minamide. Static approximation of dynamically generated Web pages. In Proceedings of the International World Wide Web Conference, May 2005. " >useful to apply the techniques found in [26]</citation>
+
+<citation ref_id="16"  reference="[16] T. Haveliwala. Topic-sensitive PageRank. In Proceedings of the International World Wide Web Conference, May 2002. " >[16]</citation>
+
+<citation ref_id="29"  reference="[29] M. Richardson and P. Domingos. The intelligent surfer: probabilistic combination of link and content information in PageRank. In Advances in Neural Information Processing Systems 14, pp. 1441-1448. Cambridge, MA: MIT Press, 2002. " >, and transition matrix [29]</citation>
+
+<citation ref_id="29"  reference="[29] M. Richardson and P. Domingos. The intelligent surfer: probabilistic combination of link and content information in PageRank. In Advances in Neural Information Processing Systems 14, pp. 1441-1448. Cambridge, MA: MIT Press, 2002. " >that a direct application of [29]</citation>
+
+<citation ref_id="14"  reference="[14] S. Fox, K S. Fox, K. Karnawat, M. Mydland, S. T. Dumais and T. White (2005). Evaluating implicit measures to improve the search experiences. In the ACM Transactions on Information Systems, 23(2), pp. 147-168. April 2005. " >valuable for the purposes of dynamic ranking [14]</citation>
+
