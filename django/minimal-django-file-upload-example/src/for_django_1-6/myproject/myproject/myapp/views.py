@@ -12,9 +12,9 @@ from myproject.myapp.forms import DocumentForm
 import subprocess
 from subprocess import Popen, PIPE
 
-script_dir = "/home/priyank/Desktop/SNLP_Project/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/myapp/"
+script_dir = '/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/myapp/'
 
-directory = "/home/priyank/Desktop/SNLP_Project/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/";
+directory = '/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/';
 
 def runScript(request):
     file_name = glob.glob(directory+'*.pdf')

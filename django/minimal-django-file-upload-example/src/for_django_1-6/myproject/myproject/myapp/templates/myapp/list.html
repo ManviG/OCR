@@ -6,23 +6,6 @@
 	</head>
 
 	<style type="text/css">
-
-		#header {
-	    text-align:center;
-	    padding:5px;
-		}
-		#nav {
-		    line-height:30px;
-		    height:3000px;
-		    width:700px;
-		    float:left;
-		    padding:5px;	      
-		}
-		#section {
-		    width:350px;
-		    float:left;
-		    padding:10px;	 	 
-		}
 		#form_made{
 			position: relative;
 			top: 40px;
@@ -58,478 +41,321 @@
 		#process{
 			position:relative; 
 			left:0px; 
-			top:-0px; 
+			top:-15px; 
 			font-size:25px;
 			color: 	#800000;
 			background-color:#D2691E;
 		}
 
-		#op_button:hover{
+		#titleauthor_button:hover{
 			color: blue;
 		}
-		#op_button{
+		#titleauthor_button{
 			position:relative; 
 			left:0px; 
-			top:0px;
+			top:-10px;
+			font-size:25px;
+			color: black;
+			background-color: green;
+			/*padding: 10px;*/
+		}
+		#section_button:hover{
+			color: blue;
+		}
+		#section_button{
+			position:relative; 
+			left:150px; 
+			top:-60px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+			/*padding: 10px;*/
+		}
+		#email_button:hover{
+			color: blue;
+		}
+		#email_button{
+			position:relative; 
+			left:300px; 
+			top:-110px; 
 			font-size:25px;
 			color: black;
 			background-color: green;
 		}
-		#ta_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#email_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#affil_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#map_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#figt_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#refcit_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#sec_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#fn_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#url_output{
-			position: relative;
-			top: 0px;
-			height: 150px;
-		}
-
-		#pdf{
-			position:relative; 
-			left:0px; 
-			top:0px; 
-			font-size:25px;
+		#figt_button:hover{
 			color: blue;
 		}
-
+		#figt_button{
+			position:relative; 
+			left:400px; 
+			top:-160px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#footnote_button:hover{
+			color: blue;
+		}
+		#footnote_button{
+			position:relative; 
+			left:550px; 
+			top:-210px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#url_button:hover{
+			color: blue;
+		}
+		#url_button{
+			position:relative; 
+			left:700px; 
+			top:-260px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#refcit_button:hover{
+			color: blue;
+		}
+		#refcit_button{
+			position:relative; 
+			left:780px; 
+			top:-310px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		
+		#affil_button:hover{
+			color: blue;
+		}
+		#affil_button{
+			position:relative; 
+			left:960px; 
+			top:-360px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#map_button:hover{
+			color: blue;
+		}
+		#map_button{
+			position:relative; 
+			left:1100px; 
+			top:-410px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#output{
+			position: relative;
+			top: -380px;
+			height: 400px;
+		}
 	</style>
 
 	<script>
 
-	function op()
-	{
-		ta();
-		sec();
-		email();
-		figt();
-		fn();
-		url();
-		refcit();
-		affil();
-		map();
-	}
-
 	function ta()
 	{
-		var iframe = document.createElement('iframe');
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
 		iframe.id = 'iframe';
 		iframe.style.display = 'none';
 		document.body.appendChild(iframe);
 		iframe.src = '../../media/documents/TitleAuthor.txt';
 		setTimeout(function(){
 		    var text = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('ta_output').style.display = "block";
-		    document.getElementById('ta_output').innerHTML = text ;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function sec()
 	{
-		var iframe1 = document.createElement('iframe');
-		iframe1.id = 'iframe1';
-		iframe1.style.display = 'none';
-		document.body.appendChild(iframe1);
-		iframe1.src = '../../media/documents/Secmap.txt';
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/Secmap.txt';
 		setTimeout(function(){
-		    var text1 = document.getElementById('iframe1').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('sec_output').style.display = "block";
-		    document.getElementById('sec_output').innerHTML = text1 ;
+		    var text1 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text1 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function email()
 	{
-		var iframe2 = document.createElement('iframe');
-		iframe2.id = 'iframe2';
-		iframe2.style.display = 'none';
-		document.body.appendChild(iframe2);
-		iframe2.src = '../../media/documents/input_Allmails.txt';
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/input_Allmails.txt';
 		setTimeout(function(){
-		    var text2 = document.getElementById('iframe2').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('email_output').style.display = "block";
-		    document.getElementById('email_output').innerHTML = text2 ;
+		    var text2 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text2 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function figt()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe3 = document.createElement('iframe');
-		iframe3.id = 'iframe3';
-		iframe3.style.display = 'none';
-		document.body.appendChild(iframe3);
-		iframe3.src = '../../media/documents/TABFIGop.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/TABFIGop.txt';
 		setTimeout(function(){
-		    var text3 = document.getElementById('iframe3').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('figt_output').style.display = "block";
-		    document.getElementById('figt_output').innerHTML = text3 ;
+		    var text3 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text3 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function fn()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe4 = document.createElement('iframe');
-		iframe4.id = 'iframe4';
-		iframe4.style.display = 'none';
-		document.body.appendChild(iframe4);
-		iframe4.src = '../../media/documents/FOOTNOTEop.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/FOOTNOTEop.txt';
 		setTimeout(function(){
-		    var text4 = document.getElementById('iframe4').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('fn_output').style.display = "block";
-		    document.getElementById('fn_output').innerHTML = text4 ;
+		    var text4 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text4 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function url()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe5 = document.createElement('iframe');
-		iframe5.id = 'iframe5';
-		iframe5.style.display = 'none';
-		document.body.appendChild(iframe5);
-		iframe5.src = '../../media/documents/URLop.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/URLop.txt';
 		setTimeout(function(){
-		    var text5 = document.getElementById('iframe5').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('url_output').style.display = "block";
-		    document.getElementById('url_output').innerHTML = text5 ;
+		    var text5 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text5 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function refcit()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe6 = document.createElement('iframe');
-		iframe6.id = 'iframe6';
-		iframe6.style.display = 'none';
-		document.body.appendChild(iframe6);
-		iframe6.src = '../../media/documents/inputcit2ref.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/inputcit2ref.txt';
 		setTimeout(function(){
-		    var text6 = document.getElementById('iframe6').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('refcit_output').style.display = "block";
-		    document.getElementById('refcit_output').innerHTML = text6 ;
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function affil()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe7 = document.createElement('iframe');
-		iframe7.id = 'iframe7';
-		iframe7.style.display = 'none';
-		document.body.appendChild(iframe7);
-		iframe7.src = '../../media/documents/input_AllAffiliations.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/input_AllAffiliations.txt';
 		setTimeout(function(){
-		    var text6 = document.getElementById('iframe7').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('affil_output').style.display = "block";
-		    document.getElementById('affil_output').innerHTML = text6 ;
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	function map()
 	{
 		// document.getElementById('output').style.display = "none";
-    	var iframe8 = document.createElement('iframe');
-		iframe8.id = 'iframe8';
-		iframe8.style.display = 'none';
-		document.body.appendChild(iframe8);
-		iframe8.src = '../../media/documents/map.txt';
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/map.txt';
 		setTimeout(function(){
-		    var text6 = document.getElementById('iframe8').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('map_output').style.display = "block";
-		    document.getElementById('map_output').innerHTML = text6 ;
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
 		}, 1000);
+		//<base href=""/>
 	}
 	</script>
 
-	<body>
+	<body background = "../../media/documents/files/background.jpg">
+		<!-- List of uploaded documents -->
+		<!-- {% if documents %}
+			<ul>
+			{% for document in documents %}
+				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No documents.</p>
+		{% endif %} -->
 
-		<div id="header">
-			<form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+		<!-- Upload form. Note enctype attribute! -->
+		<form action="{% url "list" %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
-			{{ form.non_field_errors }}
-			{{ form.docfile.label_tag }} {{ form.docfile.help_text }}
-			{{ form.docfile.errors }}
-			{{ form.docfile }}
+			<p>{{ form.non_field_errors }}</p>
+			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+			<p>
+				{{ form.docfile.errors }}
+				{{ form.docfile }}
+			</p>
 			<p><input id="submit" type="submit" value="Upload" /></p>
 		</form>
 			<a id="process" href="runScript">Process</a>
-			<a id="op_button" onclick="op()">Output<a>		
-		</div>
-	
-		<div id="nav">
-		<table border=1>
 
-			<tr>			
-				<th>
-					Features
-				</th>
-				
-				<th>
-				</th>
-				
-				<th>
-					<label>Right</label>
-				</th>
-				
-				<th>
-					<label>Wrong</label>
-				</th>
-				
-				<th>
-					<label>Partial</label>
-				</th>
-			</tr>
+		<br>
+	<a id="titleauthor_button" onclick="ta()">Title Auth<a>		
+		<br>
+		<br>
+	<a id="section_button" onclick="sec()">Sections<a>		
+		<br>
+		<br>
+	<a id="email_button" onclick="email()">Email<a>		
+		<br>
+		<br>
+	<a id="figt_button" onclick="figt()">Fig_Table<a>		
+		<br>
+		<br>
+	<a id="footnote_button" onclick="fn()">Footnotes<a>		
+		<br>
+		<br>
+	<a id="url_button" onclick="url()">URL<a>		
+		<br>
+		<br>
+	<a id="refcit_button" onclick="refcit()">Cits_to_Refs<a>		
+		<br>
+		<br>
+	<a id="affil_button" onclick="affil()">Affiliation<a>		
+		<br>
+		<br>
+	<a id="map_button" onclick="map()">EmailtoAuth<a>		
+		<br>
+		<!-- <br>
+	<a id="extra1_button" onclick="extra1()">extra1<a>		
+		<br>		
+		<br>
+	<a id="extra2_button" onclick="extra2()">extra2<a>		
+		<br> -->
+	<textarea id="output"  style="display:none;" class="answer_list" rows="25" cols="150" > WELCOME</textarea>
 
-			<tr>
-				<td>
-					<textarea id="ta_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-	
-				<td>
-					<label>Title :</label>
-					<br>
-					<label>Author:</label>
-				</td>
 
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-					<br>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-					<br>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;"><br>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-	
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="email_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>email :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="sec_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>section :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="refcit_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Cit2Ref :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="url_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>urls :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					<textarea id="fn_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Footnotes :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					<textarea id="figt_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>figure :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="affil_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Affiliation :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="map_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Map :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		</table>
-	
-	</div>
-
-	<div id="section" style="position:relative; top:0px; left:30px;">
-	<embed id="pdf" src="../../media/documents/input.pdf" width="550px" height="580px">
-	</div>
 	
 	</body>
 
