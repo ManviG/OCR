@@ -1,0 +1,10697 @@
+0						0
+Beyond						0
+PageRank:						0
+Machine						0
+Learning						0
+for						0
+Static						0
+Ranking						0
+0						0
+
+Matthew						0
+Richardson						0
+0						0
+
+Microsoft						0
+Research						0
+0						0
+
+One						0
+Microsoft						0
+Way						0
+0						0
+
+Redmond,						0
+WA						0
+98052						0
+0						0
+
++1						0
+(425)						0
+722-3325						0
+0						0
+
+mattri@microsoft.com						0
+0						0
+
+Amit						0
+Prakash						0
+0						0
+
+MSN						0
+0						0
+
+One						0
+Microsoft						0
+Way						0
+0						0
+
+Redmond,						0
+WA						0
+98052						0
+0						0
+
++1						0
+(425)						0
+705-6015						0
+0						0
+
+amitp@microsoft.com						0
+0						0
+
+Eric						0
+Brill						0
+0						0
+
+Microsoft						0
+Research						0
+0						0
+
+One						0
+Microsoft						0
+Way						0
+0						0
+
+Redmond,						0
+WA						0
+98052						0
+0						0
+
++1						0
+(425)						0
+705-4992						0
+0						0
+
+brill@microsoft.com						0
+0						0
+
+ABSTRACT						0
+0						0
+
+Since						0
+the						0
+publication						0
+of						0
+Brin						0
+and						0
+paper						0
+on						0
+PageRank,						0
+0						0
+
+many						0
+in						0
+the						0
+Web						0
+community						0
+have						0
+depended						0
+on						0
+PageRank						0
+for						0
+the						0
+0						0
+
+static						0
+(query-independent)						0
+ordering						0
+of						0
+Web						0
+pages.						0
+We						0
+show						0
+that						0
+0						0
+
+we						0
+can						0
+significantly						0
+outperform						0
+PageRank						0
+using						0
+features						0
+that						0
+are						0
+0						0
+
+independent						0
+of						0
+the						0
+link						0
+structure						0
+of						0
+the						0
+Web.						0
+We						0
+gain						0
+a						0
+further						0
+0						0
+
+boost						0
+in						0
+accuracy						0
+by						0
+using						0
+data						0
+on						0
+the						0
+frequency						0
+at						0
+which						0
+users						0
+0						0
+
+visit						0
+Web						0
+pages.						0
+We						0
+use						0
+RankNet,						0
+a						0
+ranking						0
+machine						0
+learning						0
+0						0
+
+algorithm,						0
+to						0
+combine						0
+these						0
+and						0
+other						0
+static						0
+features						0
+based						0
+on						0
+0						0
+
+anchor						0
+text						0
+and						0
+domain						0
+characteristics.						0
+The						0
+resulting						0
+model						0
+0						0
+
+achieves						0
+a						0
+static						0
+ranking						0
+pairwise						0
+accuracy						0
+of						0
+67.3%						0
+(vs.						0
+56.7%						0
+0						0
+
+for						0
+PageRank						0
+or						0
+50%						0
+for						0
+random).						0
+0						0
+
+Categories						0
+and						0
+Subject						0
+Descriptors						0
+0						0
+
+I.2.6						0
+[Artificial						0
+Intelligence]:						0
+Learning.						0
+H.3.3						0
+[Information						0
+0						0
+
+Storage						0
+and						0
+Retrieval]:						0
+Information						0
+Search						0
+and						0
+Retrieval.						0
+0						0
+
+General						0
+Terms						0
+0						0
+
+Algorithms,						0
+Measurement,						0
+Performance,						0
+Experimentation.						0
+0						0
+
+Keywords						0
+0						0
+
+Static						0
+ranking,						0
+search						0
+engines,						0
+PageRank,						0
+RankNet,						0
+relevance						0
+0						0
+
+1.						0
+INTRODUCTION						0
+0						0
+
+Over						0
+the						0
+past						0
+decade,						0
+the						0
+Web						0
+has						0
+grown						0
+exponentially						0
+in						0
+size.						0
+0						0
+
+Unfortunately,						0
+this						0
+growth						0
+has						0
+not						0
+been						0
+isolated						0
+to						0
+good-quality						0
+0						0
+
+pages.						0
+The						0
+number						0
+of						0
+incorrect,						0
+spamming,						0
+and						0
+malicious						0
+(e.g.,						0
+0						0
+
+phishing)						0
+sites						0
+has						0
+also						0
+grown						0
+rapidly.						0
+The						0
+sheer						0
+number						0
+of						0
+both						0
+0						0
+
+good						0
+and						0
+bad						0
+pages						0
+on						0
+the						0
+Web						0
+has						0
+led						0
+to						0
+an						0
+increasing						0
+reliance						0
+0						0
+
+on						0
+search						0
+engines						0
+for						0
+the						0
+discovery						0
+of						0
+useful						0
+information.						0
+Users						0
+0						0
+
+rely						0
+on						0
+search						0
+engines						0
+not						0
+only						0
+to						0
+return						0
+pages						0
+related						0
+to						0
+their						0
+0						0
+
+search						0
+query,						0
+but						0
+also						0
+to						0
+separate						0
+the						0
+good						0
+from						0
+the						0
+bad,						0
+and						0
+0						0
+
+order						0
+results						0
+so						0
+that						0
+the						0
+best						0
+pages						0
+are						0
+suggested						0
+first.						0
+0						0
+
+To						0
+date,						0
+most						0
+work						0
+on						0
+Web						0
+page						0
+ranking						0
+has						0
+focused						0
+on						0
+0						0
+
+improving						0
+the						0
+ordering						0
+of						0
+the						0
+results						0
+returned						0
+to						0
+the						0
+user						0
+(query-						0
+0						0
+
+dependent						0
+ranking,						0
+or						0
+dynamic						0
+ranking).						0
+However,						0
+having						0
+a						0
+good						0
+0						0
+
+query-independent						0
+ranking						0
+(static						0
+ranking)						0
+is						0
+also						0
+crucially						0
+0						0
+
+important						0
+for						0
+a						0
+search						0
+engine.						0
+A						0
+good						0
+static						0
+ranking						0
+algorithm						0
+0						0
+
+provides						0
+numerous						0
+benefits:						0
+0						0
+
+Relevance:						0
+The						0
+static						0
+rank						0
+of						0
+a						0
+page						0
+provides						0
+a						0
+general						0
+0						0
+
+indicator						0
+to						0
+the						0
+overall						0
+quality						0
+of						0
+the						0
+page.						0
+This						0
+is						0
+a						0
+0						0
+
+useful						0
+input						0
+to						0
+the						0
+dynamic						0
+ranking						0
+algorithm.						0
+0						0
+
+Efficiency:						0
+Typically,						0
+the						0
+search						0
+index						0
+is						0
+0						0
+
+ordered						0
+by						0
+static						0
+rank.						0
+By						0
+traversing						0
+the						0
+index						0
+from						0
+high-						0
+0						0
+
+quality						0
+to						0
+low-quality						0
+pages,						0
+the						0
+dynamic						0
+ranker						0
+may						0
+0						0
+
+abort						0
+the						0
+search						0
+when						0
+it						0
+determines						0
+that						0
+no						0
+later						0
+page						0
+0						0
+
+will						0
+have						0
+as						0
+high						0
+of						0
+a						0
+dynamic						0
+rank						0
+as						0
+those						0
+already						0
+0						0
+
+found.						0
+The						0
+more						0
+accurate						0
+the						0
+static						0
+rank,						0
+the						0
+better						0
+this						0
+0						0
+
+early-stopping						0
+ability,						0
+and						0
+hence						0
+the						0
+quicker						0
+the						0
+search						0
+0						0
+
+engine						0
+may						0
+respond						0
+to						0
+queries.						0
+0						0
+
+Crawl						0
+Priority:						0
+The						0
+Web						0
+grows						0
+and						0
+changes						0
+as						0
+quickly						0
+0						0
+
+as						0
+search						0
+engines						0
+can						0
+crawl						0
+it.						0
+Search						0
+engines						0
+need						0
+a						0
+way						0
+0						0
+
+to						0
+prioritize						0
+their						0
+determine						0
+which						0
+pages						0
+to						0
+re-						0
+0						0
+
+crawl,						0
+how						0
+frequently,						0
+and						0
+how						0
+often						0
+to						0
+seek						0
+out						0
+new						0
+0						0
+
+pages.						0
+Among						0
+other						0
+factors,						0
+the						0
+static						0
+rank						0
+of						0
+a						0
+page						0
+is						0
+0						0
+
+used						0
+to						0
+determine						0
+this						0
+prioritization.						0
+A						0
+better						0
+static						0
+rank						0
+0						0
+
+thus						0
+provides						0
+the						0
+engine						0
+with						0
+a						0
+higher						0
+quality,						0
+more						0
+up-						0
+0						0
+
+to-date						0
+index.						0
+0						0
+
+Google						0
+is						0
+often						0
+regarded						0
+as						0
+the						0
+first						0
+commercially						0
+successful						0
+0						0
+
+search						0
+engine.						0
+Their						0
+ranking						0
+was						0
+originally						0
+based						0
+on						0
+the						0
+0						0
+
+PageRank						0
+algorithm						0
+[5][27].						0
+Due						0
+to						0
+this						0
+(and						0
+possibly						0
+due						0
+to						0
+0						0
+
+promotion						0
+of						0
+PageRank						0
+to						0
+the						0
+public),						0
+PageRank						0
+is						0
+0						0
+
+widely						0
+regarded						0
+as						0
+the						0
+best						0
+method						0
+for						0
+the						0
+static						0
+ranking						0
+of						0
+Web						0
+0						0
+
+pages.						0
+0						0
+
+Though						0
+PageRank						0
+has						0
+historically						0
+been						0
+thought						0
+to						0
+perform						0
+quite						0
+0						0
+
+well,						0
+there						0
+has						0
+yet						0
+been						0
+little						0
+academic						0
+evidence						0
+to						0
+support						0
+this						0
+0						0
+
+claim.						0
+Even						0
+worse,						0
+there						0
+has						0
+recently						0
+been						0
+work						0
+showing						0
+that						0
+0						0
+
+PageRank						0
+may						0
+not						0
+perform						0
+any						0
+better						0
+than						0
+other						0
+simple						0
+measures						0
+0						0
+
+on						0
+certain						0
+tasks.						0
+Upstill						0
+et						0
+al.						0
+have						0
+found						0
+that						0
+for						0
+the						0
+task						0
+of						0
+0						0
+
+finding						0
+home						0
+pages,						0
+the						0
+number						0
+of						0
+pages						0
+linking						0
+to						0
+a						0
+page						0
+and						0
+the						0
+0						0
+
+type						0
+of						0
+URL						0
+were						0
+as,						0
+or						0
+more,						0
+effective						0
+than						0
+PageRank						0
+[32].						0
+They						0
+0						0
+
+found						0
+similar						0
+results						0
+for						0
+the						0
+task						0
+of						0
+finding						0
+high						0
+quality						0
+0						0
+
+companies						0
+[31].						0
+PageRank						0
+has						0
+also						0
+been						0
+used						0
+in						0
+systems						0
+for						0
+0						0
+
+large						0
+and						0
+competitions,						0
+0						0
+
+but						0
+with						0
+much						0
+less						0
+success						0
+than						0
+had						0
+been						0
+expected						0
+[17].						0
+Finally,						0
+0						0
+
+Amento						0
+et						0
+al.						0
+[1]						0
+found						0
+that						0
+simple						0
+features,						0
+such						0
+as						0
+the						0
+number						0
+0						0
+
+of						0
+pages						0
+on						0
+a						0
+site,						0
+performed						0
+as						0
+well						0
+as						0
+PageRank.						0
+0						0
+
+Despite						0
+these,						0
+the						0
+general						0
+belief						0
+remains						0
+among						0
+many,						0
+both						0
+0						0
+
+academic						0
+and						0
+in						0
+the						0
+public,						0
+that						0
+PageRank						0
+is						0
+an						0
+essential						0
+factor						0
+0						0
+
+for						0
+a						0
+good						0
+static						0
+rank.						0
+Failing						0
+this,						0
+it						0
+is						0
+still						0
+assumed						0
+that						0
+using						0
+the						0
+0						0
+
+link						0
+structure						0
+is						0
+crucial,						0
+in						0
+the						0
+form						0
+of						0
+the						0
+number						0
+of						0
+inlinks						0
+or						0
+the						0
+0						0
+
+amount						0
+of						0
+anchor						0
+text.						0
+0						0
+
+In						0
+this						0
+paper,						0
+we						0
+show						0
+there						0
+are						0
+a						0
+number						0
+of						0
+simple						0
+url-						0
+or						0
+page-						0
+0						0
+
+based						0
+features						0
+that						0
+significantly						0
+outperform						0
+PageRank						0
+(for						0
+the						0
+0						0
+
+purposes						0
+of						0
+statically						0
+ranking						0
+Web						0
+pages)						0
+despite						0
+ignoring						0
+the						0
+0						0
+
+Copyright						0
+is						0
+held						0
+by						0
+the						0
+International						0
+World						0
+Wide						0
+Web						0
+Conference						0
+0						0
+
+Committee						0
+(IW3C2).						0
+Distribution						0
+of						0
+these						0
+papers						0
+is						0
+limited						0
+to						0
+0						0
+
+classroom						0
+use,						0
+and						0
+personal						0
+use						0
+by						0
+others.						0
+0						0
+
+WWW						0
+2006,						0
+May						0
+2006,						0
+Edinburgh,						0
+Scotland.						0
+0						0
+
+ACM						0
+1-59593-323-9/06/0005.						0
+0						0
+
+structure						0
+of						0
+the						0
+Web.						0
+We						0
+combine						0
+these						0
+and						0
+other						0
+static						0
+features						0
+0						0
+
+using						0
+machine						0
+learning						0
+to						0
+achieve						0
+a						0
+ranking						0
+system						0
+that						0
+is						0
+0						0
+
+significantly						0
+better						0
+than						0
+PageRank						0
+(in						0
+pairwise						0
+agreement						0
+with						0
+0						0
+
+human						0
+labels).						0
+0						0
+
+A						0
+machine						0
+learning						0
+approach						0
+for						0
+static						0
+ranking						0
+has						0
+other						0
+0						0
+
+advantages						0
+besides						0
+the						0
+quality						0
+of						0
+the						0
+ranking.						0
+Because						0
+the						0
+0						0
+
+measure						0
+consists						0
+of						0
+many						0
+features,						0
+it						0
+is						0
+harder						0
+for						0
+malicious						0
+users						0
+0						0
+
+to						0
+manipulate						0
+it						0
+(i.e.,						0
+to						0
+raise						0
+their						0
+static						0
+rank						0
+to						0
+an						0
+0						0
+
+undeserved						0
+level						0
+through						0
+questionable						0
+techniques,						0
+also						0
+known						0
+as						0
+0						0
+
+Web						0
+spamming).						0
+This						0
+is						0
+particularly						0
+true						0
+if						0
+the						0
+feature						0
+set						0
+is						0
+not						0
+0						0
+
+known.						0
+In						0
+contrast,						0
+a						0
+single						0
+measure						0
+like						0
+PageRank						0
+can						0
+be						0
+easier						0
+0						0
+
+to						0
+manipulate						0
+because						0
+spammers						0
+need						0
+only						0
+concentrate						0
+on						0
+one						0
+0						0
+
+goal:						0
+how						0
+to						0
+cause						0
+more						0
+pages						0
+to						0
+point						0
+to						0
+their						0
+page.						0
+With						0
+an						0
+0						0
+
+algorithm						0
+that						0
+learns,						0
+a						0
+feature						0
+that						0
+becomes						0
+unusable						0
+due						0
+to						0
+0						0
+
+spammer						0
+manipulation						0
+will						0
+simply						0
+be						0
+reduced						0
+or						0
+removed						0
+from						0
+0						0
+
+the						0
+final						0
+computation						0
+of						0
+rank.						0
+This						0
+flexibility						0
+allows						0
+a						0
+ranking						0
+0						0
+
+system						0
+to						0
+rapidly						0
+react						0
+to						0
+new						0
+spamming						0
+techniques.						0
+0						0
+
+A						0
+machine						0
+learning						0
+approach						0
+to						0
+static						0
+ranking						0
+is						0
+also						0
+able						0
+to						0
+take						0
+0						0
+
+advantage						0
+of						0
+any						0
+advances						0
+in						0
+the						0
+machine						0
+learning						0
+field.						0
+For						0
+0						0
+
+example,						0
+recent						0
+work						0
+on						0
+adversarial						0
+classification						0
+[12]						0
+suggests						0
+0						0
+
+that						0
+it						0
+may						0
+be						0
+possible						0
+to						0
+explicitly						0
+model						0
+the						0
+Web						0
+page						0
+0						0
+
+(the						0
+adversary)						0
+actions,						0
+adjusting						0
+the						0
+ranking						0
+model						0
+in						0
+0						0
+
+advance						0
+of						0
+the						0
+attempts						0
+to						0
+circumvent						0
+it.						0
+Another						0
+0						0
+
+example						0
+is						0
+the						0
+elimination						0
+of						0
+outliers						0
+in						0
+constructing						0
+the						0
+model,						0
+0						0
+
+which						0
+helps						0
+reduce						0
+the						0
+effect						0
+that						0
+unique						0
+sites						0
+may						0
+have						0
+on						0
+the						0
+0						0
+
+overall						0
+quality						0
+of						0
+the						0
+static						0
+rank.						0
+By						0
+moving						0
+static						0
+ranking						0
+to						0
+a						0
+0						0
+
+machine						0
+learning						0
+framework,						0
+we						0
+not						0
+only						0
+gain						0
+in						0
+accuracy,						0
+but						0
+0						0
+
+also						0
+gain						0
+in						0
+the						0
+ability						0
+to						0
+react						0
+to						0
+actions,						0
+to						0
+rapidly						0
+0						0
+
+add						0
+new						0
+features						0
+to						0
+the						0
+ranking						0
+algorithm,						0
+and						0
+to						0
+leverage						0
+0						0
+
+advances						0
+in						0
+the						0
+rapidly						0
+growing						0
+field						0
+of						0
+machine						0
+learning.						0
+0						0
+
+Finally,						0
+we						0
+believe						0
+there						0
+will						0
+be						0
+significant						0
+advantages						0
+to						0
+using						0
+0						0
+
+this						0
+technique						0
+for						0
+other						0
+domains,						0
+such						0
+as						0
+searching						0
+a						0
+local						0
+hard						0
+0						0
+
+drive						0
+or						0
+a						0
+intranet.						0
+These						0
+are						0
+domains						0
+where						0
+the						0
+0						0
+
+link						0
+structure						0
+is						0
+particularly						0
+weak						0
+(or						0
+non-existent),						0
+but						0
+there						0
+are						0
+0						0
+
+other						0
+domain-specific						0
+features						0
+that						0
+could						0
+be						0
+just						0
+as						0
+powerful.						0
+For						0
+0						0
+
+example,						0
+the						0
+author						0
+of						0
+an						0
+intranet						0
+page						0
+and						0
+his/her						0
+position						0
+in						0
+the						0
+0						0
+
+organization						0
+(e.g.,						0
+CEO,						0
+manager,						0
+or						0
+developer)						0
+could						0
+provide						0
+0						0
+
+significant						0
+clues						0
+as						0
+to						0
+the						0
+importance						0
+of						0
+that						0
+page.						0
+A						0
+machine						0
+0						0
+
+learning						0
+approach						0
+thus						0
+allows						0
+rapid						0
+development						0
+of						0
+a						0
+good						0
+static						0
+0						0
+
+algorithm						0
+in						0
+new						0
+domains.						0
+0						0
+
+This						0
+contribution						0
+is						0
+a						0
+systematic						0
+study						0
+of						0
+static						0
+features,						0
+0						0
+
+including						0
+PageRank,						0
+for						0
+the						0
+purposes						0
+of						0
+(statically)						0
+ranking						0
+Web						0
+0						0
+
+pages.						0
+Previous						0
+studies						0
+on						0
+PageRank						0
+typically						0
+used						0
+subsets						0
+of						0
+the						0
+0						0
+
+Web						0
+that						0
+are						0
+significantly						0
+smaller						0
+(e.g.,						0
+the						0
+TREC						0
+VLC2						0
+corpus,						0
+0						0
+
+used						0
+by						0
+many,						0
+contains						0
+only						0
+19						0
+million						0
+pages).						0
+Also,						0
+the						0
+0						0
+
+performance						0
+of						0
+PageRank						0
+and						0
+other						0
+static						0
+features						0
+has						0
+typically						0
+0						0
+
+been						0
+evaluated						0
+in						0
+the						0
+context						0
+of						0
+a						0
+complete						0
+system						0
+for						0
+dynamic						0
+0						0
+
+ranking,						0
+or						0
+for						0
+other						0
+tasks						0
+such						0
+as						0
+question						0
+answering.						0
+In						0
+contrast,						0
+0						0
+
+we						0
+explore						0
+the						0
+use						0
+of						0
+PageRank						0
+and						0
+other						0
+features						0
+for						0
+the						0
+direct						0
+0						0
+
+task						0
+of						0
+statically						0
+ranking						0
+Web						0
+pages.						0
+0						0
+
+We						0
+first						0
+briefly						0
+describe						0
+the						0
+PageRank						0
+algorithm.						0
+In						0
+Section						0
+3						0
+we						0
+0						0
+
+introduce						0
+RankNet,						0
+the						0
+machine						0
+learning						0
+technique						0
+used						0
+to						0
+0						0
+
+combine						0
+static						0
+features						0
+into						0
+a						0
+final						0
+ranking.						0
+Section						0
+4						0
+describes						0
+0						0
+
+the						0
+static						0
+features.						0
+The						0
+heart						0
+of						0
+the						0
+paper						0
+is						0
+in						0
+Section						0
+5,						0
+which						0
+0						0
+
+presents						0
+our						0
+experiments						0
+and						0
+results.						0
+We						0
+conclude						0
+with						0
+a						0
+0						0
+
+discussion						0
+of						0
+related						0
+and						0
+future						0
+work.						0
+0						0
+
+2.						0
+PAGERANK						0
+0						0
+
+The						0
+basic						0
+idea						0
+behind						0
+PageRank						0
+is						0
+simple:						0
+a						0
+link						0
+from						0
+a						0
+Web						0
+0						0
+
+page						0
+to						0
+another						0
+can						0
+be						0
+seen						0
+as						0
+an						0
+endorsement						0
+of						0
+that						0
+page.						0
+In						0
+0						0
+
+general,						0
+links						0
+are						0
+made						0
+by						0
+people.						0
+As						0
+such,						0
+they						0
+are						0
+indicative						0
+of						0
+0						0
+
+the						0
+quality						0
+of						0
+the						0
+pages						0
+to						0
+which						0
+they						0
+point						0
+when						0
+creating						0
+a						0
+0						0
+
+page,						0
+an						0
+author						0
+presumably						0
+chooses						0
+to						0
+link						0
+to						0
+pages						0
+deemed						0
+to						0
+be						0
+0						0
+
+of						0
+good						0
+quality.						0
+We						0
+can						0
+take						0
+advantage						0
+of						0
+this						0
+linkage						0
+0						0
+
+information						0
+to						0
+order						0
+Web						0
+pages						0
+according						0
+to						0
+their						0
+perceived						0
+0						0
+
+quality.						0
+0						0
+
+Imagine						0
+a						0
+Web						0
+surfer						0
+who						0
+jumps						0
+from						0
+Web						0
+page						0
+to						0
+Web						0
+page,						0
+0						0
+
+choosing						0
+with						0
+uniform						0
+probability						0
+which						0
+link						0
+to						0
+follow						0
+at						0
+each						0
+0						0
+
+step.						0
+In						0
+order						0
+to						0
+reduce						0
+the						0
+effect						0
+of						0
+dead-ends						0
+or						0
+endless						0
+cycles						0
+0						0
+
+the						0
+surfer						0
+will						0
+occasionally						0
+jump						0
+to						0
+a						0
+random						0
+page						0
+with						0
+some						0
+0						0
+
+small						0
+probability						0
+or						0
+when						0
+on						0
+a						0
+page						0
+with						0
+no						0
+out-links.						0
+If						0
+0						0
+
+averaged						0
+over						0
+a						0
+sufficient						0
+number						0
+of						0
+steps,						0
+the						0
+probability						0
+the						0
+0						0
+
+surfer						0
+is						0
+on						0
+page						0
+j						0
+at						0
+some						0
+point						0
+in						0
+time						0
+is						0
+given						0
+by						0
+the						0
+formula:						0
+0						0
+
+0						0
+
+0						0
+
++						0
+0						0
+
+0						0
+
+=						0
+0						0
+
+j						0
+0						0
+
+i						0
+0						0
+
+i						0
+0						0
+
+i						0
+0						0
+
+P						0
+0						0
+
+N						0
+0						0
+
+j						0
+0						0
+
+P						0
+0						0
+
+B						0
+0						0
+
+F						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+)						0
+0						0
+
+1						0
+0						0
+
+(						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+0						0
+
+0						0
+
+(1)						0
+0						0
+
+Where						0
+F						0
+i						0
+is						0
+the						0
+set						0
+of						0
+pages						0
+that						0
+page						0
+i						0
+links						0
+to,						0
+and						0
+B						0
+j						0
+is						0
+the						0
+set						0
+of						0
+0						0
+
+pages						0
+that						0
+link						0
+to						0
+page						0
+j.						0
+The						0
+PageRank						0
+score						0
+for						0
+node						0
+j						0
+is						0
+defined						0
+0						0
+
+as						0
+this						0
+probability:						0
+PR(j)=P(j).						0
+Because						0
+equation						0
+(1)						0
+is						0
+recursive,						0
+0						0
+
+it						0
+must						0
+be						0
+iteratively						0
+evaluated						0
+until						0
+P(j)						0
+converges						0
+(typically,						0
+the						0
+0						0
+
+initial						0
+distribution						0
+for						0
+P(j)						0
+is						0
+uniform).						0
+The						0
+intuition						0
+is,						0
+because						0
+a						0
+0						0
+
+random						0
+surfer						0
+would						0
+end						0
+up						0
+at						0
+the						0
+page						0
+more						0
+frequently,						0
+it						0
+is						0
+0						0
+
+likely						0
+a						0
+better						0
+page.						0
+An						0
+alternative						0
+view						0
+for						0
+equation						0
+(1)						0
+is						0
+that						0
+0						0
+
+each						0
+page						0
+is						0
+assigned						0
+a						0
+quality,						0
+P(j).						0
+A						0
+page						0
+an						0
+equal						0
+0						0
+
+share						0
+of						0
+its						0
+quality						0
+to						0
+each						0
+page						0
+it						0
+points						0
+to.						0
+0						0
+
+PageRank						0
+is						0
+computationally						0
+expensive.						0
+Our						0
+collection						0
+of						0
+5						0
+0						0
+
+billion						0
+pages						0
+contains						0
+approximately						0
+370						0
+billion						0
+links.						0
+Computing						0
+0						0
+
+PageRank						0
+requires						0
+iterating						0
+over						0
+these						0
+billions						0
+of						0
+links						0
+multiple						0
+0						0
+
+times						0
+(until						0
+convergence).						0
+It						0
+requires						0
+large						0
+amounts						0
+of						0
+memory						0
+0						0
+
+(or						0
+very						0
+smart						0
+caching						0
+schemes						0
+that						0
+slow						0
+the						0
+computation						0
+down						0
+0						0
+
+even						0
+further),						0
+and						0
+if						0
+spread						0
+across						0
+multiple						0
+machines,						0
+requires						0
+0						0
+
+significant						0
+communication						0
+between						0
+them.						0
+Though						0
+much						0
+work						0
+has						0
+0						0
+
+been						0
+done						0
+on						0
+optimizing						0
+the						0
+PageRank						0
+computation						0
+(see						0
+e.g.,						0
+0						0
+
+[25]						0
+and						0
+[6]),						0
+it						0
+remains						0
+a						0
+relatively						0
+slow,						0
+computationally						0
+0						0
+
+expensive						0
+property						0
+to						0
+compute.						0
+0						0
+
+3.						0
+RANKNET						0
+0						0
+
+Much						0
+work						0
+in						0
+machine						0
+learning						0
+has						0
+been						0
+done						0
+on						0
+the						0
+problems						0
+of						0
+0						0
+
+classification						0
+and						0
+regression.						0
+Let						0
+X={x						0
+i						0
+}						0
+be						0
+a						0
+collection						0
+of						0
+feature						0
+0						0
+
+vectors						0
+(typically,						0
+a						0
+feature						0
+is						0
+any						0
+real						0
+valued						0
+number),						0
+and						0
+0						0
+
+Y={y						0
+i						0
+}						0
+be						0
+a						0
+collection						0
+of						0
+associated						0
+classes,						0
+where						0
+y						0
+i						0
+is						0
+the						0
+class						0
+0						0
+
+of						0
+the						0
+object						0
+described						0
+by						0
+feature						0
+vector						0
+x						0
+i						0
+.						0
+The						0
+classification						0
+0						0
+
+problem						0
+is						0
+to						0
+learn						0
+a						0
+function						0
+f						0
+that						0
+maps						0
+y						0
+i						0
+=f(x						0
+i						0
+),						0
+for						0
+all						0
+i.						0
+When						0
+0						0
+
+y						0
+i						0
+is						0
+real-valued						0
+as						0
+well,						0
+this						0
+is						0
+called						0
+regression.						0
+0						0
+
+Static						0
+ranking						0
+can						0
+be						0
+seen						0
+as						0
+a						0
+regression						0
+problem.						0
+If						0
+we						0
+let						0
+x						0
+i						0
+0						0
+
+represent						0
+features						0
+of						0
+page						0
+i,						0
+and						0
+y						0
+i						0
+be						0
+a						0
+value						0
+(say,						0
+the						0
+rank)						0
+for						0
+0						0
+
+each						0
+page,						0
+we						0
+could						0
+learn						0
+a						0
+regression						0
+function						0
+that						0
+mapped						0
+each						0
+0						0
+
+features						0
+to						0
+their						0
+rank.						0
+However,						0
+this						0
+over-constrains						0
+the						0
+0						0
+
+problem						0
+we						0
+wish						0
+to						0
+solve.						0
+All						0
+we						0
+really						0
+care						0
+about						0
+is						0
+the						0
+order						0
+of						0
+0						0
+
+the						0
+pages,						0
+not						0
+the						0
+actual						0
+value						0
+assigned						0
+to						0
+them.						0
+0						0
+
+Recent						0
+work						0
+on						0
+this						0
+ranking						0
+problem						0
+[7][13][18]						0
+directly						0
+0						0
+
+attempts						0
+to						0
+optimize						0
+the						0
+ordering						0
+of						0
+the						0
+objects,						0
+rather						0
+than						0
+the						0
+0						0
+
+value						0
+assigned						0
+to						0
+them.						0
+For						0
+these,						0
+let						0
+Z={<i,j>}						0
+be						0
+a						0
+collection						0
+of						0
+0						0
+
+pairs						0
+of						0
+items,						0
+where						0
+item						0
+i						0
+should						0
+be						0
+assigned						0
+a						0
+higher						0
+value						0
+than						0
+0						0
+
+item						0
+j.						0
+The						0
+goal						0
+of						0
+the						0
+ranking						0
+problem,						0
+then,						0
+is						0
+to						0
+learn						0
+a						0
+0						0
+
+function						0
+f						0
+such						0
+that,						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+,						0
+0						0
+
+,						0
+0						0
+
+j						0
+0						0
+
+i						0
+0						0
+
+f						0
+0						0
+
+f						0
+0						0
+
+j						0
+0						0
+
+i						0
+0						0
+
+x						0
+0						0
+
+x						0
+0						0
+
+Z						0
+0						0
+
+>						0
+0						0
+
+0						0
+
+0						0
+
+Note						0
+that,						0
+as						0
+with						0
+learning						0
+a						0
+regression						0
+function,						0
+the						0
+result						0
+of						0
+this						0
+0						0
+
+process						0
+is						0
+a						0
+function						0
+(f)						0
+that						0
+maps						0
+feature						0
+vectors						0
+to						0
+real						0
+values.						0
+0						0
+
+This						0
+function						0
+can						0
+still						0
+be						0
+applied						0
+anywhere						0
+that						0
+a						0
+regression-						0
+0						0
+
+learned						0
+function						0
+could						0
+be						0
+applied.						0
+The						0
+only						0
+difference						0
+is						0
+the						0
+0						0
+
+technique						0
+used						0
+to						0
+learn						0
+the						0
+function.						0
+By						0
+directly						0
+optimizing						0
+the						0
+0						0
+
+ordering						0
+of						0
+objects,						0
+these						0
+methods						0
+are						0
+able						0
+to						0
+learn						0
+a						0
+function						0
+that						0
+0						0
+
+does						0
+a						0
+better						0
+job						0
+of						0
+ranking						0
+than						0
+do						0
+regression						0
+techniques.						0
+0						0
+
+We						0
+used						0
+RankNet						0
+[7],						0
+one						0
+of						0
+the						0
+aforementioned						0
+techniques						0
+for						0
+0						0
+
+learning						0
+ranking						0
+functions,						0
+to						0
+learn						0
+our						0
+static						0
+rank						0
+function.						0
+0						0
+
+RankNet						0
+is						0
+a						0
+straightforward						0
+modification						0
+to						0
+the						0
+standard						0
+neural						0
+0						0
+
+network						0
+back-prop						0
+algorithm.						0
+As						0
+with						0
+back-prop,						0
+RankNet						0
+0						0
+
+attempts						0
+to						0
+minimize						0
+the						0
+value						0
+of						0
+a						0
+cost						0
+function						0
+by						0
+adjusting						0
+0						0
+
+each						0
+weight						0
+in						0
+the						0
+network						0
+according						0
+to						0
+the						0
+gradient						0
+of						0
+the						0
+cost						0
+0						0
+
+function						0
+with						0
+respect						0
+to						0
+that						0
+weight.						0
+The						0
+difference						0
+is						0
+that,						0
+while						0
+a						0
+0						0
+
+typical						0
+neural						0
+network						0
+cost						0
+function						0
+is						0
+based						0
+on						0
+the						0
+difference						0
+0						0
+
+between						0
+the						0
+network						0
+output						0
+and						0
+the						0
+desired						0
+output,						0
+the						0
+RankNet						0
+0						0
+
+cost						0
+function						0
+is						0
+based						0
+on						0
+the						0
+difference						0
+between						0
+a						0
+pair						0
+of						0
+network						0
+0						0
+
+outputs.						0
+That						0
+is,						0
+for						0
+each						0
+pair						0
+of						0
+feature						0
+vectors						0
+<i,j>						0
+in						0
+the						0
+0						0
+
+training						0
+set,						0
+RankNet						0
+computes						0
+the						0
+network						0
+outputs						0
+o						0
+i						0
+and						0
+o						0
+j						0
+.						0
+0						0
+
+Since						0
+vector						0
+i						0
+is						0
+supposed						0
+to						0
+be						0
+ranked						0
+higher						0
+than						0
+vector						0
+j,						0
+the						0
+0						0
+
+larger						0
+is						0
+o						0
+j						0
+-o						0
+i						0
+,						0
+the						0
+larger						0
+the						0
+cost.						0
+0						0
+
+RankNet						0
+also						0
+allows						0
+the						0
+pairs						0
+in						0
+Z						0
+to						0
+be						0
+weighted						0
+with						0
+a						0
+0						0
+
+confidence						0
+(posed						0
+as						0
+the						0
+probability						0
+that						0
+the						0
+pair						0
+satisfies						0
+the						0
+0						0
+
+ordering						0
+induced						0
+by						0
+the						0
+ranking						0
+function).						0
+In						0
+this						0
+paper,						0
+we						0
+used						0
+0						0
+
+a						0
+probability						0
+of						0
+one						0
+for						0
+all						0
+pairs.						0
+In						0
+the						0
+next						0
+section,						0
+we						0
+will						0
+0						0
+
+discuss						0
+the						0
+features						0
+used						0
+in						0
+our						0
+feature						0
+vectors,						0
+x						0
+i						0
+.						0
+0						0
+
+4.						0
+FEATURES						0
+0						0
+
+To						0
+apply						0
+RankNet						0
+(or						0
+other						0
+machine						0
+learning						0
+techniques)						0
+to						0
+the						0
+0						0
+
+ranking						0
+problem,						0
+we						0
+needed						0
+to						0
+extract						0
+a						0
+set						0
+of						0
+features						0
+from						0
+each						0
+0						0
+
+page.						0
+We						0
+divided						0
+our						0
+feature						0
+set						0
+into						0
+four,						0
+mutually						0
+exclusive,						0
+0						0
+
+categories:						0
+page-level						0
+(Page),						0
+domain-level						0
+(Domain),						0
+anchor						0
+text						0
+0						0
+
+and						0
+inlinks						0
+(Anchor),						0
+and						0
+popularity						0
+(Popularity).						0
+We						0
+also						0
+0						0
+
+optionally						0
+used						0
+the						0
+PageRank						0
+of						0
+a						0
+page						0
+as						0
+a						0
+feature.						0
+Below,						0
+we						0
+0						0
+
+describe						0
+each						0
+of						0
+these						0
+feature						0
+categories						0
+in						0
+more						0
+detail.						0
+0						0
+
+PageRank						0
+0						0
+
+We						0
+computed						0
+PageRank						0
+on						0
+a						0
+Web						0
+graph						0
+of						0
+5						0
+billion						0
+crawled						0
+0						0
+
+pages						0
+(and						0
+20						0
+billion						0
+known						0
+URLs						0
+linked						0
+to						0
+by						0
+these						0
+pages).						0
+0						0
+
+This						0
+represents						0
+a						0
+significant						0
+portion						0
+of						0
+the						0
+Web,						0
+and						0
+is						0
+0						0
+
+approximately						0
+the						0
+same						0
+number						0
+of						0
+pages						0
+as						0
+are						0
+used						0
+by						0
+0						0
+
+Google,						0
+Yahoo,						0
+and						0
+MSN						0
+for						0
+their						0
+search						0
+engines.						0
+0						0
+
+Because						0
+PageRank						0
+is						0
+a						0
+graph-based						0
+algorithm,						0
+it						0
+is						0
+important						0
+0						0
+
+that						0
+it						0
+be						0
+run						0
+on						0
+as						0
+large						0
+a						0
+subset						0
+of						0
+the						0
+Web						0
+as						0
+possible.						0
+Most						0
+0						0
+
+previous						0
+studies						0
+on						0
+PageRank						0
+used						0
+subsets						0
+of						0
+the						0
+Web						0
+that						0
+are						0
+0						0
+
+significantly						0
+smaller						0
+(e.g.						0
+the						0
+TREC						0
+VLC2						0
+corpus,						0
+used						0
+by						0
+0						0
+
+many,						0
+contains						0
+only						0
+19						0
+million						0
+pages)						0
+0						0
+
+We						0
+computed						0
+PageRank						0
+using						0
+the						0
+standard						0
+value						0
+of						0
+0.85						0
+for						0
+0						0
+
+Popularity						0
+0						0
+
+Another						0
+feature						0
+we						0
+used						0
+is						0
+the						0
+actual						0
+popularity						0
+of						0
+a						0
+Web						0
+page,						0
+0						0
+
+measured						0
+as						0
+the						0
+number						0
+of						0
+times						0
+that						0
+it						0
+has						0
+been						0
+visited						0
+by						0
+0						0
+
+users						0
+over						0
+some						0
+period						0
+of						0
+time.						0
+We						0
+have						0
+access						0
+to						0
+such						0
+data						0
+0						0
+
+from						0
+users						0
+who						0
+have						0
+installed						0
+the						0
+MSN						0
+toolbar						0
+and						0
+have						0
+opted						0
+0						0
+
+to						0
+provide						0
+it						0
+to						0
+MSN.						0
+The						0
+data						0
+is						0
+aggregated						0
+into						0
+a						0
+count,						0
+for						0
+0						0
+
+each						0
+Web						0
+page,						0
+of						0
+the						0
+number						0
+of						0
+users						0
+who						0
+viewed						0
+that						0
+page.						0
+0						0
+
+Though						0
+popularity						0
+data						0
+is						0
+generally						0
+unavailable,						0
+there						0
+are						0
+two						0
+0						0
+
+other						0
+sources						0
+for						0
+it.						0
+The						0
+first						0
+is						0
+from						0
+proxy						0
+logs.						0
+For						0
+example,						0
+a						0
+0						0
+
+university						0
+that						0
+requires						0
+its						0
+students						0
+to						0
+use						0
+a						0
+proxy						0
+has						0
+a						0
+record						0
+0						0
+
+of						0
+all						0
+the						0
+pages						0
+they						0
+have						0
+visited						0
+while						0
+on						0
+campus.						0
+0						0
+
+Unfortunately,						0
+proxy						0
+data						0
+is						0
+quite						0
+biased						0
+and						0
+relatively						0
+small.						0
+0						0
+
+Another						0
+source,						0
+internal						0
+to						0
+search						0
+engines,						0
+are						0
+records						0
+of						0
+which						0
+0						0
+
+results						0
+their						0
+users						0
+clicked						0
+on.						0
+Such						0
+data						0
+was						0
+used						0
+by						0
+the						0
+search						0
+0						0
+
+engine						0
+and						0
+has						0
+recently						0
+been						0
+explored						0
+for						0
+0						0
+
+dynamic						0
+ranking						0
+purposes						0
+[20].						0
+An						0
+advantage						0
+of						0
+the						0
+toolbar						0
+0						0
+
+data						0
+over						0
+this						0
+is						0
+that						0
+it						0
+contains						0
+information						0
+about						0
+URL						0
+visits						0
+0						0
+
+that						0
+are						0
+not						0
+just						0
+the						0
+result						0
+of						0
+a						0
+search.						0
+0						0
+
+The						0
+raw						0
+popularity						0
+is						0
+processed						0
+into						0
+a						0
+number						0
+of						0
+features						0
+such						0
+0						0
+
+as						0
+the						0
+number						0
+of						0
+times						0
+a						0
+page						0
+was						0
+viewed						0
+and						0
+the						0
+number						0
+of						0
+0						0
+
+times						0
+any						0
+page						0
+in						0
+the						0
+domain						0
+was						0
+viewed.						0
+More						0
+details						0
+are						0
+0						0
+
+provided						0
+in						0
+section						0
+5.5.						0
+0						0
+
+Anchor						0
+text						0
+and						0
+inlinks						0
+0						0
+
+These						0
+features						0
+are						0
+based						0
+on						0
+the						0
+information						0
+associated						0
+with						0
+0						0
+
+links						0
+to						0
+the						0
+page						0
+in						0
+question.						0
+It						0
+includes						0
+features						0
+such						0
+as						0
+the						0
+0						0
+
+total						0
+amount						0
+of						0
+text						0
+in						0
+links						0
+pointing						0
+to						0
+the						0
+page						0
+0						0
+
+the						0
+number						0
+of						0
+unique						0
+words						0
+in						0
+that						0
+text,						0
+etc.						0
+0						0
+
+Page						0
+0						0
+
+This						0
+category						0
+consists						0
+of						0
+features						0
+which						0
+may						0
+be						0
+determined						0
+by						0
+0						0
+
+looking						0
+at						0
+the						0
+page						0
+(and						0
+its						0
+URL)						0
+alone.						0
+We						0
+used						0
+only						0
+eight,						0
+0						0
+
+simple						0
+features						0
+such						0
+as						0
+the						0
+number						0
+of						0
+words						0
+in						0
+the						0
+body,						0
+the						0
+0						0
+
+frequency						0
+of						0
+the						0
+most						0
+common						0
+term,						0
+etc.						0
+0						0
+
+Domain						0
+0						0
+
+This						0
+category						0
+contains						0
+features						0
+that						0
+are						0
+computed						0
+as						0
+averages						0
+0						0
+
+across						0
+all						0
+pages						0
+in						0
+the						0
+domain.						0
+For						0
+example,						0
+the						0
+average						0
+0						0
+
+number						0
+of						0
+outlinks						0
+on						0
+any						0
+page						0
+and						0
+the						0
+average						0
+PageRank.						0
+0						0
+
+Many						0
+of						0
+these						0
+features						0
+have						0
+been						0
+used						0
+by						0
+others						0
+for						0
+ranking						0
+Web						0
+0						0
+
+pages,						0
+particularly						0
+the						0
+anchor						0
+and						0
+page						0
+features.						0
+As						0
+mentioned,						0
+0						0
+
+the						0
+evaluation						0
+is						0
+typically						0
+for						0
+dynamic						0
+ranking,						0
+and						0
+we						0
+wish						0
+to						0
+0						0
+
+evaluate						0
+the						0
+use						0
+of						0
+them						0
+for						0
+static						0
+ranking.						0
+Also,						0
+to						0
+our						0
+0						0
+
+knowledge,						0
+this						0
+is						0
+the						0
+first						0
+study						0
+on						0
+the						0
+use						0
+of						0
+actual						0
+page						0
+0						0
+
+visitation						0
+popularity						0
+for						0
+static						0
+ranking.						0
+The						0
+closest						0
+similar						0
+work						0
+is						0
+0						0
+
+on						0
+using						0
+click-through						0
+behavior						0
+(that						0
+is,						0
+which						0
+search						0
+engine						0
+0						0
+
+results						0
+the						0
+users						0
+click						0
+on)						0
+to						0
+affect						0
+dynamic						0
+ranking						0
+(see						0
+e.g.,						0
+0						0
+
+[20]).						0
+0						0
+
+Because						0
+we						0
+use						0
+a						0
+wide						0
+variety						0
+of						0
+features						0
+to						0
+come						0
+up						0
+with						0
+a						0
+static						0
+0						0
+
+ranking,						0
+we						0
+refer						0
+to						0
+this						0
+as						0
+fRank						0
+(for						0
+feature-based						0
+ranking).						0
+0						0
+
+fRank						0
+uses						0
+RankNet						0
+and						0
+the						0
+set						0
+of						0
+features						0
+described						0
+in						0
+this						0
+0						0
+
+section						0
+to						0
+learn						0
+a						0
+ranking						0
+function						0
+for						0
+Web						0
+pages.						0
+Unless						0
+0						0
+
+otherwise						0
+specified,						0
+fRank						0
+was						0
+trained						0
+with						0
+all						0
+of						0
+the						0
+features.						0
+0						0
+
+5.						0
+EXPERIMENTS						0
+0						0
+
+In						0
+this						0
+section,						0
+we						0
+will						0
+demonstrate						0
+that						0
+we						0
+can						0
+out						0
+perform						0
+0						0
+
+PageRank						0
+by						0
+applying						0
+machine						0
+learning						0
+to						0
+a						0
+straightforward						0
+set						0
+0						0
+
+of						0
+features.						0
+Before						0
+the						0
+results,						0
+we						0
+first						0
+discuss						0
+the						0
+data,						0
+the						0
+0						0
+
+performance						0
+metric,						0
+and						0
+the						0
+training						0
+method.						0
+0						0
+
+5.1						0
+Data						0
+0						0
+
+In						0
+order						0
+to						0
+evaluate						0
+the						0
+quality						0
+of						0
+a						0
+static						0
+ranking,						0
+we						0
+needed						0
+a						0
+0						0
+
+defining						0
+the						0
+correct						0
+ordering						0
+for						0
+a						0
+set						0
+of						0
+pages.						0
+0						0
+
+For						0
+this,						0
+we						0
+employed						0
+a						0
+dataset						0
+which						0
+contains						0
+human						0
+judgments						0
+0						0
+
+for						0
+28000						0
+queries.						0
+For						0
+each						0
+query,						0
+a						0
+number						0
+of						0
+results						0
+are						0
+0						0
+
+manually						0
+assigned						0
+a						0
+rating,						0
+from						0
+0						0
+to						0
+4,						0
+by						0
+human						0
+judges.						0
+The						0
+0						0
+
+rating						0
+is						0
+meant						0
+to						0
+be						0
+a						0
+measure						0
+of						0
+how						0
+relevant						0
+the						0
+result						0
+is						0
+for						0
+0						0
+
+the						0
+query,						0
+where						0
+0						0
+means						0
+and						0
+4						0
+means						0
+There						0
+0						0
+
+are						0
+approximately						0
+500k						0
+judgments						0
+in						0
+all,						0
+or						0
+an						0
+average						0
+of						0
+18						0
+0						0
+
+ratings						0
+per						0
+query.						0
+0						0
+
+The						0
+queries						0
+are						0
+selected						0
+by						0
+randomly						0
+choosing						0
+queries						0
+from						0
+0						0
+
+among						0
+those						0
+issued						0
+to						0
+the						0
+MSN						0
+search						0
+engine.						0
+The						0
+probability						0
+0						0
+
+that						0
+a						0
+query						0
+is						0
+selected						0
+is						0
+proportional						0
+to						0
+its						0
+frequency						0
+among						0
+all						0
+0						0
+
+of						0
+the						0
+queries.						0
+As						0
+a						0
+result,						0
+common						0
+queries						0
+are						0
+more						0
+likely						0
+to						0
+be						0
+0						0
+
+judged						0
+than						0
+uncommon						0
+queries.						0
+As						0
+an						0
+example						0
+of						0
+how						0
+diverse						0
+0						0
+
+the						0
+queries						0
+are,						0
+the						0
+first						0
+four						0
+queries						0
+in						0
+the						0
+training						0
+set						0
+are						0
+0						0
+
+fan						0
+and						0
+0						0
+
+The						0
+documents						0
+selected						0
+for						0
+judging						0
+are						0
+those						0
+0						0
+
+that						0
+we						0
+expected						0
+would,						0
+on						0
+average,						0
+be						0
+reasonably						0
+relevant						0
+(for						0
+0						0
+
+example,						0
+the						0
+top						0
+ten						0
+documents						0
+returned						0
+by						0
+search						0
+0						0
+
+engine).						0
+This						0
+provides						0
+significantly						0
+more						0
+information						0
+than						0
+0						0
+
+randomly						0
+selecting						0
+documents						0
+on						0
+the						0
+Web,						0
+the						0
+vast						0
+majority						0
+of						0
+0						0
+
+which						0
+would						0
+be						0
+irrelevant						0
+to						0
+a						0
+given						0
+query.						0
+0						0
+
+Because						0
+of						0
+this						0
+process,						0
+the						0
+judged						0
+pages						0
+tend						0
+to						0
+be						0
+of						0
+higher						0
+0						0
+
+quality						0
+than						0
+the						0
+average						0
+page						0
+on						0
+the						0
+Web,						0
+and						0
+tend						0
+to						0
+be						0
+pages						0
+0						0
+
+that						0
+will						0
+be						0
+returned						0
+for						0
+common						0
+search						0
+queries.						0
+This						0
+bias						0
+is						0
+good						0
+0						0
+
+when						0
+evaluating						0
+the						0
+quality						0
+of						0
+static						0
+ranking						0
+for						0
+the						0
+purposes						0
+of						0
+0						0
+
+index						0
+ordering						0
+and						0
+returning						0
+relevant						0
+documents.						0
+This						0
+is						0
+because						0
+0						0
+
+the						0
+most						0
+important						0
+portion						0
+of						0
+the						0
+index						0
+to						0
+be						0
+well-ordered						0
+and						0
+0						0
+
+relevant						0
+is						0
+the						0
+portion						0
+that						0
+is						0
+frequently						0
+returned						0
+for						0
+search						0
+0						0
+
+queries.						0
+Because						0
+of						0
+this						0
+bias,						0
+however,						0
+the						0
+results						0
+in						0
+this						0
+paper						0
+are						0
+0						0
+
+not						0
+applicable						0
+to						0
+crawl						0
+prioritization.						0
+In						0
+order						0
+to						0
+obtain						0
+0						0
+
+experimental						0
+results						0
+on						0
+crawl						0
+prioritization,						0
+we						0
+would						0
+need						0
+0						0
+
+ratings						0
+on						0
+a						0
+random						0
+sample						0
+of						0
+Web						0
+pages.						0
+0						0
+
+To						0
+convert						0
+the						0
+data						0
+from						0
+query-dependent						0
+to						0
+query-independent,						0
+0						0
+
+we						0
+simply						0
+removed						0
+the						0
+query,						0
+taking						0
+the						0
+maximum						0
+over						0
+0						0
+
+judgments						0
+for						0
+a						0
+URL						0
+that						0
+appears						0
+in						0
+more						0
+than						0
+one						0
+query.						0
+The						0
+0						0
+
+reasoning						0
+behind						0
+this						0
+is						0
+that						0
+a						0
+page						0
+that						0
+is						0
+relevant						0
+for						0
+some						0
+query						0
+0						0
+
+and						0
+irrelevant						0
+for						0
+another						0
+is						0
+probably						0
+a						0
+decent						0
+page						0
+and						0
+should						0
+0						0
+
+have						0
+a						0
+high						0
+static						0
+rank.						0
+Because						0
+we						0
+evaluated						0
+the						0
+pages						0
+on						0
+0						0
+
+queries						0
+that						0
+occur						0
+frequently,						0
+our						0
+data						0
+indicates						0
+the						0
+correct						0
+index						0
+0						0
+
+ordering,						0
+and						0
+assigns						0
+high						0
+value						0
+to						0
+pages						0
+that						0
+are						0
+likely						0
+to						0
+be						0
+0						0
+
+relevant						0
+to						0
+a						0
+common						0
+query.						0
+0						0
+
+We						0
+randomly						0
+assigned						0
+queries						0
+to						0
+a						0
+training,						0
+validation,						0
+or						0
+test						0
+set,						0
+0						0
+
+such						0
+that						0
+they						0
+contained						0
+84%,						0
+8%,						0
+and						0
+8%						0
+of						0
+the						0
+queries,						0
+0						0
+
+respectively.						0
+Each						0
+set						0
+contains						0
+all						0
+of						0
+the						0
+ratings						0
+for						0
+a						0
+given						0
+query,						0
+0						0
+
+and						0
+no						0
+query						0
+appears						0
+in						0
+more						0
+than						0
+one						0
+set.						0
+The						0
+training						0
+set						0
+was						0
+0						0
+
+used						0
+to						0
+train						0
+fRank.						0
+The						0
+validation						0
+set						0
+was						0
+used						0
+to						0
+select						0
+the						0
+0						0
+
+model						0
+that						0
+had						0
+the						0
+highest						0
+performance.						0
+The						0
+test						0
+set						0
+was						0
+used						0
+for						0
+0						0
+
+the						0
+final						0
+results.						0
+0						0
+
+This						0
+data						0
+gives						0
+us						0
+a						0
+query-independent						0
+ordering						0
+of						0
+pages.						0
+The						0
+0						0
+
+goal						0
+for						0
+a						0
+static						0
+ranking						0
+algorithm						0
+will						0
+be						0
+to						0
+reproduce						0
+this						0
+0						0
+
+ordering						0
+as						0
+closely						0
+as						0
+possible.						0
+In						0
+the						0
+next						0
+section,						0
+we						0
+describe						0
+0						0
+
+the						0
+measure						0
+we						0
+used						0
+to						0
+evaluate						0
+this.						0
+0						0
+
+5.2						0
+Measure						0
+0						0
+
+We						0
+chose						0
+to						0
+use						0
+pairwise						0
+accuracy						0
+to						0
+evaluate						0
+the						0
+quality						0
+of						0
+a						0
+0						0
+
+static						0
+ranking.						0
+The						0
+pairwise						0
+accuracy						0
+is						0
+the						0
+fraction						0
+of						0
+time						0
+that						0
+0						0
+
+the						0
+ranking						0
+algorithm						0
+and						0
+human						0
+judges						0
+agree						0
+on						0
+the						0
+ordering						0
+of						0
+0						0
+
+a						0
+pair						0
+of						0
+Web						0
+pages.						0
+0						0
+
+If						0
+S(x)						0
+is						0
+the						0
+static						0
+ranking						0
+assigned						0
+to						0
+page						0
+x,						0
+and						0
+H(x)						0
+is						0
+the						0
+0						0
+
+human						0
+judgment						0
+of						0
+relevance						0
+for						0
+x,						0
+then						0
+consider						0
+the						0
+following						0
+0						0
+
+sets:						0
+0						0
+
+)}						0
+0						0
+
+(						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+:						0
+0						0
+
+,						0
+0						0
+
+{						0
+0						0
+
+y						0
+0						0
+
+H						0
+0						0
+
+x						0
+0						0
+
+H						0
+0						0
+
+y						0
+0						0
+
+x						0
+0						0
+
+>						0
+0						0
+
+=						0
+0						0
+
+p						0
+0						0
+
+H						0
+0						0
+
+and						0
+0						0
+
+)}						0
+0						0
+
+(						0
+0						0
+
+)						0
+0						0
+
+(						0
+0						0
+
+:						0
+0						0
+
+,						0
+0						0
+
+{						0
+0						0
+
+y						0
+0						0
+
+S						0
+0						0
+
+x						0
+0						0
+
+S						0
+0						0
+
+y						0
+0						0
+
+x						0
+0						0
+
+>						0
+0						0
+
+=						0
+0						0
+
+p						0
+0						0
+
+S						0
+0						0
+
+The						0
+pairwise						0
+accuracy						0
+is						0
+the						0
+portion						0
+of						0
+H						0
+p						0
+that						0
+is						0
+also						0
+contained						0
+0						0
+
+in						0
+S						0
+p						0
+:						0
+0						0
+
+p						0
+0						0
+
+p						0
+0						0
+
+p						0
+0						0
+
+H						0
+0						0
+
+S						0
+0						0
+
+H						0
+0						0
+
+=						0
+0						0
+
+accuracy						0
+0						0
+
+pairwise						0
+0						0
+
+This						0
+measure						0
+was						0
+chosen						0
+for						0
+two						0
+reasons.						0
+First,						0
+the						0
+discrete						0
+0						0
+
+human						0
+judgments						0
+provide						0
+only						0
+a						0
+partial						0
+ordering						0
+over						0
+Web						0
+pages,						0
+0						0
+
+making						0
+it						0
+difficult						0
+to						0
+apply						0
+a						0
+measure						0
+such						0
+as						0
+the						0
+Spearman						0
+rank						0
+0						0
+
+order						0
+correlation						0
+coefficient						0
+(in						0
+the						0
+pairwise						0
+accuracy						0
+measure,						0
+a						0
+0						0
+
+pair						0
+of						0
+documents						0
+with						0
+the						0
+same						0
+human						0
+judgment						0
+does						0
+not						0
+affect						0
+0						0
+
+the						0
+score).						0
+Second,						0
+the						0
+pairwise						0
+accuracy						0
+has						0
+an						0
+intuitive						0
+0						0
+
+meaning:						0
+it						0
+is						0
+the						0
+fraction						0
+of						0
+pairs						0
+of						0
+documents						0
+that,						0
+when						0
+the						0
+0						0
+
+humans						0
+claim						0
+one						0
+is						0
+better						0
+than						0
+the						0
+other,						0
+the						0
+static						0
+rank						0
+0						0
+
+algorithm						0
+orders						0
+them						0
+correctly.						0
+0						0
+
+5.3						0
+Method						0
+0						0
+
+We						0
+trained						0
+fRank						0
+(a						0
+RankNet						0
+based						0
+neural						0
+network)						0
+using						0
+the						0
+0						0
+
+following						0
+parameters.						0
+We						0
+used						0
+a						0
+fully						0
+connected						0
+2						0
+layer						0
+network.						0
+0						0
+
+The						0
+hidden						0
+layer						0
+had						0
+10						0
+hidden						0
+nodes.						0
+The						0
+input						0
+weights						0
+to						0
+this						0
+0						0
+
+layer						0
+were						0
+all						0
+initialized						0
+to						0
+be						0
+zero.						0
+The						0
+output						0
+(just						0
+a						0
+0						0
+
+single						0
+node)						0
+weights						0
+were						0
+initialized						0
+using						0
+a						0
+uniform						0
+random						0
+0						0
+
+distribution						0
+in						0
+the						0
+range						0
+[-0.1,						0
+0.1].						0
+We						0
+used						0
+tanh						0
+as						0
+the						0
+transfer						0
+0						0
+
+function						0
+from						0
+the						0
+inputs						0
+to						0
+the						0
+hidden						0
+layer,						0
+and						0
+a						0
+linear						0
+function						0
+0						0
+
+from						0
+the						0
+hidden						0
+layer						0
+to						0
+the						0
+output.						0
+The						0
+cost						0
+function						0
+is						0
+the						0
+0						0
+
+pairwise						0
+cross						0
+entropy						0
+cost						0
+function						0
+as						0
+discussed						0
+in						0
+section						0
+3.						0
+0						0
+
+The						0
+features						0
+in						0
+the						0
+training						0
+set						0
+were						0
+normalized						0
+to						0
+have						0
+zero						0
+mean						0
+0						0
+
+and						0
+unit						0
+standard						0
+deviation.						0
+The						0
+same						0
+linear						0
+transformation						0
+was						0
+0						0
+
+then						0
+applied						0
+to						0
+the						0
+features						0
+in						0
+the						0
+validation						0
+and						0
+test						0
+sets.						0
+0						0
+
+For						0
+training,						0
+we						0
+presented						0
+the						0
+network						0
+with						0
+5						0
+million						0
+pairings						0
+of						0
+0						0
+
+pages,						0
+where						0
+one						0
+page						0
+had						0
+a						0
+higher						0
+rating						0
+than						0
+the						0
+other.						0
+The						0
+0						0
+
+pairings						0
+were						0
+chosen						0
+uniformly						0
+at						0
+random						0
+(with						0
+replacement)						0
+0						0
+
+from						0
+all						0
+possible						0
+pairings.						0
+When						0
+forming						0
+the						0
+pairs,						0
+we						0
+ignored						0
+the						0
+0						0
+
+magnitude						0
+of						0
+the						0
+difference						0
+between						0
+the						0
+ratings						0
+(the						0
+rating						0
+spread)						0
+0						0
+
+for						0
+the						0
+two						0
+URLs.						0
+Hence,						0
+the						0
+weight						0
+for						0
+each						0
+pair						0
+was						0
+constant						0
+0						0
+
+(one),						0
+and						0
+the						0
+probability						0
+of						0
+a						0
+pair						0
+being						0
+selected						0
+was						0
+0						0
+
+independent						0
+of						0
+its						0
+rating						0
+spread.						0
+0						0
+
+We						0
+trained						0
+the						0
+network						0
+for						0
+30						0
+epochs.						0
+On						0
+each						0
+epoch,						0
+the						0
+0						0
+
+training						0
+pairs						0
+were						0
+randomly						0
+shuffled.						0
+The						0
+initial						0
+training						0
+rate						0
+was						0
+0						0
+
+0.001.						0
+At						0
+each						0
+epoch,						0
+we						0
+checked						0
+the						0
+error						0
+on						0
+the						0
+training						0
+set.						0
+If						0
+0						0
+
+the						0
+error						0
+had						0
+increased,						0
+then						0
+we						0
+decreased						0
+the						0
+training						0
+rate,						0
+under						0
+0						0
+
+the						0
+hypothesis						0
+that						0
+the						0
+network						0
+had						0
+probably						0
+overshot.						0
+The						0
+0						0
+
+training						0
+rate						0
+at						0
+each						0
+epoch						0
+was						0
+thus						0
+set						0
+to:						0
+0						0
+
+Training						0
+rate						0
+=						0
+0						0
+
+1						0
+0						0
+
++						0
+0						0
+
+0						0
+
+0						0
+
+Where						0
+is						0
+the						0
+initial						0
+rate						0
+(0.001),						0
+and						0
+is						0
+the						0
+number						0
+of						0
+times						0
+0						0
+
+the						0
+training						0
+set						0
+error						0
+has						0
+increased.						0
+After						0
+each						0
+epoch,						0
+we						0
+0						0
+
+measured						0
+the						0
+performance						0
+of						0
+the						0
+neural						0
+network						0
+on						0
+the						0
+validation						0
+0						0
+
+set,						0
+using						0
+1						0
+million						0
+pairs						0
+(chosen						0
+randomly						0
+with						0
+replacement).						0
+0						0
+
+The						0
+network						0
+with						0
+the						0
+highest						0
+pairwise						0
+accuracy						0
+on						0
+the						0
+validation						0
+0						0
+
+set						0
+was						0
+selected,						0
+and						0
+then						0
+tested						0
+on						0
+the						0
+test						0
+set.						0
+We						0
+report						0
+the						0
+0						0
+
+pairwise						0
+accuracy						0
+on						0
+the						0
+test						0
+set,						0
+calculated						0
+using						0
+all						0
+possible						0
+0						0
+
+pairs.						0
+0						0
+
+These						0
+parameters						0
+were						0
+determined						0
+and						0
+fixed						0
+before						0
+the						0
+static						0
+rank						0
+0						0
+
+experiments						0
+in						0
+this						0
+paper.						0
+In						0
+particular,						0
+the						0
+choice						0
+of						0
+initial						0
+0						0
+
+training						0
+rate,						0
+number						0
+of						0
+epochs,						0
+and						0
+training						0
+rate						0
+decay						0
+function						0
+0						0
+
+were						0
+taken						0
+directly						0
+from						0
+Burges						0
+et						0
+al						0
+[7].						0
+0						0
+
+Though						0
+we						0
+had						0
+the						0
+option						0
+of						0
+preprocessing						0
+any						0
+of						0
+the						0
+features						0
+0						0
+
+before						0
+they						0
+were						0
+input						0
+to						0
+the						0
+neural						0
+network,						0
+we						0
+refrained						0
+from						0
+0						0
+
+doing						0
+so						0
+on						0
+most						0
+of						0
+them.						0
+The						0
+only						0
+exception						0
+was						0
+the						0
+popularity						0
+0						0
+
+features.						0
+As						0
+with						0
+most						0
+Web						0
+phenomenon,						0
+we						0
+found						0
+that						0
+the						0
+0						0
+
+distribution						0
+of						0
+site						0
+popularity						0
+is						0
+Zipfian.						0
+To						0
+reduce						0
+the						0
+dynamic						0
+0						0
+
+range,						0
+and						0
+hopefully						0
+make						0
+the						0
+feature						0
+more						0
+useful,						0
+we						0
+presented						0
+0						0
+
+the						0
+network						0
+with						0
+both						0
+the						0
+unpreprocessed,						0
+as						0
+well						0
+as						0
+the						0
+0						0
+
+logarithm,						0
+of						0
+the						0
+popularity						0
+features						0
+(As						0
+with						0
+the						0
+others,						0
+the						0
+0						0
+
+logarithmic						0
+feature						0
+values						0
+were						0
+also						0
+normalized						0
+to						0
+have						0
+zero						0
+0						0
+
+mean						0
+and						0
+unit						0
+standard						0
+deviation).						0
+0						0
+
+Applying						0
+fRank						0
+to						0
+a						0
+document						0
+is						0
+computationally						0
+efficient,						0
+taking						0
+0						0
+
+time						0
+that						0
+is						0
+only						0
+linear						0
+in						0
+the						0
+number						0
+of						0
+input						0
+features;						0
+it						0
+is						0
+thus						0
+0						0
+
+within						0
+a						0
+constant						0
+factor						0
+of						0
+other						0
+simple						0
+machine						0
+learning						0
+methods						0
+0						0
+
+such						0
+as						0
+Bayes.						0
+In						0
+our						0
+experiments,						0
+computing						0
+the						0
+fRank						0
+for						0
+0						0
+
+all						0
+five						0
+billion						0
+Web						0
+pages						0
+was						0
+approximately						0
+100						0
+times						0
+faster						0
+0						0
+
+than						0
+computing						0
+the						0
+PageRank						0
+for						0
+the						0
+same						0
+set.						0
+0						0
+
+5.4						0
+Results						0
+0						0
+
+As						0
+Table						0
+1						0
+shows,						0
+fRank						0
+significantly						0
+outperforms						0
+PageRank						0
+for						0
+0						0
+
+the						0
+purposes						0
+of						0
+static						0
+ranking.						0
+With						0
+a						0
+pairwise						0
+accuracy						0
+of						0
+67.4%,						0
+0						0
+
+fRank						0
+more						0
+than						0
+doubles						0
+the						0
+accuracy						0
+of						0
+PageRank						0
+(relative						0
+to						0
+0						0
+
+the						0
+baseline						0
+of						0
+50%,						0
+which						0
+is						0
+the						0
+accuracy						0
+that						0
+would						0
+be						0
+achieved						0
+0						0
+
+by						0
+a						0
+random						0
+ordering						0
+of						0
+Web						0
+pages).						0
+Note						0
+that						0
+one						0
+of						0
+0						0
+
+input						0
+features						0
+is						0
+the						0
+PageRank						0
+of						0
+the						0
+page,						0
+so						0
+we						0
+would						0
+expect						0
+it						0
+0						0
+
+to						0
+perform						0
+no						0
+worse						0
+than						0
+PageRank.						0
+The						0
+significant						0
+increase						0
+in						0
+0						0
+
+accuracy						0
+implies						0
+that						0
+the						0
+other						0
+features						0
+(anchor,						0
+popularity,						0
+etc.)						0
+0						0
+
+do						0
+in						0
+fact						0
+contain						0
+useful						0
+information						0
+regarding						0
+the						0
+overall						0
+quality						0
+0						0
+
+of						0
+a						0
+page.						0
+0						0
+
+Table						0
+1:						0
+Basic						0
+Results						0
+0						0
+
+Technique						0
+0						0
+
+Accuracy						0
+(%)						0
+0						0
+
+None						0
+(Baseline)						0
+0						0
+
+50.00						0
+0						0
+
+PageRank						0
+0						0
+
+56.70						0
+0						0
+
+fRank						0
+0						0
+
+67.43						0
+0						0
+
+There						0
+are						0
+a						0
+number						0
+of						0
+decisions						0
+that						0
+go						0
+into						0
+the						0
+computation						0
+of						0
+0						0
+
+PageRank,						0
+such						0
+as						0
+how						0
+to						0
+deal						0
+with						0
+pages						0
+that						0
+have						0
+no						0
+outlinks,						0
+0						0
+
+the						0
+choice						0
+of						0
+numeric						0
+precision,						0
+convergence						0
+threshold,						0
+etc.						0
+0						0
+
+We						0
+were						0
+able						0
+to						0
+obtain						0
+a						0
+computation						0
+of						0
+PageRank						0
+from						0
+a						0
+0						0
+
+completely						0
+independent						0
+implementation						0
+(provided						0
+by						0
+Marc						0
+0						0
+
+Najork)						0
+that						0
+varied						0
+somewhat						0
+in						0
+these						0
+parameters.						0
+It						0
+achieved						0
+a						0
+0						0
+
+pairwise						0
+accuracy						0
+of						0
+56.52%,						0
+nearly						0
+identical						0
+to						0
+that						0
+obtained						0
+by						0
+0						0
+
+our						0
+implementation.						0
+We						0
+thus						0
+concluded						0
+that						0
+the						0
+quality						0
+of						0
+the						0
+0						0
+
+PageRank						0
+is						0
+not						0
+sensitive						0
+to						0
+these						0
+minor						0
+variations						0
+in						0
+algorithm,						0
+0						0
+
+nor						0
+was						0
+low						0
+accuracy						0
+due						0
+to						0
+problems						0
+with						0
+our						0
+0						0
+
+implementation						0
+of						0
+it.						0
+0						0
+
+We						0
+also						0
+wanted						0
+to						0
+find						0
+how						0
+well						0
+each						0
+feature						0
+set						0
+performed.						0
+To						0
+0						0
+
+answer						0
+this,						0
+for						0
+each						0
+feature						0
+set,						0
+we						0
+trained						0
+and						0
+tested						0
+fRank						0
+0						0
+
+using						0
+only						0
+that						0
+set						0
+of						0
+features.						0
+The						0
+results						0
+are						0
+shown						0
+in						0
+Table						0
+2.						0
+0						0
+
+As						0
+can						0
+be						0
+seen,						0
+every						0
+single						0
+feature						0
+set						0
+individually						0
+outperformed						0
+0						0
+
+PageRank						0
+on						0
+this						0
+test.						0
+Perhaps						0
+the						0
+most						0
+interesting						0
+result						0
+is						0
+that						0
+0						0
+
+the						0
+Page-level						0
+features						0
+had						0
+the						0
+highest						0
+performance						0
+out						0
+of						0
+all						0
+the						0
+0						0
+
+feature						0
+sets.						0
+This						0
+is						0
+surprising						0
+because						0
+these						0
+are						0
+features						0
+that						0
+do						0
+0						0
+
+not						0
+depend						0
+on						0
+the						0
+overall						0
+graph						0
+structure						0
+of						0
+the						0
+Web,						0
+nor						0
+even						0
+on						0
+0						0
+
+what						0
+pages						0
+point						0
+to						0
+a						0
+given						0
+page.						0
+This						0
+is						0
+contrary						0
+to						0
+the						0
+common						0
+0						0
+
+belief						0
+that						0
+the						0
+Web						0
+graph						0
+structure						0
+is						0
+the						0
+key						0
+to						0
+finding						0
+a						0
+good						0
+0						0
+
+static						0
+ranking						0
+of						0
+Web						0
+pages.						0
+0						0
+
+Table						0
+2:						0
+Results						0
+for						0
+individual						0
+feature						0
+sets.						0
+0						0
+
+Feature						0
+Set						0
+0						0
+
+Accuracy						0
+(%)						0
+0						0
+
+PageRank						0
+0						0
+
+56.70						0
+0						0
+
+Popularity						0
+0						0
+
+60.82						0
+0						0
+
+Anchor						0
+0						0
+
+59.09						0
+0						0
+
+Page						0
+0						0
+
+63.93						0
+0						0
+
+Domain						0
+0						0
+
+59.03						0
+0						0
+
+All						0
+Features						0
+0						0
+
+67.43						0
+0						0
+
+Because						0
+we						0
+are						0
+using						0
+a						0
+two-layer						0
+neural						0
+network,						0
+the						0
+features						0
+in						0
+0						0
+
+the						0
+learned						0
+network						0
+can						0
+interact						0
+with						0
+each						0
+other						0
+in						0
+interesting,						0
+0						0
+
+nonlinear						0
+ways.						0
+This						0
+means						0
+that						0
+a						0
+particular						0
+feature						0
+that						0
+appears						0
+0						0
+
+to						0
+have						0
+little						0
+value						0
+in						0
+isolation						0
+could						0
+actually						0
+be						0
+very						0
+important						0
+0						0
+
+when						0
+used						0
+in						0
+combination						0
+with						0
+other						0
+features.						0
+To						0
+measure						0
+the						0
+0						0
+
+final						0
+contribution						0
+of						0
+a						0
+feature						0
+set,						0
+in						0
+the						0
+context						0
+of						0
+all						0
+the						0
+other						0
+0						0
+
+features,						0
+we						0
+performed						0
+an						0
+ablation						0
+study.						0
+That						0
+is,						0
+for						0
+each						0
+set						0
+of						0
+0						0
+
+features,						0
+we						0
+trained						0
+a						0
+network						0
+to						0
+contain						0
+all						0
+of						0
+the						0
+features						0
+except						0
+0						0
+
+that						0
+set.						0
+We						0
+then						0
+compared						0
+the						0
+performance						0
+of						0
+the						0
+resulting						0
+0						0
+
+network						0
+to						0
+the						0
+performance						0
+of						0
+the						0
+network						0
+with						0
+all						0
+of						0
+the						0
+features.						0
+0						0
+
+Table						0
+3						0
+shows						0
+the						0
+results						0
+of						0
+this						0
+experiment,						0
+where						0
+the						0
+0						0
+
+in						0
+is						0
+the						0
+difference						0
+in						0
+pairwise						0
+accuracy						0
+between						0
+the						0
+0						0
+
+network						0
+trained						0
+with						0
+all						0
+of						0
+the						0
+features,						0
+and						0
+the						0
+network						0
+missing						0
+0						0
+
+the						0
+given						0
+feature						0
+set.						0
+0						0
+
+Table						0
+3:						0
+Ablation						0
+study.						0
+Shown						0
+is						0
+the						0
+decrease						0
+in						0
+accuracy						0
+0						0
+
+when						0
+we						0
+train						0
+a						0
+network						0
+that						0
+has						0
+all						0
+but						0
+the						0
+given						0
+set						0
+of						0
+0						0
+
+features.						0
+The						0
+last						0
+line						0
+is						0
+shows						0
+the						0
+effect						0
+of						0
+removing						0
+the						0
+0						0
+
+anchor,						0
+PageRank,						0
+and						0
+domain						0
+features,						0
+hence						0
+a						0
+model						0
+0						0
+
+containing						0
+no						0
+network						0
+or						0
+link-based						0
+information						0
+whatsoever.						0
+0						0
+
+Feature						0
+Set						0
+0						0
+
+Decrease						0
+in						0
+0						0
+
+Accuracy						0
+0						0
+
+PageRank						0
+0						0
+
+0.18						0
+0						0
+
+Popularity						0
+0						0
+
+0.78						0
+0						0
+
+Anchor						0
+0						0
+
+0.47						0
+0						0
+
+Page						0
+0						0
+
+5.42						0
+0						0
+
+Domain						0
+0						0
+
+Anchor,						0
+PageRank						0
+&						0
+Domain						0
+0						0
+
+0.10						0
+0						0
+
+0.60						0
+0						0
+
+The						0
+results						0
+of						0
+the						0
+ablation						0
+study						0
+are						0
+consistent						0
+with						0
+the						0
+individual						0
+0						0
+
+feature						0
+set						0
+study.						0
+Both						0
+show						0
+that						0
+the						0
+most						0
+important						0
+feature						0
+set						0
+is						0
+0						0
+
+the						0
+Page-level						0
+feature						0
+set,						0
+and						0
+the						0
+second						0
+most						0
+important						0
+is						0
+the						0
+0						0
+
+popularity						0
+feature						0
+set.						0
+0						0
+
+Finally,						0
+we						0
+wished						0
+to						0
+see						0
+how						0
+the						0
+performance						0
+of						0
+fRank						0
+0						0
+
+improved						0
+as						0
+we						0
+added						0
+features;						0
+we						0
+wanted						0
+to						0
+find						0
+at						0
+what						0
+point						0
+0						0
+
+adding						0
+more						0
+feature						0
+sets						0
+became						0
+relatively						0
+useless.						0
+Beginning						0
+0						0
+
+with						0
+no						0
+features,						0
+we						0
+greedily						0
+added						0
+the						0
+feature						0
+set						0
+that						0
+improved						0
+0						0
+
+performance						0
+the						0
+most.						0
+The						0
+results						0
+are						0
+shown						0
+in						0
+Table						0
+4.						0
+For						0
+0						0
+
+example,						0
+the						0
+fourth						0
+line						0
+of						0
+the						0
+table						0
+shows						0
+that						0
+fRank						0
+using						0
+the						0
+0						0
+
+page,						0
+popularity,						0
+and						0
+anchor						0
+features						0
+outperformed						0
+any						0
+network						0
+0						0
+
+that						0
+used						0
+the						0
+page,						0
+popularity,						0
+and						0
+some						0
+other						0
+feature						0
+set,						0
+and						0
+that						0
+0						0
+
+the						0
+performance						0
+of						0
+this						0
+network						0
+was						0
+67.25%.						0
+0						0
+
+Table						0
+4:						0
+fRank						0
+performance						0
+as						0
+feature						0
+sets						0
+are						0
+added.						0
+At						0
+each						0
+0						0
+
+row,						0
+the						0
+feature						0
+set						0
+that						0
+gave						0
+the						0
+greatest						0
+increase						0
+in						0
+accuracy						0
+0						0
+
+was						0
+added						0
+to						0
+the						0
+list						0
+of						0
+features						0
+(i.e.,						0
+we						0
+conducted						0
+a						0
+greedy						0
+0						0
+
+search						0
+over						0
+feature						0
+sets).						0
+0						0
+
+Feature						0
+Set						0
+0						0
+
+Accuracy						0
+(%)						0
+0						0
+
+None						0
+0						0
+
+50.00						0
+0						0
+
++Page						0
+0						0
+
+63.93						0
+0						0
+
++Popularity						0
+0						0
+
+66.83						0
+0						0
+
++Anchor						0
+0						0
+
+67.25						0
+0						0
+
++PageRank						0
+0						0
+
+67.31						0
+0						0
+
++Domain						0
+0						0
+
+67.43						0
+0						0
+
+Finally,						0
+we						0
+present						0
+a						0
+qualitative						0
+comparison						0
+of						0
+PageRank						0
+vs.						0
+0						0
+
+fRank.						0
+In						0
+Table						0
+5						0
+are						0
+the						0
+top						0
+ten						0
+URLs						0
+returned						0
+for						0
+PageRank						0
+and						0
+0						0
+
+for						0
+fRank.						0
+results						0
+are						0
+heavily						0
+weighted						0
+towards						0
+0						0
+
+technology						0
+sites.						0
+It						0
+contains						0
+two						0
+QuickTime						0
+URLs						0
+video						0
+0						0
+
+playback						0
+software),						0
+as						0
+well						0
+as						0
+Internet						0
+Explorer						0
+and						0
+FireFox						0
+0						0
+
+URLs						0
+(both						0
+of						0
+which						0
+are						0
+Web						0
+browsers).						0
+fRank,						0
+on						0
+the						0
+other						0
+0						0
+
+hand,						0
+contains						0
+more						0
+consumer-oriented						0
+sites						0
+such						0
+as						0
+American						0
+0						0
+
+Express,						0
+Target,						0
+Dell,						0
+etc.						0
+bias						0
+toward						0
+technology						0
+can						0
+0						0
+
+be						0
+explained						0
+through						0
+two						0
+processes.						0
+First,						0
+there						0
+are						0
+many						0
+pages						0
+0						0
+
+with						0
+at						0
+the						0
+bottom						0
+suggesting						0
+that						0
+the						0
+site						0
+is						0
+optimized						0
+0						0
+
+for						0
+Internet						0
+Explorer,						0
+or						0
+that						0
+the						0
+visitor						0
+needs						0
+QuickTime.						0
+These						0
+0						0
+
+generally						0
+link						0
+back						0
+to,						0
+in						0
+these						0
+examples,						0
+the						0
+Internet						0
+Explorer						0
+0						0
+
+and						0
+QuickTime						0
+download						0
+sites.						0
+Consequently,						0
+PageRank						0
+ranks						0
+0						0
+
+those						0
+pages						0
+highly.						0
+Though						0
+these						0
+pages						0
+are						0
+important,						0
+they						0
+are						0
+0						0
+
+not						0
+as						0
+important						0
+as						0
+it						0
+may						0
+seem						0
+by						0
+looking						0
+at						0
+the						0
+link						0
+structure						0
+0						0
+
+alone.						0
+One						0
+fix						0
+for						0
+this						0
+is						0
+to						0
+add						0
+information						0
+about						0
+the						0
+link						0
+to						0
+the						0
+0						0
+
+PageRank						0
+computation,						0
+such						0
+as						0
+the						0
+size						0
+of						0
+the						0
+text,						0
+whether						0
+it						0
+was						0
+0						0
+
+at						0
+the						0
+bottom						0
+of						0
+the						0
+page,						0
+etc.						0
+0						0
+
+The						0
+other						0
+bias						0
+comes						0
+from						0
+the						0
+fact						0
+that						0
+the						0
+population						0
+of						0
+Web						0
+site						0
+0						0
+
+authors						0
+is						0
+different						0
+than						0
+the						0
+population						0
+of						0
+Web						0
+users.						0
+Web						0
+0						0
+
+authors						0
+tend						0
+to						0
+be						0
+technologically-oriented,						0
+and						0
+thus						0
+their						0
+linking						0
+0						0
+
+behavior						0
+reflects						0
+those						0
+interests.						0
+fRank,						0
+by						0
+knowing						0
+the						0
+actual						0
+0						0
+
+visitation						0
+popularity						0
+of						0
+a						0
+site						0
+(the						0
+popularity						0
+feature						0
+set),						0
+is						0
+able						0
+to						0
+0						0
+
+eliminate						0
+some						0
+of						0
+that						0
+bias.						0
+It						0
+has						0
+the						0
+ability						0
+to						0
+depend						0
+more						0
+on						0
+0						0
+
+where						0
+actual						0
+Web						0
+users						0
+visit						0
+rather						0
+than						0
+where						0
+the						0
+Web						0
+site						0
+0						0
+
+authors						0
+have						0
+linked.						0
+0						0
+
+The						0
+results						0
+confirm						0
+that						0
+fRank						0
+outperforms						0
+PageRank						0
+in						0
+pairwise						0
+0						0
+
+accuracy.						0
+The						0
+two						0
+most						0
+important						0
+feature						0
+sets						0
+are						0
+the						0
+page						0
+and						0
+0						0
+
+popularity						0
+features.						0
+This						0
+is						0
+surprising,						0
+as						0
+the						0
+page						0
+features						0
+0						0
+
+consisted						0
+only						0
+of						0
+a						0
+few						0
+(8)						0
+simple						0
+features.						0
+Further						0
+experiments						0
+0						0
+
+found						0
+that,						0
+of						0
+the						0
+page						0
+features,						0
+those						0
+based						0
+on						0
+the						0
+text						0
+of						0
+the						0
+0						0
+
+page						0
+(as						0
+opposed						0
+to						0
+the						0
+URL)						0
+performed						0
+the						0
+best.						0
+In						0
+the						0
+next						0
+0						0
+
+section,						0
+we						0
+explore						0
+the						0
+popularity						0
+feature						0
+in						0
+more						0
+detail.						0
+0						0
+
+5.5						0
+Popularity						0
+Data						0
+0						0
+
+As						0
+mentioned						0
+in						0
+section						0
+4,						0
+our						0
+popularity						0
+data						0
+came						0
+from						0
+MSN						0
+0						0
+
+toolbar						0
+users.						0
+For						0
+privacy						0
+reasons,						0
+we						0
+had						0
+access						0
+only						0
+to						0
+an						0
+0						0
+
+aggregate						0
+count						0
+of,						0
+for						0
+each						0
+URL,						0
+how						0
+many						0
+times						0
+it						0
+was						0
+visited						0
+0						0
+
+by						0
+any						0
+toolbar						0
+user.						0
+This						0
+limited						0
+the						0
+possible						0
+features						0
+we						0
+could						0
+0						0
+
+derive						0
+from						0
+this						0
+data.						0
+For						0
+possible						0
+extensions,						0
+see						0
+section						0
+6.3,						0
+0						0
+
+future						0
+work.						0
+0						0
+
+For						0
+each						0
+URL						0
+in						0
+our						0
+train						0
+and						0
+test						0
+sets,						0
+we						0
+provided						0
+a						0
+feature						0
+to						0
+0						0
+
+fRank						0
+which						0
+was						0
+how						0
+many						0
+times						0
+it						0
+had						0
+been						0
+visited						0
+by						0
+a						0
+toolbar						0
+0						0
+
+user.						0
+However,						0
+this						0
+feature						0
+was						0
+quite						0
+noisy						0
+and						0
+sparse,						0
+0						0
+
+particularly						0
+for						0
+URLs						0
+with						0
+query						0
+parameters						0
+(e.g.,						0
+http://search-						1
+0						0
+
+.msn.com/results.aspx?q=machine+learning&form=QBHP).						0
+One						0
+0						0
+
+solution						0
+was						0
+to						0
+provide						0
+an						0
+additional						0
+feature						0
+which						0
+was						0
+the						0
+0						0
+
+number						0
+of						0
+times						0
+any						0
+URL						0
+at						0
+the						0
+given						0
+domain						0
+was						0
+visited						0
+by						0
+a						0
+0						0
+
+toolbar						0
+user.						0
+Adding						0
+this						0
+feature						0
+dramatically						0
+improved						0
+the						0
+0						0
+
+performance						0
+of						0
+fRank.						0
+0						0
+
+We						0
+took						0
+this						0
+one						0
+step						0
+further						0
+and						0
+used						0
+the						0
+built-in						0
+hierarchical						0
+0						0
+
+structure						0
+of						0
+URLs						0
+to						0
+construct						0
+many						0
+levels						0
+of						0
+backoff						0
+between						0
+the						0
+0						0
+
+full						0
+URL						0
+and						0
+the						0
+domain.						0
+We						0
+did						0
+this						0
+by						0
+using						0
+the						0
+set						0
+of						0
+features						0
+0						0
+
+shown						0
+in						0
+Table						0
+6.						0
+0						0
+
+Table						0
+6:						0
+URL						0
+functions						0
+used						0
+to						0
+compute						0
+the						0
+Popularity						0
+0						0
+
+feature						0
+set.						0
+0						0
+
+Function						0
+0						0
+
+Example						0
+0						0
+
+Exact						0
+URL						0
+0						0
+
+cnn.com/2005/tech/wikipedia.html?v=mobile						0
+0						0
+
+No						0
+Params						0
+0						0
+
+cnn.com/2005/tech/wikipedia.html						0
+0						0
+
+Page						0
+0						0
+
+wikipedia.html						0
+0						0
+
+URL-1						0
+0						0
+
+cnn.com/2005/tech						0
+0						0
+
+URL-2						0
+0						0
+
+cnn.com/2005						0
+0						0
+
+0						0
+
+Domain						0
+0						0
+
+cnn.com						0
+0						0
+
+Domain+1						0
+0						0
+
+cnn.com/2005						0
+0						0
+
+0						0
+
+Each						0
+URL						0
+was						0
+assigned						0
+one						0
+feature						0
+for						0
+each						0
+function						0
+shown						0
+in						0
+0						0
+
+the						0
+table.						0
+The						0
+value						0
+of						0
+the						0
+feature						0
+was						0
+the						0
+count						0
+of						0
+the						0
+number						0
+of						0
+0						0
+
+times						0
+a						0
+toolbar						0
+user						0
+visited						0
+a						0
+URL,						0
+where						0
+the						0
+function						0
+applied						0
+to						0
+0						0
+
+that						0
+URL						0
+matches						0
+the						0
+function						0
+applied						0
+to						0
+the						0
+URL						0
+in						0
+question.						0
+0						0
+
+For						0
+example,						0
+a						0
+visit						0
+to						0
+cnn.com/2005/sports.html						0
+would						0
+0						0
+
+increment						0
+the						0
+Domain						0
+and						0
+Domain+1						0
+features						0
+for						0
+the						0
+URL						0
+0						0
+
+cnn.com/2005/tech/wikipedia.html.						0
+0						0
+
+As						0
+seen						0
+in						0
+Table						0
+7,						0
+adding						0
+the						0
+domain						0
+counts						0
+significantly						0
+0						0
+
+improved						0
+the						0
+quality						0
+of						0
+the						0
+popularity						0
+feature,						0
+and						0
+adding						0
+the						0
+0						0
+
+numerous						0
+backoff						0
+functions						0
+listed						0
+in						0
+Table						0
+6						0
+improved						0
+the						0
+0						0
+
+accuracy						0
+even						0
+further.						0
+0						0
+
+Table						0
+7:						0
+Effect						0
+of						0
+adding						0
+backoff						0
+to						0
+the						0
+popularity						0
+feature						0
+set						0
+0						0
+
+Features						0
+0						0
+
+Accuracy						0
+(%)						0
+0						0
+
+URL						0
+count						0
+0						0
+
+58.15						0
+0						0
+
+URL						0
+and						0
+Domain						0
+counts						0
+0						0
+
+59.31						0
+0						0
+
+All						0
+backoff						0
+functions						0
+(Table						0
+6)						0
+0						0
+
+60.82						0
+0						0
+
+Table						0
+5:						0
+Top						0
+ten						0
+URLs						0
+for						0
+PageRank						0
+vs.						0
+fRank						0
+0						0
+
+PageRank						0
+0						0
+
+fRank						0
+0						0
+
+google.com						0
+0						0
+
+google.com						0
+0						0
+
+apple.com/quicktime/download						0
+yahoo.com						0
+0						0
+
+amazon.com						0
+0						0
+
+americanexpress.com						0
+0						0
+
+yahoo.com						0
+0						0
+
+hp.com						0
+0						0
+
+microsoft.com/windows/ie						0
+0						0
+
+target.com						0
+0						0
+
+apple.com/quicktime						0
+0						0
+
+bestbuy.com						0
+0						0
+
+mapquest.com						0
+0						0
+
+dell.com						0
+0						0
+
+ebay.com						0
+0						0
+
+autotrader.com						0
+0						0
+
+mozilla.org/products/firefox						0
+0						0
+
+dogpile.com						0
+0						0
+
+ftc.gov						0
+0						0
+
+bankofamerica.com						0
+0						0
+
+Backing						0
+off						0
+to						0
+subsets						0
+of						0
+the						0
+URL						0
+is						0
+one						0
+technique						0
+for						0
+dealing						0
+0						0
+
+with						0
+the						0
+sparsity						0
+of						0
+data.						0
+It						0
+is						0
+also						0
+informative						0
+to						0
+see						0
+how						0
+the						0
+0						0
+
+performance						0
+of						0
+fRank						0
+depends						0
+on						0
+the						0
+amount						0
+of						0
+popularity						0
+data						0
+0						0
+
+that						0
+we						0
+have						0
+collected.						0
+In						0
+Figure						0
+1						0
+we						0
+show						0
+the						0
+performance						0
+of						0
+0						0
+
+fRank						0
+trained						0
+with						0
+only						0
+the						0
+popularity						0
+feature						0
+set						0
+vs.						0
+the						0
+amount						0
+0						0
+
+of						0
+data						0
+we						0
+have						0
+for						0
+the						0
+popularity						0
+feature						0
+set.						0
+Each						0
+day,						0
+we						0
+0						0
+
+receive						0
+additional						0
+popularity						0
+data,						0
+and						0
+as						0
+can						0
+be						0
+seen						0
+in						0
+the						0
+plot,						0
+0						0
+
+this						0
+increases						0
+the						0
+performance						0
+of						0
+fRank.						0
+The						0
+relation						0
+is						0
+0						0
+
+logarithmic:						0
+doubling						0
+the						0
+amount						0
+of						0
+popularity						0
+data						0
+provides						0
+a						0
+0						0
+
+constant						0
+improvement						0
+in						0
+pairwise						0
+accuracy.						0
+0						0
+
+In						0
+summary,						0
+we						0
+have						0
+found						0
+that						0
+the						0
+popularity						0
+features						0
+provide						0
+a						0
+0						0
+
+useful						0
+boost						0
+to						0
+the						0
+overall						0
+fRank						0
+accuracy.						0
+Gathering						0
+more						0
+0						0
+
+popularity						0
+data,						0
+as						0
+well						0
+as						0
+employing						0
+simple						0
+backoff						0
+strategies,						0
+0						0
+
+improve						0
+this						0
+boost						0
+even						0
+further.						0
+0						0
+
+5.6						0
+Summary						0
+of						0
+Results						0
+0						0
+
+The						0
+experiments						0
+provide						0
+a						0
+number						0
+of						0
+conclusions.						0
+First,						0
+fRank						0
+0						0
+
+performs						0
+significantly						0
+better						0
+than						0
+PageRank,						0
+even						0
+without						0
+any						0
+0						0
+
+information						0
+about						0
+the						0
+Web						0
+graph.						0
+Second,						0
+the						0
+page						0
+level						0
+and						0
+0						0
+
+popularity						0
+features						0
+were						0
+the						0
+most						0
+significant						0
+contributors						0
+to						0
+0						0
+
+pairwise						0
+accuracy.						0
+Third,						0
+by						0
+collecting						0
+more						0
+popularity						0
+data,						0
+we						0
+0						0
+
+can						0
+continue						0
+to						0
+improve						0
+performance.						0
+0						0
+
+The						0
+popularity						0
+data						0
+provides						0
+two						0
+benefits						0
+to						0
+fRank.						0
+First,						0
+we						0
+see						0
+0						0
+
+that						0
+qualitatively,						0
+ordering						0
+of						0
+Web						0
+pages						0
+has						0
+a						0
+more						0
+0						0
+
+favorable						0
+bias						0
+than						0
+ordering						0
+seems						0
+to						0
+0						0
+
+correspond						0
+to						0
+what						0
+Web						0
+users,						0
+rather						0
+than						0
+Web						0
+page						0
+authors,						0
+0						0
+
+prefer.						0
+Second,						0
+the						0
+popularity						0
+data						0
+is						0
+more						0
+timely						0
+than						0
+0						0
+
+link						0
+information.						0
+The						0
+toolbar						0
+provides						0
+information						0
+0						0
+
+about						0
+which						0
+Web						0
+pages						0
+people						0
+find						0
+interesting						0
+right						0
+now,						0
+0						0
+
+whereas						0
+links						0
+are						0
+added						0
+to						0
+pages						0
+more						0
+slowly,						0
+as						0
+authors						0
+find						0
+the						0
+0						0
+
+time						0
+and						0
+interest.						0
+0						0
+
+6.						0
+RELATED						0
+AND						0
+FUTURE						0
+WORK						0
+0						0
+
+6.1						0
+Improvements						0
+to						0
+PageRank						0
+0						0
+
+Since						0
+the						0
+original						0
+PageRank						0
+paper,						0
+there						0
+has						0
+been						0
+work						0
+on						0
+0						0
+
+improving						0
+it.						0
+Much						0
+of						0
+that						0
+work						0
+centers						0
+on						0
+speeding						0
+up						0
+and						0
+0						0
+
+parallelizing						0
+the						0
+computation						0
+[15][25].						0
+0						0
+
+One						0
+recognized						0
+problem						0
+with						0
+PageRank						0
+is						0
+that						0
+of						0
+topic						0
+drift:						0
+A						0
+0						0
+
+page						0
+about						0
+will						0
+have						0
+high						0
+PageRank						0
+if						0
+it						0
+is						0
+linked						0
+to						0
+by						0
+0						0
+
+many						0
+pages						0
+that						0
+themselves						0
+have						0
+high						0
+rank,						0
+regardless						0
+of						0
+their						0
+0						0
+
+topic.						0
+In						0
+contrast,						0
+a						0
+search						0
+engine						0
+user						0
+looking						0
+for						0
+good						0
+pages						0
+0						0
+
+about						0
+dogs						0
+would						0
+likely						0
+prefer						0
+to						0
+find						0
+pages						0
+that						0
+are						0
+pointed						0
+to						0
+by						0
+0						0
+
+many						0
+pages						0
+that						0
+are						0
+themselves						0
+about						0
+dogs.						0
+Hence,						0
+a						0
+link						0
+that						0
+is						0
+0						0
+
+should						0
+have						0
+higher						0
+weight						0
+than						0
+a						0
+link						0
+that						0
+is						0
+not.						0
+0						0
+
+Richardson						0
+and						0
+Query						0
+Dependent						0
+PageRank						0
+[29]						0
+0						0
+
+and						0
+Topic-Sensitive						0
+PageRank						0
+[16]						0
+are						0
+two						0
+0						0
+
+approaches						0
+that						0
+tackle						0
+this						0
+problem.						0
+0						0
+
+Other						0
+variations						0
+to						0
+PageRank						0
+include						0
+differently						0
+weighting						0
+links						0
+0						0
+
+for						0
+inter-						0
+vs.						0
+intra-domain						0
+links,						0
+adding						0
+a						0
+backwards						0
+step						0
+to						0
+the						0
+0						0
+
+random						0
+surfer						0
+to						0
+simulate						0
+the						0
+button						0
+on						0
+most						0
+browsers						0
+0						0
+
+[24]						0
+and						0
+modifying						0
+the						0
+jump						0
+probability						0
+[3].						0
+See						0
+Langville						0
+0						0
+
+and						0
+Meyer						0
+[23]						0
+for						0
+a						0
+good						0
+survey						0
+of						0
+these,						0
+and						0
+other						0
+0						0
+
+modifications						0
+to						0
+PageRank.						0
+0						0
+
+6.2						0
+Other						0
+related						0
+work						0
+0						0
+
+PageRank						0
+is						0
+not						0
+the						0
+only						0
+link						0
+analysis						0
+algorithm						0
+used						0
+for						0
+ranking						0
+0						0
+
+Web						0
+pages.						0
+The						0
+most						0
+well-known						0
+other						0
+is						0
+HITS						0
+[22],						0
+which						0
+is						0
+0						0
+
+used						0
+by						0
+the						0
+Teoma						0
+search						0
+engine						0
+[30].						0
+HITS						0
+produces						0
+a						0
+list						0
+of						0
+0						0
+
+hubs						0
+and						0
+authorities,						0
+where						0
+hubs						0
+are						0
+pages						0
+that						0
+point						0
+to						0
+many						0
+0						0
+
+authority						0
+pages,						0
+and						0
+authorities						0
+are						0
+pages						0
+that						0
+are						0
+pointed						0
+to						0
+by						0
+0						0
+
+many						0
+hubs.						0
+Previous						0
+work						0
+has						0
+shown						0
+HITS						0
+to						0
+perform						0
+0						0
+
+comparably						0
+to						0
+PageRank						0
+[1].						0
+0						0
+
+One						0
+field						0
+of						0
+interest						0
+is						0
+that						0
+of						0
+static						0
+index						0
+pruning						0
+(see						0
+e.g.,						0
+0						0
+
+Carmel						0
+et						0
+al.						0
+[8]).						0
+Static						0
+index						0
+pruning						0
+methods						0
+reduce						0
+the						0
+size						0
+of						0
+0						0
+
+the						0
+search						0
+index						0
+by						0
+removing						0
+documents						0
+that						0
+are						0
+0						0
+
+unlikely						0
+to						0
+be						0
+returned						0
+by						0
+a						0
+search						0
+query.						0
+The						0
+pruning						0
+is						0
+typically						0
+0						0
+
+done						0
+based						0
+on						0
+the						0
+frequency						0
+of						0
+query						0
+terms.						0
+Similarly,						0
+Pandey						0
+0						0
+
+and						0
+Olston						0
+[28]						0
+suggest						0
+crawling						0
+pages						0
+frequently						0
+if						0
+they						0
+are						0
+0						0
+
+likely						0
+to						0
+incorrectly						0
+appear						0
+(or						0
+not						0
+appear)						0
+as						0
+a						0
+result						0
+of						0
+a						0
+search.						0
+0						0
+
+Similar						0
+methods						0
+could						0
+be						0
+incorporated						0
+into						0
+the						0
+static						0
+rank						0
+(e.g.,						0
+0						0
+
+how						0
+many						0
+frequent						0
+queries						0
+contain						0
+words						0
+found						0
+on						0
+this						0
+page).						0
+0						0
+
+Others						0
+have						0
+investigated						0
+the						0
+effect						0
+that						0
+PageRank						0
+has						0
+on						0
+the						0
+Web						0
+0						0
+
+at						0
+large						0
+[9].						0
+They						0
+argue						0
+that						0
+pages						0
+with						0
+high						0
+PageRank						0
+are						0
+more						0
+0						0
+
+likely						0
+to						0
+be						0
+found						0
+by						0
+Web						0
+users,						0
+thus						0
+more						0
+likely						0
+to						0
+be						0
+linked						0
+to,						0
+0						0
+
+and						0
+thus						0
+more						0
+likely						0
+to						0
+maintain						0
+a						0
+higher						0
+PageRank						0
+than						0
+other						0
+0						0
+
+pages.						0
+The						0
+same						0
+may						0
+occur						0
+for						0
+the						0
+popularity						0
+data.						0
+If						0
+we						0
+increase						0
+0						0
+
+the						0
+ranking						0
+for						0
+popular						0
+pages,						0
+they						0
+are						0
+more						0
+likely						0
+to						0
+be						0
+clicked						0
+0						0
+
+on,						0
+thus						0
+further						0
+increasing						0
+their						0
+popularity.						0
+Cho						0
+et						0
+al.						0
+[10]						0
+argue						0
+0						0
+
+that						0
+a						0
+more						0
+appropriate						0
+measure						0
+of						0
+Web						0
+page						0
+quality						0
+would						0
+0						0
+
+depend						0
+on						0
+not						0
+only						0
+the						0
+current						0
+link						0
+structure						0
+of						0
+the						0
+Web,						0
+but						0
+also						0
+0						0
+
+on						0
+the						0
+change						0
+in						0
+that						0
+link						0
+structure.						0
+The						0
+same						0
+technique						0
+may						0
+be						0
+0						0
+
+applicable						0
+to						0
+popularity						0
+data:						0
+the						0
+change						0
+in						0
+popularity						0
+of						0
+a						0
+page						0
+0						0
+
+may						0
+be						0
+more						0
+informative						0
+than						0
+the						0
+absolute						0
+popularity.						0
+0						0
+
+One						0
+interesting						0
+related						0
+work						0
+is						0
+that						0
+of						0
+Ivory						0
+and						0
+Hearst						0
+[19].						0
+0						0
+
+Their						0
+goal						0
+was						0
+to						0
+build						0
+a						0
+model						0
+of						0
+Web						0
+sites						0
+that						0
+are						0
+considered						0
+0						0
+
+high						0
+quality						0
+from						0
+the						0
+perspective						0
+of						0
+structure						0
+and						0
+0						0
+
+navigation,						0
+visual						0
+design,						0
+functionality,						0
+interactivity,						0
+and						0
+overall						0
+0						0
+
+They						0
+used						0
+over						0
+100						0
+page						0
+level						0
+features,						0
+as						0
+well						0
+as						0
+0						0
+
+features						0
+encompassing						0
+the						0
+performance						0
+and						0
+structure						0
+of						0
+the						0
+site.						0
+0						0
+
+This						0
+let						0
+them						0
+qualitatively						0
+describe						0
+the						0
+qualities						0
+of						0
+a						0
+page						0
+that						0
+0						0
+
+make						0
+it						0
+appear						0
+attractive						0
+(e.g.,						0
+rare						0
+use						0
+of						0
+italics,						0
+at						0
+least						0
+9						0
+point						0
+0						0
+
+font,						0
+and						0
+(in						0
+later						0
+work)						0
+to						0
+build						0
+a						0
+system						0
+that						0
+assists						0
+novel						0
+0						0
+
+Web						0
+page						0
+authors						0
+in						0
+creating						0
+quality						0
+pages						0
+by						0
+evaluating						0
+it						0
+0						0
+
+according						0
+to						0
+these						0
+features.						0
+The						0
+primary						0
+differences						0
+between						0
+this						0
+0						0
+
+work						0
+and						0
+ours						0
+are						0
+the						0
+goal						0
+(discovering						0
+what						0
+constitutes						0
+a						0
+good						0
+0						0
+
+Web						0
+page						0
+vs.						0
+ordering						0
+Web						0
+pages						0
+for						0
+the						0
+purposes						0
+of						0
+Web						0
+0						0
+
+search),						0
+the						0
+size						0
+of						0
+the						0
+study						0
+(they						0
+used						0
+a						0
+dataset						0
+of						0
+less						0
+than						0
+6000						0
+0						0
+
+pages						0
+vs.						0
+our						0
+set						0
+of						0
+468,000),						0
+and						0
+our						0
+comparison						0
+with						0
+PageRank.						0
+0						0
+
+y						0
+=						0
+0.577Ln(x)						0
++						0
+58.283						0
+0						0
+
+R						0
+0						0
+
+2						0
+=						0
+0.9822						0
+0						0
+
+58						0
+0						0
+
+58.5						0
+0						0
+
+59						0
+0						0
+
+59.5						0
+0						0
+
+60						0
+0						0
+
+60.5						0
+0						0
+
+61						0
+0						0
+
+1						0
+0						0
+
+10						0
+0						0
+
+100						0
+0						0
+
+Days						0
+of						0
+Toolbar						0
+Data						0
+0						0
+
+Pairwise						0
+Accuracy						0
+0						0
+
+Figure						0
+1:						0
+Relation						0
+between						0
+the						0
+amount						0
+of						0
+popularity						0
+data						0
+and						0
+0						0
+
+the						0
+performance						0
+of						0
+the						0
+popularity						0
+feature						0
+set.						0
+Note						0
+the						0
+x-axis						0
+0						0
+
+is						0
+a						0
+logarithmic						0
+scale.						0
+0						0
+
+Nevertheless,						0
+their						0
+work						0
+provides						0
+insights						0
+to						0
+additional						0
+useful						0
+0						0
+
+static						0
+features						0
+that						0
+we						0
+could						0
+incorporate						0
+into						0
+fRank						0
+in						0
+the						0
+future.						0
+0						0
+
+Recent						0
+work						0
+on						0
+incorporating						0
+novel						0
+features						0
+into						0
+dynamic						0
+ranking						0
+0						0
+
+includes						0
+that						0
+by						0
+Joachims						0
+et						0
+al.						0
+[21],						0
+who						0
+investigate						0
+the						0
+use						0
+of						0
+0						0
+
+implicit						0
+feedback						0
+from						0
+users,						0
+in						0
+the						0
+form						0
+of						0
+which						0
+search						0
+engine						0
+0						0
+
+results						0
+are						0
+clicked						0
+on.						0
+Craswell						0
+et						0
+al.						0
+[11]						0
+present						0
+a						0
+method						0
+for						0
+0						0
+
+determining						0
+the						0
+best						0
+transformation						0
+to						0
+apply						0
+to						0
+query						0
+independent						0
+0						0
+
+features						0
+(such						0
+as						0
+those						0
+used						0
+in						0
+this						0
+paper)						0
+for						0
+the						0
+purposes						0
+of						0
+0						0
+
+improving						0
+dynamic						0
+ranking.						0
+Other						0
+work,						0
+such						0
+as						0
+Boyan						0
+et						0
+al.						0
+[4]						0
+0						0
+
+and						0
+Bartell						0
+et						0
+al.						0
+[2]						0
+apply						0
+machine						0
+learning						0
+for						0
+the						0
+purposes						0
+of						0
+0						0
+
+improving						0
+the						0
+overall						0
+relevance						0
+of						0
+a						0
+search						0
+engine						0
+(i.e.,						0
+the						0
+0						0
+
+dynamic						0
+ranking).						0
+They						0
+do						0
+not						0
+apply						0
+their						0
+techniques						0
+to						0
+the						0
+0						0
+
+problem						0
+of						0
+static						0
+ranking.						0
+0						0
+
+6.3						0
+Future						0
+work						0
+0						0
+
+There						0
+are						0
+many						0
+ways						0
+in						0
+which						0
+we						0
+would						0
+like						0
+to						0
+extend						0
+this						0
+work.						0
+0						0
+
+First,						0
+fRank						0
+uses						0
+only						0
+a						0
+small						0
+number						0
+of						0
+features.						0
+We						0
+believe						0
+we						0
+0						0
+
+could						0
+achieve						0
+even						0
+more						0
+significant						0
+results						0
+with						0
+more						0
+features.						0
+In						0
+0						0
+
+particular						0
+the						0
+existence,						0
+or						0
+lack						0
+thereof,						0
+of						0
+certain						0
+words						0
+could						0
+0						0
+
+prove						0
+very						0
+significant						0
+(for						0
+instance,						0
+0						0
+
+probably						0
+signifies						0
+a						0
+low						0
+quality						0
+page).						0
+Other						0
+features						0
+could						0
+0						0
+
+include						0
+the						0
+number						0
+of						0
+images						0
+on						0
+a						0
+page,						0
+size						0
+of						0
+those						0
+images,						0
+0						0
+
+number						0
+of						0
+layout						0
+elements						0
+(tables,						0
+divs,						0
+and						0
+spans),						0
+use						0
+of						0
+style						0
+0						0
+
+sheets,						0
+conforming						0
+to						0
+W3C						0
+standards						0
+(like						0
+XHTML						0
+1.0						0
+Strict),						0
+0						0
+
+background						0
+color						0
+of						0
+a						0
+page,						0
+etc.						0
+0						0
+
+Many						0
+pages						0
+are						0
+generated						0
+dynamically,						0
+the						0
+contents						0
+of						0
+which						0
+may						0
+0						0
+
+depend						0
+on						0
+parameters						0
+in						0
+the						0
+URL,						0
+the						0
+time						0
+of						0
+day,						0
+the						0
+user						0
+0						0
+
+visiting						0
+the						0
+site,						0
+or						0
+other						0
+variables.						0
+For						0
+such						0
+pages,						0
+it						0
+may						0
+be						0
+0						0
+
+useful						0
+to						0
+apply						0
+the						0
+techniques						0
+found						0
+in						0
+[26]						0
+to						0
+form						0
+a						0
+static						0
+0						0
+
+approximation						0
+for						0
+the						0
+purposes						0
+of						0
+extracting						0
+features.						0
+The						0
+0						0
+
+resulting						0
+grammar						0
+describing						0
+the						0
+page						0
+could						0
+itself						0
+be						0
+a						0
+source						0
+of						0
+0						0
+
+additional						0
+features						0
+describing						0
+the						0
+complexity						0
+of						0
+the						0
+page,						0
+such						0
+as						0
+0						0
+
+how						0
+many						0
+non-terminal						0
+nodes						0
+it						0
+has,						0
+the						0
+depth						0
+of						0
+the						0
+grammar						0
+0						0
+
+tree,						0
+etc.						0
+0						0
+
+fRank						0
+allows						0
+one						0
+to						0
+specify						0
+a						0
+confidence						0
+in						0
+each						0
+pairing						0
+of						0
+0						0
+
+documents.						0
+In						0
+the						0
+future,						0
+we						0
+will						0
+experiment						0
+with						0
+probabilities						0
+0						0
+
+that						0
+depend						0
+on						0
+the						0
+difference						0
+in						0
+human						0
+judgments						0
+between						0
+the						0
+0						0
+
+two						0
+items						0
+in						0
+the						0
+pair.						0
+For						0
+example,						0
+a						0
+pair						0
+of						0
+documents						0
+where						0
+one						0
+0						0
+
+was						0
+rated						0
+4						0
+and						0
+the						0
+other						0
+0						0
+should						0
+have						0
+a						0
+higher						0
+confidence						0
+than						0
+0						0
+
+a						0
+pair						0
+of						0
+documents						0
+rated						0
+3						0
+and						0
+2.						0
+0						0
+
+The						0
+experiments						0
+in						0
+this						0
+paper						0
+are						0
+biased						0
+toward						0
+pages						0
+that						0
+have						0
+0						0
+
+higher						0
+than						0
+average						0
+quality.						0
+Also,						0
+fRank						0
+with						0
+all						0
+of						0
+the						0
+features						0
+0						0
+
+can						0
+only						0
+be						0
+applied						0
+to						0
+pages						0
+that						0
+have						0
+already						0
+been						0
+crawled.						0
+0						0
+
+Thus,						0
+fRank						0
+is						0
+primarily						0
+useful						0
+for						0
+index						0
+ordering						0
+and						0
+improving						0
+0						0
+
+relevance,						0
+not						0
+for						0
+directing						0
+the						0
+crawl.						0
+We						0
+would						0
+like						0
+to						0
+0						0
+
+investigate						0
+a						0
+machine						0
+learning						0
+approach						0
+for						0
+crawl						0
+prioritization						0
+as						0
+0						0
+
+well.						0
+It						0
+may						0
+be						0
+that						0
+a						0
+combination						0
+of						0
+methods						0
+is						0
+best:						0
+for						0
+0						0
+
+example,						0
+using						0
+PageRank						0
+to						0
+select						0
+the						0
+best						0
+5						0
+billion						0
+of						0
+the						0
+20						0
+0						0
+
+billion						0
+pages						0
+on						0
+the						0
+Web,						0
+then						0
+using						0
+fRank						0
+to						0
+order						0
+the						0
+index						0
+and						0
+0						0
+
+affect						0
+search						0
+relevancy.						0
+0						0
+
+Another						0
+interesting						0
+direction						0
+for						0
+exploration						0
+is						0
+to						0
+incorporate						0
+0						0
+
+fRank						0
+and						0
+page-level						0
+features						0
+directly						0
+into						0
+the						0
+PageRank						0
+0						0
+
+computation						0
+itself.						0
+Work						0
+on						0
+biasing						0
+the						0
+PageRank						0
+jump						0
+vector						0
+0						0
+
+[16],						0
+and						0
+transition						0
+matrix						0
+[29],						0
+have						0
+demonstrated						0
+the						0
+feasibility						0
+0						0
+
+and						0
+advantages						0
+of						0
+such						0
+an						0
+approach.						0
+There						0
+is						0
+reason						0
+to						0
+believe						0
+0						0
+
+that						0
+a						0
+direct						0
+application						0
+of						0
+[29],						0
+using						0
+the						0
+fRank						0
+of						0
+a						0
+page						0
+for						0
+its						0
+0						0
+
+could						0
+lead						0
+to						0
+an						0
+improved						0
+overall						0
+static						0
+rank.						0
+0						0
+
+Finally,						0
+the						0
+popularity						0
+data						0
+can						0
+be						0
+used						0
+in						0
+other						0
+interesting						0
+ways.						0
+0						0
+
+The						0
+general						0
+surfing						0
+and						0
+searching						0
+habits						0
+of						0
+Web						0
+users						0
+varies						0
+by						0
+0						0
+
+time						0
+of						0
+day.						0
+Activity						0
+in						0
+the						0
+morning,						0
+daytime,						0
+and						0
+evening						0
+are						0
+0						0
+
+often						0
+quite						0
+different						0
+(e.g.,						0
+reading						0
+the						0
+news,						0
+solving						0
+problems,						0
+0						0
+
+and						0
+accessing						0
+entertainment,						0
+respectively).						0
+We						0
+can						0
+gain						0
+insight						0
+0						0
+
+into						0
+these						0
+differences						0
+by						0
+using						0
+the						0
+popularity						0
+data,						0
+divided						0
+into						0
+0						0
+
+segments						0
+of						0
+the						0
+day.						0
+When						0
+a						0
+query						0
+is						0
+issued,						0
+we						0
+would						0
+then						0
+use						0
+0						0
+
+the						0
+popularity						0
+data						0
+matching						0
+the						0
+time						0
+of						0
+query						0
+in						0
+order						0
+to						0
+do						0
+the						0
+0						0
+
+ranking						0
+of						0
+Web						0
+pages.						0
+We						0
+also						0
+plan						0
+to						0
+explore						0
+popularity						0
+features						0
+0						0
+
+that						0
+use						0
+more						0
+than						0
+just						0
+the						0
+counts						0
+of						0
+how						0
+often						0
+a						0
+page						0
+was						0
+visited.						0
+0						0
+
+For						0
+example,						0
+how						0
+long						0
+users						0
+tended						0
+to						0
+dwell						0
+on						0
+a						0
+page,						0
+did						0
+they						0
+0						0
+
+leave						0
+the						0
+page						0
+by						0
+clicking						0
+a						0
+link						0
+or						0
+by						0
+hitting						0
+the						0
+back						0
+button,						0
+etc.						0
+0						0
+
+Fox						0
+et						0
+al.						0
+did						0
+a						0
+study						0
+that						0
+showed						0
+that						0
+features						0
+such						0
+as						0
+this						0
+can						0
+be						0
+0						0
+
+valuable						0
+for						0
+the						0
+purposes						0
+of						0
+dynamic						0
+ranking						0
+[14].						0
+Finally,						0
+the						0
+0						0
+
+popularity						0
+data						0
+could						0
+be						0
+used						0
+as						0
+the						0
+label						0
+rather						0
+than						0
+as						0
+a						0
+feature.						0
+0						0
+
+Using						0
+fRank						0
+in						0
+this						0
+way						0
+to						0
+predict						0
+the						0
+popularity						0
+of						0
+a						0
+page						0
+may						0
+0						0
+
+useful						0
+for						0
+the						0
+tasks						0
+of						0
+relevance,						0
+efficiency,						0
+and						0
+crawl						0
+priority.						0
+0						0
+
+There						0
+is						0
+also						0
+significantly						0
+more						0
+popularity						0
+data						0
+than						0
+human						0
+0						0
+
+labeled						0
+data,						0
+potentially						0
+enabling						0
+more						0
+complex						0
+machine						0
+learning						0
+0						0
+
+methods,						0
+and						0
+significantly						0
+more						0
+features.						0
+0						0
+
+7.						0
+CONCLUSIONS						0
+0						0
+
+A						0
+good						0
+static						0
+ranking						0
+is						0
+an						0
+important						0
+component						0
+for						0
+0						0
+
+search						0
+engines						0
+and						0
+information						0
+retrieval						0
+systems.						0
+We						0
+have						0
+0						0
+
+demonstrated						0
+that						0
+PageRank						0
+does						0
+not						0
+provide						0
+a						0
+very						0
+good						0
+static						0
+0						0
+
+ranking;						0
+there						0
+are						0
+many						0
+simple						0
+features						0
+that						0
+individually						0
+out						0
+0						0
+
+perform						0
+PageRank.						0
+By						0
+combining						0
+many						0
+static						0
+features,						0
+fRank						0
+0						0
+
+achieves						0
+a						0
+ranking						0
+that						0
+has						0
+a						0
+significantly						0
+higher						0
+pairwise						0
+0						0
+
+accuracy						0
+than						0
+PageRank						0
+alone.						0
+A						0
+qualitative						0
+evaluation						0
+of						0
+the						0
+top						0
+0						0
+
+documents						0
+shows						0
+that						0
+fRank						0
+is						0
+less						0
+technology-biased						0
+than						0
+0						0
+
+PageRank;						0
+by						0
+using						0
+popularity						0
+data,						0
+it						0
+is						0
+biased						0
+toward						0
+pages						0
+that						0
+0						0
+
+Web						0
+users,						0
+rather						0
+than						0
+Web						0
+authors,						0
+visit.						0
+The						0
+machine						0
+learning						0
+0						0
+
+component						0
+of						0
+fRank						0
+gives						0
+it						0
+the						0
+additional						0
+benefit						0
+of						0
+being						0
+more						0
+0						0
+
+robust						0
+against						0
+spammers,						0
+and						0
+allows						0
+it						0
+to						0
+leverage						0
+further						0
+0						0
+
+developments						0
+in						0
+the						0
+machine						0
+learning						0
+community						0
+in						0
+areas						0
+such						0
+as						0
+0						0
+
+adversarial						0
+classification.						0
+We						0
+have						0
+only						0
+begun						0
+to						0
+explore						0
+the						0
+0						0
+
+options,						0
+and						0
+believe						0
+that						0
+significant						0
+strides						0
+can						0
+be						0
+made						0
+in						0
+the						0
+0						0
+
+area						0
+of						0
+static						0
+ranking						0
+by						0
+further						0
+experimentation						0
+with						0
+additional						0
+0						0
+
+features,						0
+other						0
+machine						0
+learning						0
+techniques,						0
+and						0
+additional						0
+0						0
+
+sources						0
+of						0
+data.						0
+0						0
+
+8.						0
+ACKNOWLEDGMENTS						0
+0						0
+
+Thank						0
+you						0
+to						0
+Marc						0
+Najork						0
+for						0
+providing						0
+us						0
+with						0
+additional						0
+0						0
+
+PageRank						0
+computations						0
+and						0
+to						0
+Timo						0
+Burkard						0
+for						0
+assistance						0
+with						0
+0						0
+
+the						0
+popularity						0
+data.						0
+Many						0
+thanks						0
+to						0
+Chris						0
+Burges						0
+for						0
+providing						0
+0						0
+
+code						0
+and						0
+significant						0
+support						0
+in						0
+using						0
+training						0
+RankNets.						0
+Also,						0
+we						0
+0						0
+
+thank						0
+Susan						0
+Dumais						0
+and						0
+Nick						0
+Craswell						0
+for						0
+their						0
+edits						0
+and						0
+0						0
+
+suggestions.						0
+0						0
+
+9.						0
+REFERENCES						0
+0						0
+
+[1]						0
+B.						0
+Amento,						0
+L.						0
+Terveen,						0
+and						0
+W.						0
+Hill.						0
+Does						0
+mean						0
+0						0
+
+quality?						0
+Predicting						0
+expert						0
+quality						0
+ratings						0
+of						0
+Web						0
+documents.						0
+0						0
+
+In						0
+Proceedings						0
+of						0
+the						0
+23						0
+rd						0
+Annual						0
+International						0
+ACM						0
+SIGIR						0
+0						0
+
+Conference						0
+on						0
+Research						0
+and						0
+Development						0
+in						0
+Information						0
+0						0
+
+Retrieval,						0
+2000.						0
+0						0
+
+[2]						0
+B.						0
+Bartell,						0
+G.						0
+Cottrell,						0
+and						0
+R.						0
+Belew.						0
+Automatic						0
+combination						0
+0						0
+
+of						0
+multiple						0
+ranked						0
+retrieval						0
+systems.						0
+In						0
+Proceedings						0
+of						0
+the						0
+0						0
+
+17th						0
+Annual						0
+International						0
+ACM						0
+SIGIR						0
+Conference						0
+on						0
+0						0
+
+Research						0
+and						0
+Development						0
+in						0
+Information						0
+Retrieval,						0
+1994.						0
+0						0
+
+[3]						0
+P.						0
+Boldi,						0
+M.						0
+Santini,						0
+and						0
+S.						0
+Vigna.						0
+PageRank						0
+as						0
+a						0
+function						0
+0						0
+
+of						0
+the						0
+damping						0
+factor.						0
+In						0
+Proceedings						0
+of						0
+the						0
+International						0
+0						0
+
+World						0
+Wide						0
+Web						0
+Conference,						0
+May						0
+2005.						0
+0						0
+
+[4]						0
+J.						0
+Boyan,						0
+D.						0
+Freitag,						0
+and						0
+T.						0
+Joachims.						0
+A						0
+machine						0
+learning						0
+0						0
+
+architecture						0
+for						0
+optimizing						0
+web						0
+search						0
+engines.						0
+In						0
+AAAI						0
+0						0
+
+Workshop						0
+on						0
+Internet						0
+Based						0
+Information						0
+Systems,						0
+August						0
+0						0
+
+1996.						0
+0						0
+
+[5]						0
+S.						0
+Brin						0
+and						0
+L.						0
+Page.						0
+The						0
+anatomy						0
+of						0
+a						0
+large-scale						0
+0						0
+
+hypertextual						0
+web						0
+search						0
+engine.						0
+In						0
+Proceedings						0
+of						0
+the						0
+0						0
+
+Seventh						0
+International						0
+Wide						0
+Web						0
+Conference,						0
+Brisbane,						0
+0						0
+
+Australia,						0
+1998.						0
+Elsevier.						0
+0						0
+
+[6]						0
+A.						0
+Broder,						0
+R.						0
+Lempel,						0
+F.						0
+Maghoul,						0
+and						0
+J.						0
+Pederson.						0
+0						0
+
+Efficient						0
+PageRank						0
+approximation						0
+via						0
+graph						0
+aggregation.						0
+In						0
+0						0
+
+Proceedings						0
+of						0
+the						0
+International						0
+World						0
+Wide						0
+Web						0
+0						0
+
+Conference,						0
+May						0
+2004.						0
+0						0
+
+[7]						0
+C.						0
+Burges,						0
+T.						0
+Shaked,						0
+E.						0
+Renshaw,						0
+A.						0
+Lazier,						0
+M.						0
+Deeds,						0
+N.						0
+0						0
+
+Hamilton,						0
+G.						0
+Hullender.						0
+Learning						0
+to						0
+rank						0
+using						0
+gradient						0
+0						0
+
+descent.						0
+In						0
+Proceedings						0
+of						0
+the						0
+22						0
+nd						0
+International						0
+Conference						0
+0						0
+
+on						0
+Machine						0
+Learning,						0
+Bonn,						0
+Germany,						0
+2005.						0
+0						0
+
+[8]						0
+D.						0
+Carmel,						0
+D.						0
+Cohen,						0
+R.						0
+Fagin,						0
+E.						0
+Farchi,						0
+M.						0
+Herscovici,						0
+Y.						0
+0						0
+
+S.						0
+Maarek,						0
+and						0
+A.						0
+Soffer.						0
+Static						0
+index						0
+pruning						0
+for						0
+0						0
+
+information						0
+retrieval						0
+systems.						0
+In						0
+Proceedings						0
+of						0
+the						0
+24th						0
+0						0
+
+Annual						0
+International						0
+ACM						0
+SIGIR						0
+Conference						0
+on						0
+Research						0
+0						0
+
+and						0
+Development						0
+in						0
+Information						0
+Retrieval,						0
+pages						0
+43-50,						0
+0						0
+
+New						0
+Orleans,						0
+Louisiana,						0
+USA,						0
+September						0
+2001.						0
+0						0
+
+[9]						0
+J.						0
+Cho						0
+and						0
+S.						0
+Roy.						0
+Impact						0
+of						0
+search						0
+engines						0
+on						0
+page						0
+0						0
+
+popularity.						0
+In						0
+Proceedings						0
+of						0
+the						0
+International						0
+World						0
+Wide						0
+0						0
+
+Web						0
+Conference,						0
+May						0
+2004.						0
+0						0
+
+[10]						0
+J.						0
+Cho,						0
+S.						0
+Roy,						0
+R.						0
+Adams.						0
+Page						0
+Quality:						0
+In						0
+search						0
+of						0
+an						0
+0						0
+
+unbiased						0
+web						0
+ranking.						0
+In						0
+Proceedings						0
+of						0
+the						0
+ACM						0
+SIGMOD						0
+0						0
+
+2005						0
+Conference.						0
+Baltimore,						0
+Maryland.						0
+June						0
+2005.						0
+0						0
+
+[11]						0
+N.						0
+Craswell,						0
+S.						0
+Robertson,						0
+H.						0
+Zaragoza,						0
+and						0
+M.						0
+Taylor.						0
+0						0
+
+Relevance						0
+weighting						0
+for						0
+query						0
+independent						0
+evidence.						0
+In						0
+0						0
+
+Proceedings						0
+of						0
+the						0
+28						0
+th						0
+Annual						0
+Conference						0
+on						0
+Research						0
+and						0
+0						0
+
+Development						0
+in						0
+Information						0
+Retrieval						0
+(SIGIR),						0
+August,						0
+0						0
+
+2005.						0
+0						0
+
+[12]						0
+N.						0
+Dalvi,						0
+P.						0
+Domingos,						0
+Mausam,						0
+S.						0
+Sanghai,						0
+D.						0
+Verma.						0
+0						0
+
+Adversarial						0
+Classification.						0
+In						0
+Proceedings						0
+of						0
+the						0
+Tenth						0
+0						0
+
+International						0
+Conference						0
+on						0
+Knowledge						0
+Discovery						0
+and						0
+Data						0
+0						0
+
+Mining						0
+(pp.						0
+99-108),						0
+Seattle,						0
+WA,						0
+2004.						0
+0						0
+
+[13]						0
+O.						0
+Dekel,						0
+C.						0
+Manning,						0
+and						0
+Y.						0
+Singer.						0
+Log-linear						0
+models						0
+for						0
+0						0
+
+label-ranking.						0
+In						0
+Advances						0
+in						0
+Neural						0
+Information						0
+Processing						0
+0						0
+
+Systems						0
+16.						0
+Cambridge,						0
+MA:						0
+MIT						0
+Press,						0
+2003.						0
+0						0
+
+[14]						0
+S.						0
+Fox,						0
+K						0
+S.						0
+Fox,						0
+K.						0
+Karnawat,						0
+M.						0
+Mydland,						0
+S.						0
+T.						0
+Dumais						0
+0						0
+
+and						0
+T.						0
+White						0
+(2005).						0
+Evaluating						0
+implicit						0
+measures						0
+to						0
+0						0
+
+improve						0
+the						0
+search						0
+experiences.						0
+In						0
+the						0
+ACM						0
+Transactions						0
+on						0
+0						0
+
+Information						0
+Systems,						0
+23(2),						0
+pp.						0
+147-168.						0
+April						0
+2005.						0
+0						0
+
+[15]						0
+T.						0
+Haveliwala.						0
+Efficient						0
+computation						0
+of						0
+PageRank.						0
+Stanford						0
+0						0
+
+University						0
+Technical						0
+Report,						0
+1999.						0
+0						0
+
+[16]						0
+T.						0
+Haveliwala.						0
+Topic-sensitive						0
+PageRank.						0
+In						0
+Proceedings						0
+of						0
+0						0
+
+the						0
+International						0
+World						0
+Wide						0
+Web						0
+Conference,						0
+May						0
+2002.						0
+0						0
+
+[17]						0
+D.						0
+Hawking						0
+and						0
+N.						0
+Craswell.						0
+Very						0
+large						0
+scale						0
+retrieval						0
+and						0
+0						0
+
+Web						0
+search.						0
+In						0
+D.						0
+Harman						0
+and						0
+E.						0
+Voorhees						0
+(eds),						0
+The						0
+0						0
+
+TREC						0
+Book.						0
+MIT						0
+Press.						0
+0						0
+
+[18]						0
+R.						0
+Herbrich,						0
+T.						0
+Graepel,						0
+and						0
+K.						0
+Obermayer.						0
+Support						0
+vector						0
+0						0
+
+learning						0
+for						0
+ordinal						0
+regression.						0
+In						0
+Proceedings						0
+of						0
+the						0
+Ninth						0
+0						0
+
+International						0
+Conference						0
+on						0
+Artificial						0
+Neural						0
+Networks,						0
+pp.						0
+0						0
+
+97-102.						0
+1999.						0
+0						0
+
+[19]						0
+M.						0
+Ivory						0
+and						0
+M.						0
+Hearst.						0
+Statistical						0
+profiles						0
+of						0
+highly-rated						0
+0						0
+
+Web						0
+sites.						0
+In						0
+Proceedings						0
+of						0
+the						0
+ACM						0
+SIGCHI						0
+Conference						0
+0						0
+
+on						0
+Human						0
+Factors						0
+in						0
+Computing						0
+Systems,						0
+2002.						0
+0						0
+
+[20]						0
+T.						0
+Joachims.						0
+Optimizing						0
+search						0
+engines						0
+using						0
+clickthrough						0
+0						0
+
+data.						0
+In						0
+Proceedings						0
+of						0
+the						0
+ACM						0
+Conference						0
+on						0
+Knowledge						0
+0						0
+
+Discovery						0
+and						0
+Data						0
+Mining						0
+(KDD),						0
+2002.						0
+0						0
+
+[21]						0
+T.						0
+Joachims,						0
+L.						0
+Granka,						0
+B.						0
+Pang,						0
+H.						0
+Hembrooke,						0
+and						0
+G.						0
+0						0
+
+Gay.						0
+Accurately						0
+Interpreting						0
+Clickthrough						0
+Data						0
+as						0
+Implicit						0
+0						0
+
+Feedback.						0
+In						0
+Proceedings						0
+of						0
+the						0
+Conference						0
+on						0
+Research						0
+and						0
+0						0
+
+Development						0
+in						0
+Information						0
+Retrieval						0
+(SIGIR),						0
+2005.						0
+0						0
+
+[22]						0
+J.						0
+Kleinberg.						0
+Authoritative						0
+sources						0
+in						0
+a						0
+hyperlinked						0
+0						0
+
+environment.						0
+Journal						0
+of						0
+the						0
+ACM						0
+46:5,						0
+pp.						0
+604-32.						0
+1999.						0
+0						0
+
+[23]						0
+A.						0
+Langville						0
+and						0
+C.						0
+Meyer.						0
+Deeper						0
+inside						0
+PageRank.						0
+0						0
+
+Internet						0
+Mathematics						0
+1(3):335-380,						0
+2004.						0
+0						0
+
+[24]						0
+F.						0
+Matthieu						0
+and						0
+M.						0
+Bouklit.						0
+The						0
+effect						0
+of						0
+the						0
+back						0
+button						0
+in						0
+0						0
+
+a						0
+random						0
+walk:						0
+application						0
+for						0
+PageRank.						0
+In						0
+Alternate						0
+track						0
+0						0
+
+papers						0
+and						0
+posters						0
+of						0
+the						0
+Thirteenth						0
+International						0
+World						0
+0						0
+
+Wide						0
+Web						0
+Conference,						0
+2004.						0
+0						0
+
+[25]						0
+F.						0
+McSherry.						0
+A						0
+uniform						0
+approach						0
+to						0
+accelerated						0
+PageRank						0
+0						0
+
+computation.						0
+In						0
+Proceedings						0
+of						0
+the						0
+International						0
+World						0
+0						0
+
+Wide						0
+Web						0
+Conference,						0
+May						0
+2005.						0
+0						0
+
+[26]						0
+Y.						0
+Minamide.						0
+Static						0
+approximation						0
+of						0
+dynamically						0
+generated						0
+0						0
+
+Web						0
+pages.						0
+In						0
+Proceedings						0
+of						0
+the						0
+International						0
+World						0
+Wide						0
+0						0
+
+Web						0
+Conference,						0
+May						0
+2005.						0
+0						0
+
+[27]						0
+L.						0
+Page,						0
+S.						0
+Brin,						0
+R.						0
+Motwani,						0
+and						0
+T.						0
+Winograd.						0
+The						0
+0						0
+
+PageRank						0
+citation						0
+ranking:						0
+Bringing						0
+order						0
+to						0
+the						0
+web.						0
+0						0
+
+Technical						0
+report,						0
+Stanford						0
+University,						0
+Stanford,						0
+CA,						0
+1998.						0
+0						0
+
+[28]						0
+S.						0
+Pandey						0
+and						0
+C.						0
+Olston.						0
+User-centric						0
+Web						0
+crawling.						0
+In						0
+0						0
+
+Proceedings						0
+of						0
+the						0
+International						0
+World						0
+Wide						0
+Web						0
+0						0
+
+Conference,						0
+May						0
+2005.						0
+0						0
+
+[29]						0
+M.						0
+Richardson						0
+and						0
+P.						0
+Domingos.						0
+The						0
+intelligent						0
+surfer:						0
+0						0
+
+probabilistic						0
+combination						0
+of						0
+link						0
+and						0
+content						0
+information						0
+in						0
+0						0
+
+PageRank.						0
+In						0
+Advances						0
+in						0
+Neural						0
+Information						0
+Processing						0
+0						0
+
+Systems						0
+14,						0
+pp.						0
+1441-1448.						0
+Cambridge,						0
+MA:						0
+MIT						0
+Press,						0
+0						0
+
+2002.						0
+0						0
+
+[30]						0
+C.						0
+Sherman.						0
+Teoma						0
+vs.						0
+Google,						0
+Round						0
+2.						0
+Available						0
+from						0
+0						0
+
+World						0
+Wide						0
+Web						0
+(http://dc.internet.com/news/article.php/						1
+0						0
+
+1002061),						0
+2002.						0
+0						0
+
+[31]						0
+T.						0
+Upstill,						0
+N.						0
+Craswell,						0
+and						0
+D.						0
+Hawking.						0
+Predicting						0
+fame						0
+0						0
+
+and						0
+fortune:						0
+PageRank						0
+or						0
+indegree?.						0
+In						0
+the						0
+Eighth						0
+0						0
+
+Australasian						0
+Document						0
+Computing						0
+Symposium.						0
+2003.						0
+0						0
+
+[32]						0
+T.						0
+Upstill,						0
+N.						0
+Craswell,						0
+and						0
+D.						0
+Hawking.						0
+Query-independent						0
+0						0
+
+evidence						0
+in						0
+home						0
+page						0
+finding.						0
+In						0
+ACM						0
+Transactions						0
+on						0
+0						0
+
+Information						0
+Systems.						0
+2003.						0
+0						0
+
