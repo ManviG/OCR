@@ -1,9 +1,0 @@
-#unigram
-#word
-U0:%x[0,0]
-
-#is word email
-U1:%x[0,1]
-
-#Automatically create all bigram features
-B

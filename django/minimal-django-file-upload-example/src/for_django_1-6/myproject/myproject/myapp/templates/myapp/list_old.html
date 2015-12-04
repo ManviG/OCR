@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Minimal Django File Upload Example</title>	
+	</head>
+
+	<style type="text/css">
+		#form_made{
+			position: relative;
+			top: 40px;
+			left: 550px;
+			width: 300px;
+			background-color: white;
+			z-index: 500px;
+			margin: 20px;
+			padding: 10px;
+		}
+		
+		#submit {
+		    background-color: green;
+		    -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		    border-radius:6px;
+		    color: #fff;
+		    font-family: 'Oswald';
+		    font-size: 20px;
+		    text-decoration: none;
+		    cursor: pointer;
+		    border:none;
+		}
+		#submit:hover {
+		    border: none;
+		    background-color :blue;
+		    box-shadow: 0px 0px 1px #777;
+		}
+
+		#process:hover{
+			color: blue;
+		}
+		#process{
+			position:relative; 
+			left:0px; 
+			top:-15px; 
+			font-size:25px;
+			color: 	#800000;
+			background-color:#D2691E;
+		}
+
+		#titleauthor_button:hover{
+			color: blue;
+		}
+		#titleauthor_button{
+			position:relative; 
+			left:0px; 
+			top:-10px;
+			font-size:25px;
+			color: black;
+			background-color: green;
+			/*padding: 10px;*/
+		}
+		#section_button:hover{
+			color: blue;
+		}
+		#section_button{
+			position:relative; 
+			left:150px; 
+			top:-60px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+			/*padding: 10px;*/
+		}
+		#email_button:hover{
+			color: blue;
+		}
+		#email_button{
+			position:relative; 
+			left:300px; 
+			top:-110px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#figt_button:hover{
+			color: blue;
+		}
+		#figt_button{
+			position:relative; 
+			left:400px; 
+			top:-160px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#footnote_button:hover{
+			color: blue;
+		}
+		#footnote_button{
+			position:relative; 
+			left:550px; 
+			top:-210px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#url_button:hover{
+			color: blue;
+		}
+		#url_button{
+			position:relative; 
+			left:700px; 
+			top:-260px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#refcit_button:hover{
+			color: blue;
+		}
+		#refcit_button{
+			position:relative; 
+			left:780px; 
+			top:-310px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		
+		#affil_button:hover{
+			color: blue;
+		}
+		#affil_button{
+			position:relative; 
+			left:960px; 
+			top:-360px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#map_button:hover{
+			color: blue;
+		}
+		#map_button{
+			position:relative; 
+			left:1100px; 
+			top:-410px; 
+			font-size:25px;
+			color: black;
+			background-color: green;
+		}
+		#output{
+			position: relative;
+			top: -380px;
+			height: 400px;
+		}
+	</style>
+
+	<script>
+
+	function ta()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/TitleAuthor.txt';
+		setTimeout(function(){
+		    var text = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function sec()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/Secmap.txt';
+		setTimeout(function(){
+		    var text1 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text1 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function email()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/input_Allmails.txt';
+		setTimeout(function(){
+		    var text2 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text2 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function figt()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/TABFIGop.txt';
+		setTimeout(function(){
+		    var text3 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text3 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function fn()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/FOOTNOTEop.txt';
+		setTimeout(function(){
+		    var text4 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text4 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function url()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/URLop.txt';
+		setTimeout(function(){
+		    var text5 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text5 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function refcit()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/inputcit2ref.txt';
+		setTimeout(function(){
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function affil()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/input_AllAffiliations.txt';
+		setTimeout(function(){
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	function map()
+	{
+		// document.getElementById('output').style.display = "none";
+    	var iframe = document.createElement('iframe');
+		iframe.id = 'iframe';
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+		iframe.src = '../../media/documents/map.txt';
+		setTimeout(function(){
+		    var text6 = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		    document.getElementById('output').style.display = "block";
+		    document.getElementById('output').innerHTML = text6 ;
+		}, 1000);
+		//<base href=""/>
+	}
+	</script>
+
+	<body background = "../../media/documents/files/background.jpg">
+		<!-- List of uploaded documents -->
+		<!-- {% if documents %}
+			<ul>
+			{% for document in documents %}
+				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No documents.</p>
+		{% endif %} -->
+
+		<!-- Upload form. Note enctype attribute! -->
+		<form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<p>{{ form.non_field_errors }}</p>
+			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+			<p>
+				{{ form.docfile.errors }}
+				{{ form.docfile }}
+			</p>
+			<p><input id="submit" type="submit" value="Upload" /></p>
+		</form>
+			<a id="process" href="runScript">Process</a>
+
+		<br>
+	<a id="titleauthor_button" onclick="ta()">Title Auth<a>		
+		<br>
+		<br>
+	<a id="section_button" onclick="sec()">Sections<a>		
+		<br>
+		<br>
+	<a id="email_button" onclick="email()">Email<a>		
+		<br>
+		<br>
+	<a id="figt_button" onclick="figt()">Fig_Table<a>		
+		<br>
+		<br>
+	<a id="footnote_button" onclick="fn()">Footnotes<a>		
+		<br>
+		<br>
+	<a id="url_button" onclick="url()">URL<a>		
+		<br>
+		<br>
+	<a id="refcit_button" onclick="refcit()">Cits_to_Refs<a>		
+		<br>
+		<br>
+	<a id="affil_button" onclick="affil()">Affiliation<a>		
+		<br>
+		<br>
+	<a id="map_button" onclick="map()">EmailtoAuth<a>		
+		<br>
+		<!-- <br>
+	<a id="extra1_button" onclick="extra1()">extra1<a>		
+		<br>		
+		<br>
+	<a id="extra2_button" onclick="extra2()">extra2<a>		
+		<br> -->
+	<textarea id="output"  style="display:none;" class="answer_list" rows="25" cols="150" > WELCOME</textarea>
+
+
+	
+	</body>
+
+</html>
