@@ -1,7 +1,6 @@
 
 from __future__ import division
 
-import xml
 import xml.etree.ElementTree as ET
 import unicodedata
 import operator
@@ -34,7 +33,11 @@ def generateXML(tree):
                     st = st + token.text+' '
                 st = st.strip('\n')
                 if(chunk_stat == 1):
-                    ET.SubElement(new_section, "chunk").text = st_chunk
+                    if(len(st_chunk)<10):
+                        ET.SubElement(new_section, "chunk").text = st_chunk
+                    else:
+                        chunk_words = st_chunk.split()
+                        ET.SubElement(new_section, "chunk").text = " ".join(chunk_words[:5])+" ... "+" ".join(chunk_words[-5:])
                     chunk_stat = 0
                     st_chunk = ''
                 new_section = ET.SubElement(xroot, "section")
@@ -154,7 +157,7 @@ def secmap(ff, path=""):
     del x_l
 
     limit = max([x[0] for x in new_l])+1
-    print(limit)
+    # print(limit)
 
 
     # Create new XML file for Chunks
@@ -235,7 +238,6 @@ def secmap(ff, path=""):
         tcount = math.floor(tcount / 16)
         f.write(tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
 
-    print "Done!"
     f.close()
     subprocess.call("crf_test -m model " + ff.split('.')[0]+'_out.txt'+" > " + "final.txt", shell=True)
     secTree = generateXML(tree)
@@ -243,6 +245,7 @@ def secmap(ff, path=""):
     reparsed = minidom.parseString(cc)
     print reparsed.toprettyxml(indent="\t")
     subprocess.call("rm final.txt", shell=True)
+    print "Done!"
 
 
 """Demo Function call"""
