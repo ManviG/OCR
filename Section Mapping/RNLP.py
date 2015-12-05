@@ -33,11 +33,7 @@ def generateXML(tree, fName):
                     st = st + token.text+' '
                 st = st.strip('\n')
                 if(chunk_stat == 1):
-                    if(len(st_chunk)<10):
-                        ET.SubElement(new_section, "chunk").text = st_chunk
-                    else:
-                        chunk_words = st_chunk.split()
-                        ET.SubElement(new_section, "chunk").text = " ".join(chunk_words[:5])+" ... "+" ".join(chunk_words[-5:])
+                    ET.SubElement(new_section, "chunk").text = st_chunk
                     chunk_stat = 0
                     st_chunk = ''
                 new_section = ET.SubElement(xroot, "section")
@@ -241,10 +237,11 @@ def secmap(ff, path=""):
     f.close()
     subprocess.call("crf_test -m model " + ff.split('.')[0]+'_out.txt'+" > " + ff.split('.')[0]+".txt", shell=True)
     secTree = generateXML(tree, ff.split('.')[0])
-    cc = ET.tostring(secTree, 'utf-8')
-    reparsed = minidom.parseString(cc)
-    print reparsed.toprettyxml(indent="\t")
-    subprocess.call("rm "+ff.split('.')[0]+".txt", shell=True)
+    ET.ElementTree(secTree).write(ff.split('.')[0]+"_secmap.xml")
+    # cc = ET.tostring(secTree, 'utf-8')
+    # reparsed = minidom.parseString(cc)
+    # print reparsed.toprettyxml(indent="\t")
+    subprocess.call("rm "+ff.split('.')[0]+".txt "+ff.split('.')[0]+'_out.txt', shell=True)
     print "Done!"
 
 
