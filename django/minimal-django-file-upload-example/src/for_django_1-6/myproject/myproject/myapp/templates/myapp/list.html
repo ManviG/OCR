@@ -75,22 +75,26 @@
 			color: black;
 			background-color: green;
 		}
-		#ta_output{
+		#aut_output{
 			position: relative;
 			top: 0px;
-			height: 150px;
+			height: 50px;
 		}
-
+		#titl_output{
+			position: relative;
+			top: 0px;
+			height: 50px;
+		}
 		#email_output{
 			position: relative;
 			top: 0px;
-			height: 150px;
+			height: 30px;
 		}
 
 		#affil_output{
 			position: relative;
 			top: 0px;
-			height: 150px;
+			height: 30px;
 		}
 
 		#map_output{
@@ -166,29 +170,68 @@
 
 	function op()
 	{
-		ta();
-		sec();
+		affil();
 		email();
+		aut();
+		titl();
+		sec();
 		figt();
 		fn();
 		url();
 		refcit();
-		affil();
 		map();
 	}
 
-	function ta()
+	function titl()
+	{
+		var iframe_t = document.createElement('iframe');
+		iframe_t.id = 'iframe_t';
+		iframe_t.style.display = 'none';
+		document.body.appendChild(iframe_t);
+		iframe_t.src = '../../media/documents/eval_title.txt';
+		setTimeout(function(){
+		    var text = document.getElementById('iframe_t').contentDocument.body.firstChild.innerHTML;
+		    var arr = text.split("&lt;&lt;title&gt;&gt;");
+		    // for(i=arr.length-1;i>0;i--)
+		    // {
+		    // console.log(arr);
+	    	text = arr[1];
+	    	var table = document.getElementById("myTable");
+
+			// Create an empty <tr> element and add it to the 1st position of the table:
+			var row = table.insertRow(1);
+
+			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+
+			// Add some text to the new cells:
+			cell1.innerHTML = "<textarea id=\"titl_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
+			document.getElementById("titl_output").style.display = "block";
+			document.getElementById("titl_output").innerHTML = text.slice(1,-2);
+			cell2.innerHTML = "Title";
+			cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+			cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+			cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+		    // }
+		    // document.getElementById('ta_output').style.display = "block";
+		    // document.getElementById('ta_output').innerHTML = text ;
+		}, 1000);
+	}
+
+	function aut()
 	{
 		var iframe = document.createElement('iframe');
 		iframe.id = 'iframe';
 		iframe.style.display = 'none';
 		document.body.appendChild(iframe);
-		iframe.src = '../../media/documents/TitleAuthor.txt';
+		iframe.src = '../../media/documents/eval_author.txt';
 		setTimeout(function(){
 		    var text = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
-		    console.log(text);
-		    var arr = text.split("&lt;name&gt;");
-		    // console.log(text.type);
+		    var arr = text.split("&lt;&lt;name&gt;&gt;");
 		    for(i=arr.length-1;i>0;i--)
 		    {
 		    	text = arr[i];
@@ -205,8 +248,86 @@
 				var cell5 = row.insertCell(4);
 
 				// Add some text to the new cells:
-				cell1.innerHTML = text;
-				cell2.innerHTML = "Author" + i;
+				cell1.innerHTML = "<textarea id=\"aut_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
+				document.getElementById("aut_output").style.display = "block";
+				document.getElementById("aut_output").innerHTML = text.slice(1,-2);
+				cell2.innerHTML = "Author " + i;
+				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+		    }
+		    // document.getElementById('ta_output').style.display = "block";
+		    // document.getElementById('ta_output').innerHTML = text ;
+		}, 1000);
+	}
+	function email()
+	{
+		var eiframe = document.createElement('iframe');
+		eiframe.id = 'eiframe';
+		eiframe.style.display = 'none';
+		document.body.appendChild(eiframe);
+		eiframe.src = '../../media/documents/eval_emails.txt';
+		setTimeout(function(){
+		    var text = document.getElementById('eiframe').contentDocument.body.firstChild.innerHTML;
+		    var arr = text.split("&lt;&lt;Email&gt;&gt;");
+		    for(i=arr.length-1;i>0;i--)
+		    {
+		    	text = arr[i];
+		    	var table = document.getElementById("myTable");
+
+				// Create an empty <tr> element and add it to the 1st position of the table:
+				var row = table.insertRow(1);
+
+				// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				var cell5 = row.insertCell(4);
+
+				// Add some text to the new cells:
+				cell1.innerHTML = "<textarea id=\"email_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
+				document.getElementById("email_output").style.display = "block";
+				document.getElementById("email_output").innerHTML = text.slice(1,-1);
+				cell2.innerHTML = "Email " + i;
+				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+		    }
+		    // document.getElementById('ta_output').style.display = "block";
+		    // document.getElementById('ta_output').innerHTML = text ;
+		}, 1000);
+	}
+	function affil()
+	{
+		var aiframe = document.createElement('iframe');
+		aiframe.id = 'aiframe';
+		aiframe.style.display = 'none';
+		document.body.appendChild(aiframe);
+		aiframe.src = '../../media/documents/eval_Affiliations.txt';
+		setTimeout(function(){
+		    var text = document.getElementById('aiframe').contentDocument.body.firstChild.innerHTML;
+		    var arr = text.split("&lt;&lt;Affiliation&gt;&gt;");
+		    for(i=arr.length-1;i>0;i--)
+		    {
+		    	text = arr[i];
+		    	var table = document.getElementById("myTable");
+
+				// Create an empty <tr> element and add it to the 1st position of the table:
+				var row = table.insertRow(1);
+
+				// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				var cell5 = row.insertCell(4);
+
+				// Add some text to the new cells:
+				cell1.innerHTML = "<textarea id=\"affil_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
+				document.getElementById("affil_output").style.display = "block";
+				document.getElementById("affil_output").innerHTML = text.slice(1,-1);
+				cell2.innerHTML = "Affiliation " + i;
 				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
@@ -221,24 +342,11 @@
 		iframe1.id = 'iframe1';
 		iframe1.style.display = 'none';
 		document.body.appendChild(iframe1);
-		iframe1.src = '../../media/documents/Secmap.txt';
+		iframe1.src = '../../media/documents/eval_Secmap.txt';
 		setTimeout(function(){
 		    var text1 = document.getElementById('iframe1').contentDocument.body.firstChild.innerHTML;
 		    document.getElementById('sec_output').style.display = "block";
 		    document.getElementById('sec_output').innerHTML = text1 ;
-		}, 1000);
-	}
-	function email()
-	{
-		var iframe2 = document.createElement('iframe');
-		iframe2.id = 'iframe2';
-		iframe2.style.display = 'none';
-		document.body.appendChild(iframe2);
-		iframe2.src = '../../media/documents/input_Allmails.txt';
-		setTimeout(function(){
-		    var text2 = document.getElementById('iframe2').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('email_output').style.display = "block";
-		    document.getElementById('email_output').innerHTML = text2 ;
 		}, 1000);
 	}
 	function figt()
@@ -297,20 +405,7 @@
 		    document.getElementById('refcit_output').innerHTML = text6 ;
 		}, 1000);
 	}
-	function affil()
-	{
-		// document.getElementById('output').style.display = "none";
-    	var iframe7 = document.createElement('iframe');
-		iframe7.id = 'iframe7';
-		iframe7.style.display = 'none';
-		document.body.appendChild(iframe7);
-		iframe7.src = '../../media/documents/input_AllAffiliations.txt';
-		setTimeout(function(){
-		    var text6 = document.getElementById('iframe7').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('affil_output').style.display = "block";
-		    document.getElementById('affil_output').innerHTML = text6 ;
-		}, 1000);
-	}
+	
 	function map()
 	{
 		// document.getElementById('output').style.display = "none";
@@ -366,7 +461,7 @@
 				</th>
 			</tr>
 
-			<tr>
+			<!-- <tr>
 				<td>
 					<textarea id="ta_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
 				</td>
@@ -394,9 +489,9 @@
 					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
 				</td>
 	
-			</tr>
+			</tr> -->
 
-			<tr>
+			<!-- <tr>
 				<td>
 					<textarea id="email_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
 				</td>
@@ -416,9 +511,9 @@
 				<td>
 					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
 				</td>
-			</tr>
+			</tr> -->
 
-			<tr>
+			<!-- <tr>
 				<td>
 					<textarea id="sec_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
 				</td>
@@ -438,7 +533,7 @@
 				<td>
 					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
 				</td>
-			</tr>
+			</tr> -->
 
 			<tr>
 				<td>
@@ -528,7 +623,7 @@
 				</td>
 			</tr>
 
-			<tr>
+			<!-- <tr>
 				<td>
 					<textarea id="affil_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
 				</td>
@@ -548,7 +643,7 @@
 				<td>
 					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
 				</td>
-			</tr>
+			</tr> -->
 
 			<tr>
 				<td>
