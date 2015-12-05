@@ -24,6 +24,7 @@ def genFile(fName, path=""):
             cw = chunks[0].text.split()
             # print "Chunks: "+" ".join(cw[:5])+" ... "+" ".join(cw[-5:])
             f.write("Chunks: "+" ".join(cw[:5])+" ... "+" ".join(cw[-5:])+"\n")
+    f.close()
     print "Done!!!"
 
 
