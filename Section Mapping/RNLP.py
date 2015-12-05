@@ -15,7 +15,7 @@ import math
 """
 Create an XML of headings and sections
 """
-def generateXML(tree):
+def generateXML(tree, fName):
     rt = tree.getroot()
     ls = rt.findall('chunk')
     st_chunk = ''
@@ -23,7 +23,7 @@ def generateXML(tree):
     chunk_stat =0
     xroot = ET.Element("sec_map")
     new_section = ET.SubElement(xroot, "section")
-    with open("final.txt", "r") as f:
+    with open(fName+".txt", "r") as f:
         count = 0
         for line in f:
             cols = line.split('\t')
@@ -239,12 +239,12 @@ def secmap(ff, path=""):
         f.write(tok1+"\t"+tok2+"\t"+str(int(tcount))+"\t"+str(boldness)+"\t"+str(round(fsize,2))+"\t"+token_features(tok1)+"\t"+token_features(tok2)+"\t0\n")
 
     f.close()
-    subprocess.call("crf_test -m model " + ff.split('.')[0]+'_out.txt'+" > " + "final.txt", shell=True)
-    secTree = generateXML(tree)
+    subprocess.call("crf_test -m model " + ff.split('.')[0]+'_out.txt'+" > " + ff.split('.')[0]+".txt", shell=True)
+    secTree = generateXML(tree, ff.split('.')[0])
     cc = ET.tostring(secTree, 'utf-8')
     reparsed = minidom.parseString(cc)
     print reparsed.toprettyxml(indent="\t")
-    subprocess.call("rm final.txt", shell=True)
+    subprocess.call("rm "+ff.split('.')[0]+".txt", shell=True)
     print "Done!"
 
 
