@@ -1,5 +1,5 @@
 echo "mail"
-Directory=/home/priyank/Desktop/SNLP_Project/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents
+Directory=/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents
 
 python $Directory/printMailformap.py <<EOF
 $f

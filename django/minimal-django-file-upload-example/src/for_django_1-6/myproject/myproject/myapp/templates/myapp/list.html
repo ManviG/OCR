@@ -88,13 +88,13 @@
 		#email_output{
 			position: relative;
 			top: 0px;
-			height: 30px;
+			height: 20px;
 		}
 
 		#affil_output{
 			position: relative;
 			top: 0px;
-			height: 30px;
+			height: 20px;
 		}
 
 		#map_output{
@@ -118,7 +118,7 @@
 		#sec_output{
 			position: relative;
 			top: 0px;
-			height: 150px;
+			height: 50px;
 		}
 
 		#fn_output{
@@ -170,11 +170,11 @@
 
 	function op()
 	{
+		sec();
 		affil();
 		email();
 		aut();
 		titl();
-		sec();
 		figt();
 		fn();
 		url();
@@ -327,7 +327,7 @@
 				cell1.innerHTML = "<textarea id=\"affil_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
 				document.getElementById("affil_output").style.display = "block";
 				document.getElementById("affil_output").innerHTML = text.slice(1,-1);
-				cell2.innerHTML = "Affiliation " + i;
+				cell2.innerHTML = "Affil " + i;
 				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
@@ -338,15 +338,40 @@
 	}
 	function sec()
 	{
-		var iframe1 = document.createElement('iframe');
-		iframe1.id = 'iframe1';
-		iframe1.style.display = 'none';
-		document.body.appendChild(iframe1);
-		iframe1.src = '../../media/documents/eval_Secmap.txt';
+		var siframe = document.createElement('iframe');
+		siframe.id = 'siframe';
+		siframe.style.display = 'none';
+		document.body.appendChild(siframe);
+		siframe.src = '../../media/documents/eval_Secmap.txt';
 		setTimeout(function(){
-		    var text1 = document.getElementById('iframe1').contentDocument.body.firstChild.innerHTML;
-		    document.getElementById('sec_output').style.display = "block";
-		    document.getElementById('sec_output').innerHTML = text1 ;
+		    var text = document.getElementById('siframe').contentDocument.body.firstChild.innerHTML;
+		    var arr = text.split("&lt;&lt;section&gt;&gt;");
+		    for(i=arr.length-1;i>0;i--)
+		    {
+		    	text = arr[i];
+		    	var table = document.getElementById("myTable");
+
+				// Create an empty <tr> element and add it to the 1st position of the table:
+				var row = table.insertRow(1);
+
+				// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				var cell5 = row.insertCell(4);
+
+				// Add some text to the new cells:
+				cell1.innerHTML = "<textarea id=\"sec_output\" style=\"background-color:yellow;\" class=\"answer_list\" rows=\"30\" cols=\"60\" > WELCOME</textarea>";
+				document.getElementById("sec_output").style.display = "block";
+				document.getElementById("sec_output").innerHTML = text.slice(1,-1);
+				cell2.innerHTML = "Section " + i;
+				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+		    }
+		    // document.getElementById('ta_output').style.display = "block";
+		    // document.getElementById('ta_output').innerHTML = text ;
 		}, 1000);
 	}
 	function figt()
@@ -670,8 +695,8 @@
 	
 	</div>
 
-	<div id="section" style="position:relative; top:0px; left:30px;">
-	<embed id="pdf" src="../../media/documents/input.pdf" width="550px" height="580px">
+	<div id="section" style="position:fixed; top:55px; left:750px;">
+	<embed id="pdf" src="../../media/documents/input.pdf" width="550px" height="600px">
 	</div>
 	
 	</body>

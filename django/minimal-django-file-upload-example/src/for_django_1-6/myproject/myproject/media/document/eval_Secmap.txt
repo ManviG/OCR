@@ -1,0 +1,63 @@
+<<section>>
+Chunks: Beyond PageRank: Machine Learning for ... 98052 +1 (425) 705-4992 brill@microsoft.com
+<<section>>
+Heading: ABSTRACT 
+Chunks: Since the publication of Brin ... search engines, PageRank, RankNet, relevance
+<<section>>
+Heading: 1. INTRODUCTION 
+Chunks: Over the past decade, the ... of related and future work.
+<<section>>
+Heading: 2. PAGERANK 
+Chunks: The basic idea behind PageRank ... computationally expensive property to compute.
+<<section>>
+Heading: 3. RANKNET 
+Chunks: Much work in machine learning ... feature vectors, x i .
+<<section>>
+Heading: 4. FEATURES 
+Chunks: To apply RankNet (or other ... feature categories in more detail.
+<<section>>
+Heading: PageRank 
+Chunks: We computed PageRank on a ... words in that text, etc.
+<<section>>
+Heading: Page 
+Chunks: This category consists of features ... with all of the features.
+<<section>>
+Heading: 5. EXPERIMENTS 
+Chunks: In this section, we will ... metric, and the training method.
+<<section>>
+Heading: 5.1 Data 
+Chunks: In order to evaluate the ... we used to evaluate this.
+<<section>>
+Heading: 5.2 Measure 
+Chunks: We chose to use pairwise ... rank algorithm orders them correctly.
+<<section>>
+Heading: 5.3 Method 
+Chunks: We trained fRank (a RankNet ... PageRank for the same set.
+<<section>>
+Heading: 5.4 Results 
+Chunks: As Table 1 shows, fRank ... popularity feature in more detail.
+<<section>>
+Heading: 5.5 Popularity Data 
+Chunks: As mentioned in section 4, ... improve this boost even further.
+<<section>>
+Heading: 5.6 Summary of Results 
+Chunks: The experiments provide a number ... find the time and interest.
+<<section>>
+Heading: 6. RELATED AND FUTURE WORK 
+<<section>>
+Heading: 6.1 Improvements to PageRank 
+Chunks: Since the original PageRank paper, ... and other modifications to PageRank.
+<<section>>
+Heading: 6.2 Other related work 
+Chunks: PageRank is not the only ... the problem of static ranking.
+<<section>>
+Heading: 6.3 Future work 
+Chunks: There are many ways in ... methods, and significantly more features.
+<<section>>
+Heading: 7. CONCLUSIONS 
+Chunks: A good static ranking is ... and additional sources of data.
+<<section>>
+Heading: 8. ACKNOWLEDGMENTS 
+Chunks: Thank you to Marc Najork ... for their edits and suggestions.
+<<section>>
+Heading: 9. REFERENCES 
