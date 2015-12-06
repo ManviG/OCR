@@ -44,6 +44,8 @@ def generateXML(tree, fName):
                     st_chunk = st_chunk + token.text+' '
                 st_chunk = st_chunk.strip('\n')
             count = count + 1
+    if chunk_stat == 1:
+         ET.SubElement(new_section, "chunk").text = st_chunk
     return xroot
 
 
