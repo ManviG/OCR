@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -8,49 +9,64 @@ from django.core.urlresolvers import reverse
 import glob
 
 from myproject.myapp.models import Document
+from myproject.myapp.models import Response, UserDetails
 from myproject.myapp.forms import DocumentForm
+from myproject.myapp.forms import user
 import subprocess
 from subprocess import Popen, PIPE
 
-script_dir = "/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/myapp"
+script_dir = "/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/myapp/"
 
 directory = "/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/";
 
+paperid = ''
+useremail = ''
+
+def vote(request):  
+    # paperid = request.POST['paperid']
+    # useremail = request.POST['email']
+    # p = UserDetails(paperid = paperid, user_email = useremail)
+    # p.save();
+    titleres = request.POST['title'];
+    print titleres
+    return HttpResponse("Done")
+
 def runScript(request):
+    print paperid
     file_name = glob.glob(directory+'*.pdf')
     # print file_name[0] + "****************************"
     fn = file_name[0].split('/')
     fn = fn[-1]
     subprocess.call("clear", shell=True)
     subprocess.call("mv " + directory + fn + " " + directory + "input.pdf", shell=True)
-    subprocess.call(directory + "files/pdftoxml.linux64.exe.1.2_7 " + directory + "input.pdf", shell=True)
+    # subprocess.call(directory + "files/pdftoxml.linux64.exe.1.2_7 " + directory + "input.pdf", shell=True)
     
     # barno
-    subprocess.call("python " + directory + "files/TitleAuthor_parse.py", shell=True)
-    subprocess.call("python " + directory + "files/extra.py", shell=True)
-    subprocess.call("crf_test -m " + directory + "files/model_new.txt " + directory + "test_file.txt > " + directory + "final.txt", shell=True)
-    subprocess.call("python " + directory + "files/printNameAuthor.py > " + directory + "TitleAuthor.txt", shell=True)
-    # barno
+    # subprocess.call("python " + directory + "files/TitleAuthor_parse.py", shell=True)
+    # subprocess.call("python " + directory + "files/extra.py", shell=True)
+    # subprocess.call("crf_test -m " + directory + "files/model_new.txt " + directory + "test_file.txt > " + directory + "final.txt", shell=True)
+    # subprocess.call("python " + directory + "files/printNameAuthor.py > " + directory + "TitleAuthor.txt", shell=True)
+    # # barno
 
-    #samuel
-    subprocess.call("rm " + directory + "input.pdf", shell=True)
-    subprocess.call("rm -r " + directory + "input.xml_data", shell=True)
-    subprocess.call("python " + directory + "files/Secmapping.py > " + directory + "Secmap.txt", shell=True)
-    #samuel
+    # #samuel
+    # subprocess.call("rm " + directory + "input.pdf", shell=True)
+    # subprocess.call("rm -r " + directory + "input.xml_data", shell=True)
+    # subprocess.call("python " + directory + "files/Secmapping.py > " + directory + "Secmap.txt", shell=True)
+    # #samuel
 
-    #integrated
-    subprocess.call(directory + "IntegratedShellScript.sh ", shell=True)
-    #integrated
+    # #integrated
+    # #subprocess.call(directory + "IntegratedShellScript.sh ", shell=True)
+    # #integrated
 
     
-    subprocess.call(directory + "Mapping.sh",shell = True)
+    # subprocess.call(directory + "Mapping.sh",shell = True)
 
-    #ayush
-    subprocess.call("python " + directory + "url.py > " + directory + "URLop.txt", shell=True)
-    subprocess.call("python " + directory + "footnotes.py > " + directory + "FOOTNOTEop.txt", shell=True)
-    subprocess.call("python " + directory + "tables_figures.py > " + directory + "TABFIGop.txt", shell=True)
-    subprocess.call("rm " + directory + "input.xml", shell=True)
-    subprocess.call("./" + directory + "ieval_op.sh", shell=True)
+    # #ayush
+    # subprocess.call("python " + directory + "url.py > " + directory + "URLop.txt", shell=True)
+    # subprocess.call("python " + directory + "footnotes.py > " + directory + "FOOTNOTEop.txt", shell=True)
+    # subprocess.call("python " + directory + "tables_figures.py > " + directory + "TABFIGop.txt", shell=True)
+    # subprocess.call("rm " + directory + "input.xml", shell=True)
+    
     # subprocess.call(directory + "Clean.sh",shell = True)
 
     return HttpResponse("Done")

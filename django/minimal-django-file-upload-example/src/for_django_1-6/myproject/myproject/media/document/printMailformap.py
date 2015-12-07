@@ -10,11 +10,11 @@ outfile = open(directory+ "input_Allmailsformap.txt",'w')
 
 with open(filetoRead,'r') as f:
     for line in f:
-        print "aya?"
+        # print "aya?"
         abc = line.split()
 
         if len(abc) >= 1:  # if not a blank line
-                print "chal to rha"
+                # print "chal to rha"
                 if abc[1] == "1":   #output column
                         if abc[0].find('{')!=-1 or abc[0].find('[')!=-1:
                             flag2 = "1"

@@ -1,2 +1,2 @@
 <<title>>
-Title : Beyond  PageRank:  Machine  Learning  for  Static  Ranking  
+Title : Sensor  Coverage  Robot  Swarms  Using  Local  Sensing  

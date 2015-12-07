@@ -8,7 +8,7 @@ do
 	echo "pdftoxml done\n"
 done
 
-for f in $Directory/*.xml
+for f in $Directory/input.xml
 do
 	echo "filename = $f \n"
 	python $Directory/PrimaryCode.py <<EOF

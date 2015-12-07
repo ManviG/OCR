@@ -182,6 +182,9 @@
 		map();
 	}
 
+	// directory = '/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/'
+
+
 	function titl()
 	{
 		var iframe_t = document.createElement('iframe');
@@ -189,6 +192,7 @@
 		iframe_t.style.display = 'none';
 		document.body.appendChild(iframe_t);
 		iframe_t.src = '../../media/documents/eval_title.txt';
+		// subprocess.call("echo lool",shell=true);
 		setTimeout(function(){
 		    var text = document.getElementById('iframe_t').contentDocument.body.firstChild.innerHTML;
 		    var arr = text.split("&lt;&lt;title&gt;&gt;");
@@ -213,12 +217,9 @@
 			document.getElementById("titl_output").style.display = "block";
 			document.getElementById("titl_output").innerHTML = text.slice(1,-2);
 			cell2.innerHTML = "Title";
-			cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-			cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-			cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-		    // }
-		    // document.getElementById('ta_output').style.display = "block";
-		    // document.getElementById('ta_output').innerHTML = text ;
+			cell3.innerHTML = "<input type=\"radio\" name=\"title\" value=\"correct\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+			cell4.innerHTML = "<input type=\"radio\" name=\"title\" value=\"incorrect\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+			cell5.innerHTML = "<input type=\"radio\" name=\"title\" value=\"partial\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 		}, 1000);
 	}
 
@@ -252,9 +253,9 @@
 				document.getElementById("aut_output").style.display = "block";
 				document.getElementById("aut_output").innerHTML = text.slice(1,-2);
 				cell2.innerHTML = "Author " + i;
-				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell3.innerHTML = "<input type=\"radio\" name=\"author\" value=\"correct\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"radio\" name=\"author\" value=\"incorrect\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"radio\" name=\"author\" partial=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 		    }
 		    // document.getElementById('ta_output').style.display = "block";
 		    // document.getElementById('ta_output').innerHTML = text ;
@@ -290,9 +291,9 @@
 				document.getElementById("email_output").style.display = "block";
 				document.getElementById("email_output").innerHTML = text.slice(1,-1);
 				cell2.innerHTML = "Email " + i;
-				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell3.innerHTML = "<input type=\"radio\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"radio\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"radio\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 		    }
 		    // document.getElementById('ta_output').style.display = "block";
 		    // document.getElementById('ta_output').innerHTML = text ;
@@ -328,9 +329,9 @@
 				document.getElementById("affil_output").style.display = "block";
 				document.getElementById("affil_output").innerHTML = text.slice(1,-1);
 				cell2.innerHTML = "Affil " + i;
-				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell3.innerHTML = "<input type=\"radio\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"radio\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"radio\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 		    }
 		    // document.getElementById('ta_output').style.display = "block";
 		    // document.getElementById('ta_output').innerHTML = text ;
@@ -366,9 +367,9 @@
 				document.getElementById("sec_output").style.display = "block";
 				document.getElementById("sec_output").innerHTML = text.slice(1,-1);
 				cell2.innerHTML = "Section " + i;
-				cell3.innerHTML = "<input type=\"checkbox\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell4.innerHTML = "<input type=\"checkbox\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
-				cell5.innerHTML = "<input type=\"checkbox\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell3.innerHTML = "<input type=\"radio\" name=\"correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell4.innerHTML = "<input type=\"radio\" name=\"incorrect\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
+				cell5.innerHTML = "<input type=\"radio\" name=\"partial_correct\" value=\"value\" style=\"position:relative; left:5px; height:20px; width:20px;\">";
 		    }
 		    // document.getElementById('ta_output').style.display = "block";
 		    // document.getElementById('ta_output').innerHTML = text ;
@@ -451,253 +452,54 @@
 
 		<div id="header">
 			<form action="{% url "list" %}" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{ form.non_field_errors }}
-			{{ form.docfile.label_tag }} {{ form.docfile.help_text }}
-			{{ form.docfile.errors }}
-			{{ form.docfile }}
-			<p><input id="submit" type="submit" value="Upload" /></p>
-		</form>
+				{% csrf_token %}
+				{{ form.non_field_errors }}
+				{{ form.docfile.label_tag }} {{ form.docfile.help_text }}
+				{{ form.docfile.errors }}
+				{{ form.docfile }}
+				<p><input id="submit" type="submit" value="Upload" /></p>
+			</form>
 			<a id="process" href="runScript">Process</a>
 			<a id="op_button" onclick="op()">Output<a>		
 		</div>
-	
-		<div id="nav">
-		<table id="myTable" border=1>
+		<form action="{% url "vote" %}" method="post" id="loginform">
+			{% csrf_token %}
+			<div id="nav">
+			<table id="myTable" border=1>
 
-			<tr>			
-				<th>
-					Features
-				</th>
-				
-				<th>
-				</th>
-				
-				<th>
-					<label>Right</label>
-				</th>
-				
-				<th>
-					<label>Wrong</label>
-				</th>
-				
-				<th>
-					<label>Partial</label>
-				</th>
-			</tr>
+				<tr>			
+					<th>
+						Features
+					</th>
+					
+					<th>
+					</th>
+					
+					<th>
+						<label>Right</label>
+					</th>
+					
+					<th>
+						<label>Wrong</label>
+					</th>
+					
+					<th>
+						<label>Partial</label>
+					</th>
+				</tr>
 
-			<!-- <tr>
-				<td>
-					<textarea id="ta_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-	
-				<td>
-					<label>Title :</label>
-					<br>
-					<label>Author:</label>
-				</td>
+			</div>
 
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-					<br>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
+			<div id="section" style="position:fixed; top:55px; left:750px;">
+			<embed id="pdf" src="../../media/documents/input.pdf" width="550px" height="600px">
+			</div>
 
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-					<br>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;"><br>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-	
-			</tr> -->
-
-			<!-- <tr>
-				<td>
-					<textarea id="email_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>email :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr> -->
-
-			<!-- <tr>
-				<td>
-					<textarea id="sec_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>section :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr> -->
-
-			<tr>
-				<td>
-					<textarea id="refcit_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Cit2Ref :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<textarea id="url_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>urls :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					<textarea id="fn_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Footnotes :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					<textarea id="figt_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>figure :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-
-			<!-- <tr>
-				<td>
-					<textarea id="affil_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Affiliation :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr> -->
-
-			<tr>
-				<td>
-					<textarea id="map_output"  style="display:none; background-color:yellow;" class="answer_list" rows="50" cols="60" > WELCOME</textarea>
-				</td>
-
-				<td>
-					<label>Map :</label>
-				</td>
-
-				<td>
-					<input type="checkbox" name="correct" value="value" style="position:relative; left:5px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="incorrect" value="value" style="position:relative; left:20px; height:20px; width:20px;">
-				</td>
-
-				<td>
-					<input type="checkbox" name="partial_correct" value="value" style="position:relative; left:30px; height:20px; width:20px;">
-				</td>
-			</tr>
-		</table>
-	
-	</div>
-
-	<div id="section" style="position:fixed; top:55px; left:750px;">
-	<embed id="pdf" src="../../media/documents/input.pdf" width="550px" height="600px">
-	</div>
+			<!-- <a href="vote" id="submit_button">Submit</a>	 -->
+		    <label for="your_name">Your email : </label>
+		    <input id="email" type="email" name="email" value="{{ email }}">
+		    <!-- <input id="paperid" name="paperid" value="{{ paperid }}"> -->
+		    <input type="submit" value="OK">
+		</form>
 	
 	</body>
 

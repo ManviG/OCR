@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
 <UniformResourceLocator>
 	<URL>
-		<url>http://search-</url>
-		<url>http://dc.internet.com/news/article.php/</url>
+		<url>http://rtv.github.io/Stage/</url>
 	</URL>
 </UniformResourceLocator>
 
