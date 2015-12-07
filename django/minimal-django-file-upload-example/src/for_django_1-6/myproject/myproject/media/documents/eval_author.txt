@@ -1,12 +1,6 @@
 <<name>>
-First name :  Rattanachai 
-Last name :  Ramaithitima 
+First name :  Fiana 
+Last name :  Raiber 
 <<name>>
-First name :  Michael 
-Last name :  Whitzer 
-<<name>>
-First name :  Subhrajit 
-Last name :  Bhattacharya 
-<<name>>
-First name :  Vijay 
-Last name :  Kumar 
+First name :  Oren 
+Last name :  Kurland 

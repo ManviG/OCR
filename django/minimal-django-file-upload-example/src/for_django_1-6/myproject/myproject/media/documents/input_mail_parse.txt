@@ -1,4 +1,5 @@
 0	0	0
-[ramar,mwhitzer,subhrabh,	1	0
-kumar]@seas.upenn.edu.	1	0
+kurland@ie.technion.ac.il	1	0
+0	0	0
+permissions@acm.org.	1	0
 0	0	0

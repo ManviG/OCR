@@ -1,4 +1,2 @@
 <<Affiliation>>
-Microsoft Research
-<<Affiliation>>
-Microsoft Research
+Technion Israel Institute of Technology

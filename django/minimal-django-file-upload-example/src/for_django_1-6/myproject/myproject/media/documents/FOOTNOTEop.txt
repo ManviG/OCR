@@ -1,5 +1,14 @@
 <?xml version="1.0" ?>
 <Footnotes>
-	<Footnotes/>
+	<Footnotes>
+		<footnote>1 Pre-retrieval predictors were used in a linear regression to predict average precision [22], but the probability of effective retrieval was not directly estimated. </footnote>
+		<footnote>2 There is work on predicting retrieval effectiveness based on statistics of features used by the retrieval method [5, 6]. 3 Small performance improvements were attained when us- ing (i) post-retrieval predictors in federated search [52] and (ii) pre-retrieval predictors in a learning-to-rank framework [35]. Post-retrieval predictors were also integrated with many (ranker specific) features to select a ranking function [5] (with somewhat inconclusive findings about the resultant effectiveness) and for fusion [43] (with small relative contri- bution to overall performance). Selective query expansion using predictors was not shown to be of much merit [2, 16]. </footnote>
+		<footnote>4 The connection between query-performance prediction and cluster ranking was also stated elsewhere [27]. 5 Pre-retrieval query-performance predictors are indepen- dent of the retrieved list and therefore cannot be used alone to select a retrieved list. </footnote>
+		<footnote>6 The difference is normalized by the query length to ensure inter-query compatibility of prediction values. 7 The standard deviation is normalized with respect to the corpus retrieval score to ensure inter-query compatibility of prediction values. </footnote>
+		<footnote>8 www.lemurproject.org/indri </footnote>
+		<footnote>9 Fusion methods were shown to be most effective when fus- ing relatively short lists [47, 7]. </footnote>
+		<footnote>10 We apply min-max normalization to the l weights which are assigned by SVM rank to the retrieved lists to avoid using negative weights. </footnote>
+		<footnote>11 Learning-to-rank methods were used to fuse lists [43] and to rank them [5]. Both approaches use features specific to, and shared by, the rankers employed. In the TREC setting here, the features used by the rankers are not necessarily known, nor shared. We used predictors over queries that can be applied to any retrieved list. </footnote>
+	</Footnotes>
 </Footnotes>
 

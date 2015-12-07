@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <UniformResourceLocator>
 	<URL>
-		<url>http://rtv.github.io/Stage/</url>
+		<url>http://dx.doi.org/10.1145/2600428.2609581</url>
 	</URL>
 </UniformResourceLocator>
 

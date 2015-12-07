@@ -1,2 +1,1 @@
-#e ramar,mwhitzer,subhrabh@seas.upenn.edu
-#e kumar@seas.upenn.edu
+#e kurland@ie.technion.ac.il

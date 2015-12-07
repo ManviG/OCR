@@ -1,9 +1,15 @@
+<<table>>
+Table 1: Summary of the prediction tasks. tar- get probability: the probability to be estimated using no relevance judgments; fixed, varied, no effect: the random variables whose values are (i) fixed, (ii) varied (and consequently, over which pre- diction is performed), and (iii) has no effect on the estimation, respectively. A triplet of a query (Q), corpus (C) and retrieval method (M ) entails a re- trieved list (L). pre- and post- stand for pre- retrieval and post-retrieval, respectively.
+<<table>>
+Table 2: TREC data used to evaluate the quality of prediction over queries.
+<<table>>
+Table 3: Prediction (over queries) quality of LTRoq. marks a statistically significant difference with LTRoq. The best result per experimental setting is boldfaced.
+<<table>>
+Table 4: The top-5 feature functions used by LTRoq for prediction over queries. Pre: pre-retrieval predic- tors.
+<<table>>
+Table 5: Data used for the evaluation of fusion-based retrieval effectiveness when using prediction over re- trieved lists to weigh lists.
+<<table>>
+Table 6: Retrieval effectiveness of using LTRol to weigh lists for linear fusion. WorstRun, MedianRun and BestRun: average performance of the worst, median and best run, among the five fused, respectively. u and c mark statistically significant differences with UNI and CV, respectively. The best result of a prediction method per experimental setting and evaluation metric is boldfaced.
 
 <<figure>>
-Fig. 1. Illustration of a swarm of robots entering an environment and attaining coverage. The hole shown on the right figure is something we would like to avoid.
-<<figure>>
-Fig. 3. Nine robots, their disks of visibility and the corresponding abstract simplicial complex, Rr v . 3409
-<<figure>>
-Fig. 4. The touch/contact sensors (gray protrusions) at the base of a robot (red). Contact with an obstacle or another robot triggers one or more touch sensors providing a rough estimate of the direction of contact. D. Local Bearing-Based Controller The robots are controlled using the bearing-based visual homing controller presented in [18]. This controller utilizes
-<<figure>>
-Fig. 7. {i, j, k
+Figure 1: The four cliques considered for graph G. G is composed of a query node (Q), corpus node (C) and a retrieved list node (L).

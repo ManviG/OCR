@@ -1,9 +1,5 @@
-#f Rattanachai
-#l Ramaithitima
-#f Michael
-#l Whitzer
-#f Subhrajit
-#l Bhattacharya
-#f Vijay
-#l Kumar
+#f Fiana
+#l Raiber
+#f Oren
+#l Kurland
 

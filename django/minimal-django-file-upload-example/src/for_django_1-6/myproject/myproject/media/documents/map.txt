@@ -1,8 +1,6 @@
-<map>
-	Michael Whitzer 
-	ramar,mwhitzer,subhrabh@seas.upenn.edu
-<\map>
-<map>
-	Vijay Kumar 
-	kumar@seas.upenn.edu
-<\map>
+<email_author>
+	<map>
+		Oren Kurland 
+		kurland@ie.technion.ac.il
+	</map>
+</email_author>

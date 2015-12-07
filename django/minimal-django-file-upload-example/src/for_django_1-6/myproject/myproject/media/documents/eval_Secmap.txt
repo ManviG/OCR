@@ -1,25 +1,48 @@
 <<section>>
-Chunks: Sensor Coverage Robot Swarms Using ... absolutely no metric information available.
+Chunks: Query-Performance Prediction: Setting the Expectations ... Technion Israel Institute of Technology
 <<section>>
-Heading: II. PRELIMINARIES A. Notations We denote by W R 
-Chunks: 2 the obstacle-free region where ... a value in [, )).
+Heading: ABSTRACT 
+Chunks: The query-performance prediction task has ... models Keywords: query-performance prediction, learning-to-rank
 <<section>>
-Heading: B. VietorisRips Complex of Camera Sensing Footprints 
-Chunks: We do not assume that ... robots neighbor list while moving.
+Heading: 1. INTRODUCTION 
+Chunks: The query-performance prediction task has ... would result in better performance.
 <<section>>
-Heading: E. Relative H 
-Chunks: 2 Homology We periodically compute ... new ones from the source.
+Heading: 2. RELATED WORK 
+Chunks: There are three main lines ... without applying a learning-to-rank approach.
 <<section>>
-Heading: IV. GUARANTEES 
-Chunks: Since throughout the deployment and ... spots inside the non-convex grooves.
+Heading: 3. THE PREDICTION TASK 
+Chunks: The query performance prediction task ... Table 1 summarizes these tasks.
 <<section>>
-Heading: V. RESULTS 
-Chunks: We demonstrate the performance of ... packing requires approximately 78 robots.
+Heading: 3.1 Prediction over corpora 
+Chunks: In the federated retrieval setting ... of corpora representation [10, 44].
 <<section>>
-Heading: B. Structured environment 
-Chunks: Our algorithm attains a similar ... average separation between the robots.
+Heading: 3.2 Prediction over retrieved lists 
+Chunks: The fusion task is merging ... among those available [47, 19].
 <<section>>
-Heading: VI. DISCUSSIONS 
-Chunks: In this paper, we proposed ... implementation on a ROS platform
+Heading: 3.3 Prediction over queries 
+Chunks: Heretofore, we used the term ... back to this point below.
 <<section>>
-Heading: REFERENCES 
+Heading: 3.4 Improved prediction improved retrieval? 
+Chunks: Work on query-performance prediction i.e., ... as to improve retrieval performance.
+<<section>>
+Heading: 3.5 Learning to rank queries using Markov 
+Chunks: Random Fields With the realization ... quality of the relevance model.
+<<section>>
+Heading: 4. EVALUATION 
+Chunks: We start in Section 4.1 ... predic- tion over retrieved lists.
+<<section>>
+Heading: 4.1 Prediction over queries 
+Chunks: 4.1.1 Experimental setup The TREC ... out of the nine settings.
+<<section>>
+Heading: 4.2 Prediction over retrieved lists 
+Chunks: We next study the effectiveness ... is not highly effective. 11
+<<section>>
+Heading: 5. SUMMARY 
+Chunks: We framed the query-performance prediction ... through its Ph.D. Scholarship Program.
+<<section>>
+Heading: 6. REFERENCES 
+Chunks: [1] J. Allan, M. E. ... of SIGIR, pages 543550, 2007.
+<<section>>
+Heading: APPENDIX 
+<<section>>
+Heading: A. POST-RETRIEVAL PREDICTION OVER 

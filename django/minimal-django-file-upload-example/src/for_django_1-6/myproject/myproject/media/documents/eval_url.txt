@@ -1,2 +1,2 @@
 <<url>>
-http://rtv.github.io/Stage/
+http://dx.doi.org/10.1145/2600428.2609581
