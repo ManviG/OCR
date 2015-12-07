@@ -1,0 +1,6 @@
+<email_author>
+	<map>
+		Oren Kurland 
+		kurland@ie.technion.ac.il
+	</map>
+</email_author>

@@ -1,0 +1,455 @@
+<?xml version="1.0" ?>
+-<Reference id="1" >[1] J. Allan, M. E. Connell, W. B. Croft, F.-F. Feng, D. Fisher, and X. Li. INQUERY and TREC-9. In Proc. of TREC-9, pages 551562, 2000. </Reference>
+
+-<Reference id="2" >[2] G. Amati, C. Carpineto, and G. Romano. Query difficulty, robustness, and selective application of query expansion. In Proc. of ECIR, pages 127137, 2004. </Reference>
+
+-<Reference id="3" >[3] C. C. V. ant Garrison W. Cottrell. Fusion via linear combination of scores. Information Retrieval, 1(3):151173, 1999. </Reference>
+
+-<Reference id="4" >[4] J. A. Aslam and V. Pavlu. Query hardness estimation using Jensen-Shannon divergence among multiple scoring functions. In Proc. of ECIR, pages 198209, 2007. </Reference>
+
+-<Reference id="5" >[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. </Reference>
+
+-<Reference id="6" >[6] N. Balasubramanian, G. Kumaran, and V. R. Carvalho. Predicting query performance on the web. In Proc. of SIGIR, pages 785786, 2010. </Reference>
+
+-<Reference id="7" >[7] S. M. Beitzel, E. C. Jensen, A. Chowdhury, O. Frieder, D. A. Grossman, and N. Goharian. Disproving the fusion hypothesis: An analysis of data fusion via effective information retrieval strategies. In Proc. of SAC, pages 823827, 2003. </Reference>
+
+-<Reference id="8" >[8] M. Bendersky, W. B. Croft, and Y. Diao. Quality-biased ranking of web documents. In Proc. of WSDM, pages 95104, 2011. </Reference>
+
+-<Reference id="9" >[9] Y. Bernstein, B. Billerbeck, S. Garcia, N. Lester, F. Scholer, and J. Zobel. RMIT university at trec 2005: Terabyte and robust track. In Proc. of TREC-14, 2005. </Reference>
+
+-<Reference id="10" >[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. </Reference>
+
+-<Reference id="11" >[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. </Reference>
+
+-<Reference id="12" >[12] D. Carmel, E. Yom-Tov, A. Darlow, and D. Pelleg. What makes a query difficult? In Proc. of SIGIR, pages 390397, 2006. </Reference>
+
+-<Reference id="13" >[13] G. V. Cormack, M. D. Smucker, and C. L. A. Clarke. Efficient and effective spam filtering and re-ranking for large web datasets. Informaltiom Retrieval Journal, 14(5):441465, 2011. </Reference>
+
+-<Reference id="14" >[14] W. B. Croft. Combining approaches to information retrieval. In W. B. Croft, editor, Advances in information retrieval, chapter 1, pages 136. Kluwer Academic Publishers, 2000. </Reference>
+
+-<Reference id="15" >[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. </Reference>
+
+-<Reference id="16" >[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. </Reference>
+
+-<Reference id="17" >[17] R. Cummins. Predicting query performance directly from score distributions. In Proc. of AIRS, pages 315326, 2011. </Reference>
+
+-<Reference id="18" >[18] R. Cummins, J. M. Jose, and C. ORiordan. Improved query performance prediction using standard deviation. In Proc. of SIGIR, pages 10891090, 2011. </Reference>
+
+-<Reference id="19" >[19] F. Diaz. Performance prediction using spatial autocorrelation. In Proc. of SIGIR, pages 583590, 2007. </Reference>
+
+-<Reference id="20" >[20] E. A. Fox and J. A. Shaw. Combination of multiple searches. In Proc. of TREC-2, 1994. </Reference>
+
+-<Reference id="21" >[21] C. Hauff and L. Azzopardi. When is query performance prediction effective? In Proc. of SIGIR, pages 829830, 2009. </Reference>
+
+-<Reference id="22" >[22] C. Hauff, L. Azzopardi, and D. Hiemstra. The combination and evaluation of query performance prediction methods. In Proc. of ECIR, pages 301312, 2009. </Reference>
+
+-<Reference id="23" >[23] C. Hauff, D. Hiemstra, and F. de Jong. A survey of pre-retrieval query performance predictors. In Proc. of CIKM, pages 14191420, 2008. </Reference>
+
+-<Reference id="24" >[24] C. Hauff, V. Murdock, and R. A. Baeza-Yates. Improved query difficulty prediction for the web. In Proc. of CIKM, pages 439448, 2008. </Reference>
+
+-<Reference id="25" >[25] B. He and I. Ounis. Inferring query performance using pre-retrieval predictors. In Proc. of SPIRE, pages 4354, 2004. </Reference>
+
+-<Reference id="26" >[26] T. Joachims. Training linear svms in linear time. In Proc. of KDD, pages 217226, 2006. </Reference>
+
+-<Reference id="27" >[27] O. Kurland, F. Raiber, and A. Shtok. Query-performance prediction and cluster ranking: Two sides of the same coin. In Proc. of CIKM, pages 24592462, 2012. </Reference>
+
+-<Reference id="28" >[28] O. Kurland, A. Shtok, D. Carmel, and S. Hummel. A unified framework for post-retrieval query-performance prediction. In Proc. of ICTIR, pages 1526, 2011. </Reference>
+
+-<Reference id="29" >[29] O. Kurland, A. Shtok, S. Hummel, F. Raiber, D. Carmel, and O. Rom. Back to the roots: a probabilistic framework for query-performance prediction. In Proc. of CIKM, pages 823832, 2012. </Reference>
+
+-<Reference id="30" >[30] V. Lavrenko and W. B. Croft. Relevance-based language models. In Proc. of SIGIR, pages 120127, 2001. </Reference>
+
+-<Reference id="31" >[31] D. Lillis, F. Toolan, R. W. Collier, and J. Dunnion. Probfuse: a probabilistic approach to data fusion. In Proc. of SIGIR, pages 139146, 2006. </Reference>
+
+-<Reference id="32" >[32] T.-Y. Liu. Learning to Rank for Information Retrieval. Springer, 2011. </Reference>
+
+-<Reference id="33" >[33] X. Liu and W. B. Croft. Cluster-based retrieval using language models. In Proc. of SIGIR, pages 186193, 2004. </Reference>
+
+-<Reference id="34" >[34] X. Liu and W. B. Croft. Experiments on retrieval of optimal clusters. Technical Report IR-478, Center for Intelligent Information Retrieval (CIIR), University of Massachusetts, 2006. </Reference>
+
+-<Reference id="35" >[35] C. Macdonald, R. L. T. Santos, and I. Ounis. On the usefulness of query features for learning to rank. In Proc. of CIKM, pages 25592562, 2012. </Reference>
+
+-<Reference id="36" >[36] D. Metzler and W. B. Croft. A Markov random field model for term dependencies. In Proc. of SIGIR, pages 472479, 2005. </Reference>
+
+-<Reference id="37" >[37] J. Mothe and L. Tanguy. Linguistic features to predict query difficulty. In ACM SIGIR 2005 Workshop on Predicting Query Difficulty - Methods and Applications, 2005. </Reference>
+
+-<Reference id="38" >[38] J. P  erez-Iglesias and L. Araujo. Standard deviation as a query hardness estimator. In Proc. of SPIRE, pages 207212, 2010. </Reference>
+
+-<Reference id="39" >[39] F. Raiber and O. Kurland. Ranking document clusters using markov random fields. In Proc. of SIGIR, pages 333342, 2013. </Reference>
+
+-<Reference id="40" >[40] F. Raiber and O. Kurland. Using document-quality measures to predict web-search effectiveness. In Proc. of ECIR, pages 134145, 2013. </Reference>
+
+-<Reference id="41" >[41] F. Scholer and S. Garcia. A case for improved evaluation of query difficulty prediction. In Proc. of SIGIR, pages 640641, 2009. </Reference>
+
+-<Reference id="42" >[42] F. Scholer, H. E. Williams, and A. Turpin. Query association surrogates for web search. JASIST, 55(7):637650, 2004. </Reference>
+
+-<Reference id="43" >[43] D. Sheldon, M. Shokouhi, M. Szummer, and N. Craswell. Lambdamerge: merging the results of query reformulations. In Proc. of WSDM, pages 795804, 2011. </Reference>
+
+-<Reference id="44" >[44] M. Shokouhi and L. Si. Federated search. Foundations and Trends in Information Retrieval, 5(1):1102, 2011. </Reference>
+
+-<Reference id="45" >[45] A. Shtok, O. Kurland, and D. Carmel. Using statistical decision theory and relevance models for query-performance prediction. In Proc. of SIGIR, 2010. </Reference>
+
+-<Reference id="46" >[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. </Reference>
+
+-<Reference id="47" >[47] I. Soboroff, C. K. Nicholas, and P. Cahan. Ranking retrieval systems without relevance judgments. In Proc. of SIGIR, pages 6673, 2001. </Reference>
+
+-<Reference id="48" >[48] F. Song and W. B. Croft. A general language model for information retrieval (poster abstract). In Proc. of SIGIR, pages 279280, 1999. </Reference>
+
+-<Reference id="49" >[49] K. Sparck Jones, S. Walker, and S. E. Robertson. A probabilistic model of information retrieval: development and comparative experiments - part 1. Information Processing and Management, 36(6):779808, 2000. </Reference>
+
+-<Reference id="50" >[50] S. Tomlinson. Robust, Web and Terabyte Retrieval with Hummingbird Search Server at TREC 2004. In Proc. of TREC-13, 2004. </Reference>
+
+-<Reference id="51" >[51] V. Vinay, I. J. Cox, N. Milic-Frayling, and K. R. Wood. On ranking the effectiveness of searches. In Proc. of SIGIR, pages 398404, 2006. </Reference>
+
+-<Reference id="52" >[52] E. Yom-Tov, S. Fine, D. Carmel, and A. Darlow. Learning to estimate query difficulty: including applications to missing content detection and distributed information retrieval. In Proc. of SIGIR, pages 512519, 2005. </Reference>
+
+-<Reference id="53" >[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. </Reference>
+
+-<Reference id="54" >[54] Y. Zhou and B. Croft. Ranking robustness: a novel framework to predict query performance. In Proc. of CIKM, pages 567574, 2006. </Reference>
+
+-<Reference id="55" >[55] Y. Zhou and B. Croft. Query performance prediction in web search environments. In Proc. of SIGIR, pages 543550, 2007. </Reference>
+
+-<Reference id="56" >APPENDIX </Reference>
+
+-<Reference id="57" >A. POST-RETRIEVAL PREDICTION OVER QUERIES We argue that post-retrieval prediction over queries meth- </Reference>
+
+-<Reference id="58" >ods (henceforth prediction methods or predictors) were cou- </Reference>
+
+-<Reference id="59" >pled with, and are hence effective for, specific retrieval meth- </Reference>
+
+-<Reference id="60" >ods; that is, for ranking queries by the presumed effective- </Reference>
+
+-<Reference id="61" >ness of using these retrieval methods for them. There are predictors that explicitly rely on features used </Reference>
+
+-<Reference id="62" >by the retrieval method [6]. This reliance is implicit for other </Reference>
+
+-<Reference id="63" >prediction methods as we discuss next. As described in Section 2, there are three classes of post- </Reference>
+
+-<Reference id="64" >retrieval predictors. The Clarity predictor [15] was shown </Reference>
+
+-<Reference id="65" >to be ineffective for a variety of retrieval methods [41]. Predictors that analyse the retrieval scores distribution </Reference>
+
+-<Reference id="66" >[50, 9, 19, 55, 6, 38, 17, 18, 46] are by definition dependent </Reference>
+
+-<Reference id="67" >on the retrieval method as noted in some work [55, 46]. In </Reference>
+
+-<Reference id="68" >fact, almost all of these predictors are suited for, and were </Reference>
+
+-<Reference id="69" >evaluated with, retrieval methods that use only document- </Reference>
+
+-<Reference id="70" >query surface-level similarities to rank documents. Query feedback (QF) [55] and UEF [45] are among the </Reference>
+
+-<Reference id="71" >most effective post-retrieval predictors that do not analyze </Reference>
+
+-<Reference id="72" >retrieval scores. Both rely on the premise that retrieval us- </Reference>
+
+-<Reference id="73" >ing pseudo-feedback-based query expansion is more effective </Reference>
+
+-<Reference id="74" >than that at hand. Indeed, in both reports [55, 45], the re- </Reference>
+
+-<Reference id="75" >trieval method used for evaluation was a language-model- </Reference>
+
+-<Reference id="76" >based approach with no query expansion. Comparison with </Reference>
+
+-<Reference id="77" >query-expansion-based retrieval, or some other effective re- </Reference>
+
+-<Reference id="78" >trieval, need not necessarily indicate the effectiveness of re- </Reference>
+
+-<Reference id="79" >trieval methods that are much more effective [47]. </Reference>
+
+
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >research attention [11]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >sponse to a query with no relevance judgments [11]</citation>
+
+<citation ref_id="1"  reference="[1] J. Allan, M. E. Connell, W. B. Croft, F.-F. Feng, D. Fisher, and X. Li. INQUERY and TREC-9. In Proc. of TREC-9, pages 551562, 2000. " >July 2014</citation>
+
+<citation ref_id="1"  reference="[1] J. Allan, M. E. Connell, W. B. Croft, F.-F. Feng, D. Fisher, and X. Li. INQUERY and TREC-9. In Proc. of TREC-9, pages 551562, 2000. " >Copyright 2014</citation>
+
+<citation ref_id="10"  reference="[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. " >used to address them in federated search [10]</citation>
+
+<citation ref_id="14"  reference="[14] W. B. Croft. Combining approaches to information retrieval. In W. B. Croft, editor, Advances in information retrieval, chapter 1, pages 136. Kluwer Academic Publishers, 2000. " >retrieval [14]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " > and query-performance prediction [11]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="25"  reference="[25] B. He and I. Ounis. Inferring query performance using pre-retrieval predictors. In Proc. of SPIRE, pages 4354, 2004. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="42"  reference="[42] F. Scholer, H. E. Williams, and A. Turpin. Query association surrogates for web search. JASIST, 55(7):637650, 2004. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="37"  reference="[37] J. Mothe and L. Tanguy. Linguistic features to predict query difficulty. In ACM SIGIR 2005 Workshop on Predicting Query Difficulty - Methods and Applications, 2005. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="23"  reference="[23] C. Hauff, D. Hiemstra, and F. de Jong. A survey of pre-retrieval query performance predictors. In Proc. of CIKM, pages 14191420, 2008. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="41"  reference="[41] F. Scholer and S. Garcia. A case for improved evaluation of query difficulty prediction. In Proc. of SIGIR, pages 640641, 2009. " >tics [15, 25, 42, 37, 23, 53, 41]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >retrieved list [11]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >clarity of the list with respect to the corpus [15, 16, 2, 24]</citation>
+
+<citation ref_id="16"  reference="[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. " >clarity of the list with respect to the corpus [15, 16, 2, 24]</citation>
+
+<citation ref_id="2"  reference="[2] G. Amati, C. Carpineto, and G. Romano. Query difficulty, robustness, and selective application of query expansion. In Proc. of ECIR, pages 127137, 2004. " >clarity of the list with respect to the corpus [15, 16, 2, 24]</citation>
+
+<citation ref_id="24"  reference="[24] C. Hauff, V. Murdock, and R. A. Baeza-Yates. Improved query difficulty prediction for the web. In Proc. of CIKM, pages 439448, 2008. " >clarity of the list with respect to the corpus [15, 16, 2, 24]</citation>
+
+<citation ref_id="52"  reference="[52] E. Yom-Tov, S. Fine, D. Carmel, and A. Darlow. Learning to estimate query difficulty: including applications to missing content detection and distributed information retrieval. In Proc. of SIGIR, pages 512519, 2005. " >[52, 51, 54, 4, 40]</citation>
+
+<citation ref_id="51"  reference="[51] V. Vinay, I. J. Cox, N. Milic-Frayling, and K. R. Wood. On ranking the effectiveness of searches. In Proc. of SIGIR, pages 398404, 2006. " >[52, 51, 54, 4, 40]</citation>
+
+<citation ref_id="54"  reference="[54] Y. Zhou and B. Croft. Ranking robustness: a novel framework to predict query performance. In Proc. of CIKM, pages 567574, 2006. " >[52, 51, 54, 4, 40]</citation>
+
+<citation ref_id="4"  reference="[4] J. A. Aslam and V. Pavlu. Query hardness estimation using Jensen-Shannon divergence among multiple scoring functions. In Proc. of ECIR, pages 198209, 2007. " >[52, 51, 54, 4, 40]</citation>
+
+<citation ref_id="40"  reference="[40] F. Raiber and O. Kurland. Using document-quality measures to predict web-search effectiveness. In Proc. of ECIR, pages 134145, 2013. " >[52, 51, 54, 4, 40]</citation>
+
+<citation ref_id="50"  reference="[50] S. Tomlinson. Robust, Web and Terabyte Retrieval with Hummingbird Search Server at TREC 2004. In Proc. of TREC-13, 2004. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="9"  reference="[9] Y. Bernstein, B. Billerbeck, S. Garcia, N. Lester, F. Scholer, and J. Zobel. RMIT university at trec 2005: Terabyte and robust track. In Proc. of TREC-14, 2005. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="19"  reference="[19] F. Diaz. Performance prediction using spatial autocorrelation. In Proc. of SIGIR, pages 583590, 2007. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="55"  reference="[55] Y. Zhou and B. Croft. Query performance prediction in web search environments. In Proc. of SIGIR, pages 543550, 2007. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="6"  reference="[6] N. Balasubramanian, G. Kumaran, and V. R. Carvalho. Predicting query performance on the web. In Proc. of SIGIR, pages 785786, 2010. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="38"  reference="[38] J. P  erez-Iglesias and L. Araujo. Standard deviation as a query hardness estimator. In Proc. of SPIRE, pages 207212, 2010. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="17"  reference="[17] R. Cummins. Predicting query performance directly from score distributions. In Proc. of AIRS, pages 315326, 2011. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="18"  reference="[18] R. Cummins, J. M. Jose, and C. ORiordan. Improved query performance prediction using standard deviation. In Proc. of SIGIR, pages 10891090, 2011. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >[50, 9, 19, 55, 6, 38, 17, 18, 46]</citation>
+
+<citation ref_id="12"  reference="[12] D. Carmel, E. Yom-Tov, A. Darlow, and D. Pelleg. What makes a query difficult? In Proc. of SIGIR, pages 390397, 2006. " >representations, relevant documents, and the corpus [12]</citation>
+
+<citation ref_id="45"  reference="[45] A. Shtok, O. Kurland, and D. Carmel. Using statistical decision theory and relevance models for query-performance prediction. In Proc. of SIGIR, 2010. " >utility estimation task [45]</citation>
+
+<citation ref_id="29"  reference="[29] O. Kurland, A. Shtok, S. Hummel, F. Raiber, D. Carmel, and O. Rom. Back to the roots: a probabilistic framework for query-performance prediction. In Proc. of CIKM, pages 823832, 2012. " >and post- retrieval) prediction methods [29]</citation>
+
+<citation ref_id="28"  reference="[28] O. Kurland, A. Shtok, D. Carmel, and S. Hummel. A unified framework for post-retrieval query-performance prediction. In Proc. of ICTIR, pages 1526, 2011. " >instantiations of a simple prediction principle [28]</citation>
+
+<citation ref_id="21"  reference="[21] C. Hauff and L. Azzopardi. When is query performance prediction effective? In Proc. of SIGIR, pages 829830, 2009. " >It was argued using a simulation [21]</citation>
+
+<citation ref_id="2"  reference="[2] G. Amati, C. Carpineto, and G. Romano. Query difficulty, robustness, and selective application of query expansion. In Proc. of ECIR, pages 127137, 2004. " >selective query expansion [2, 16]</citation>
+
+<citation ref_id="16"  reference="[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. " >selective query expansion [2, 16]</citation>
+
+<citation ref_id="22"  reference="[22] C. Hauff, L. Azzopardi, and D. Hiemstra. The combination and evaluation of query performance prediction methods. In Proc. of ECIR, pages 301312, 2009. " >using linear regression [22]</citation>
+
+<citation ref_id="29"  reference="[29] O. Kurland, A. Shtok, S. Hummel, F. Raiber, D. Carmel, and O. Rom. Back to the roots: a probabilistic framework for query-performance prediction. In Proc. of CIKM, pages 823832, 2012. " >in a probabilistic framework [29]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >a query in the absence of relevance [15, 11]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >a query in the absence of relevance [15, 11]</citation>
+
+<citation ref_id="10"  reference="[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. " >In the federated retrieval setting [10, 44]</citation>
+
+<citation ref_id="44"  reference="[44] M. Shokouhi and L. Si. Federated search. Foundations and Trends in Information Retrieval, 5(1):1102, 2011. " >In the federated retrieval setting [10, 44]</citation>
+
+<citation ref_id="10"  reference="[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. " >the retrieval on [10, 44]</citation>
+
+<citation ref_id="44"  reference="[44] M. Shokouhi and L. Si. Federated search. Foundations and Trends in Information Retrieval, 5(1):1102, 2011. " >the retrieval on [10, 44]</citation>
+
+<citation ref_id="10"  reference="[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. " >query using some form of corpora representation [10, 44]</citation>
+
+<citation ref_id="44"  reference="[44] M. Shokouhi and L. Si. Federated search. Foundations and Trends in Information Retrieval, 5(1):1102, 2011. " >query using some form of corpora representation [10, 44]</citation>
+
+<citation ref_id="14"  reference="[14] W. B. Croft. Combining approaches to information retrieval. In W. B. Croft, editor, Advances in information retrieval, chapter 1, pages 136. Kluwer Academic Publishers, 2000. " >the same corpus in response to a query [14]</citation>
+
+<citation ref_id="14"  reference="[14] W. B. Croft. Combining approaches to information retrieval. In W. B. Croft, editor, Advances in information retrieval, chapter 1, pages 136. Kluwer Academic Publishers, 2000. " >the ranking function can be varied [14]</citation>
+
+<citation ref_id="3"  reference="[3] C. C. V. ant Garrison W. Cottrell. Fusion via linear combination of scores. Information Retrieval, 1(3):151173, 1999. " >judgements [3]</citation>
+
+<citation ref_id="3"  reference="[3] C. C. V. ant Garrison W. Cottrell. Fusion via linear combination of scores. Information Retrieval, 1(3):151173, 1999. " >to weigh the lists when linearly fusing them [3, 31, 43]</citation>
+
+<citation ref_id="31"  reference="[31] D. Lillis, F. Toolan, R. W. Collier, and J. Dunnion. Probfuse: a probabilistic approach to data fusion. In Proc. of SIGIR, pages 139146, 2006. " >to weigh the lists when linearly fusing them [3, 31, 43]</citation>
+
+<citation ref_id="43"  reference="[43] D. Sheldon, M. Shokouhi, M. Szummer, and N. Craswell. Lambdamerge: merging the results of query reformulations. In Proc. of WSDM, pages 795804, 2011. " >to weigh the lists when linearly fusing them [3, 31, 43]</citation>
+
+<citation ref_id="2"  reference="[2] G. Amati, C. Carpineto, and G. Romano. Query difficulty, robustness, and selective application of query expansion. In Proc. of ECIR, pages 127137, 2004. " >to select a single list as the result list [2, 16, 34, 5]</citation>
+
+<citation ref_id="16"  reference="[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. " >to select a single list as the result list [2, 16, 34, 5]</citation>
+
+<citation ref_id="34"  reference="[34] X. Liu and W. B. Croft. Experiments on retrieval of optimal clusters. Technical Report IR-478, Center for Intelligent Information Retrieval (CIIR), University of Massachusetts, 2006. " >to select a single list as the result list [2, 16, 34, 5]</citation>
+
+<citation ref_id="5"  reference="[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. " >to select a single list as the result list [2, 16, 34, 5]</citation>
+
+<citation ref_id="3"  reference="[3] C. C. V. ant Garrison W. Cottrell. Fusion via linear combination of scores. Information Retrieval, 1(3):151173, 1999. " >methods (e.g., [3, 31]</citation>
+
+<citation ref_id="31"  reference="[31] D. Lillis, F. Toolan, R. W. Collier, and J. Dunnion. Probfuse: a probabilistic approach to data fusion. In Proc. of SIGIR, pages 139146, 2006. " >methods (e.g., [3, 31]</citation>
+
+<citation ref_id="34"  reference="[34] X. Liu and W. B. Croft. Experiments on retrieval of optimal clusters. Technical Report IR-478, Center for Intelligent Information Retrieval (CIIR), University of Massachusetts, 2006. " >with list [34, 5, 43]</citation>
+
+<citation ref_id="5"  reference="[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. " >with list [34, 5, 43]</citation>
+
+<citation ref_id="43"  reference="[43] D. Sheldon, M. Shokouhi, M. Szummer, and N. Craswell. Lambdamerge: merging the results of query reformulations. In Proc. of WSDM, pages 795804, 2011. " >with list [34, 5, 43]</citation>
+
+<citation ref_id="47"  reference="[47] I. Soboroff, C. K. Nicholas, and P. Cahan. Ranking retrieval systems without relevance judgments. In Proc. of SIGIR, pages 6673, 2001. " >the list and the among those available [47, 19]</citation>
+
+<citation ref_id="19"  reference="[19] F. Diaz. Performance prediction using spatial autocorrelation. In Proc. of SIGIR, pages 583590, 2007. " >the list and the among those available [47, 19]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >two classes that we discuss next [11]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="25"  reference="[25] B. He and I. Ounis. Inferring query performance using pre-retrieval predictors. In Proc. of SPIRE, pages 4354, 2004. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="42"  reference="[42] F. Scholer, H. E. Williams, and A. Turpin. Query association surrogates for web search. JASIST, 55(7):637650, 2004. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="37"  reference="[37] J. Mothe and L. Tanguy. Linguistic features to predict query difficulty. In ACM SIGIR 2005 Workshop on Predicting Query Difficulty - Methods and Applications, 2005. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="24"  reference="[24] C. Hauff, V. Murdock, and R. A. Baeza-Yates. Improved query difficulty prediction for the web. In Proc. of CIKM, pages 439448, 2008. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="41"  reference="[41] F. Scholer and S. Garcia. A case for improved evaluation of query difficulty prediction. In Proc. of SIGIR, pages 640641, 2009. " >pendently of a retrieval method [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="25"  reference="[25] B. He and I. Ounis. Inferring query performance using pre-retrieval predictors. In Proc. of SPIRE, pages 4354, 2004. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="42"  reference="[42] F. Scholer, H. E. Williams, and A. Turpin. Query association surrogates for web search. JASIST, 55(7):637650, 2004. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="37"  reference="[37] J. Mothe and L. Tanguy. Linguistic features to predict query difficulty. In ACM SIGIR 2005 Workshop on Predicting Query Difficulty - Methods and Applications, 2005. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="24"  reference="[24] C. Hauff, V. Murdock, and R. A. Baeza-Yates. Improved query difficulty prediction for the web. In Proc. of CIKM, pages 439448, 2008. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="41"  reference="[41] F. Scholer and S. Garcia. A case for improved evaluation of query difficulty prediction. In Proc. of SIGIR, pages 640641, 2009. " >past work [15, 25, 42, 37, 24, 53, 41]</citation>
+
+<citation ref_id="10"  reference="[10] J. Callan. Distributed information retrieval. In W. Croft, editor, Advances in information retrieval, chapter 5, pages 127150. Kluwer Academic Publishers, 2000. " >erated search [10]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >also using a tf.idf-based similarity measure [53]</citation>
+
+<citation ref_id="22"  reference="[22] C. Hauff, L. Azzopardi, and D. Hiemstra. The combination and evaluation of query performance prediction methods. In Proc. of ECIR, pages 301312, 2009. " >predict average precision [22]</citation>
+
+<citation ref_id="29"  reference="[29] O. Kurland, A. Shtok, S. Hummel, F. Raiber, D. Carmel, and O. Rom. Back to the roots: a probabilistic framework for query-performance prediction. In Proc. of CIKM, pages 823832, 2012. " >between prediction over queries methods [29]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >retrieval [11, Chapter 1]</citation>
+
+<citation ref_id="49"  reference="[49] K. Sparck Jones, S. Walker, and S. E. Robertson. A probabilistic model of information retrieval: development and comparative experiments - part 1. Information Processing and Management, 36(6):779808, 2000. " >probability that this document is relevant to this query? [49]</citation>
+
+<citation ref_id="5"  reference="[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. " >statistics of features used by the retrieval method [5, 6]</citation>
+
+<citation ref_id="6"  reference="[6] N. Balasubramanian, G. Kumaran, and V. R. Carvalho. Predicting query performance on the web. In Proc. of SIGIR, pages 785786, 2010. " >statistics of features used by the retrieval method [5, 6]</citation>
+
+<citation ref_id="52"  reference="[52] E. Yom-Tov, S. Fine, D. Carmel, and A. Darlow. Learning to estimate query difficulty: including applications to missing content detection and distributed information retrieval. In Proc. of SIGIR, pages 512519, 2005. " >ing (i) post-retrieval predictors in federated search [52]</citation>
+
+<citation ref_id="35"  reference="[35] C. Macdonald, R. L. T. Santos, and I. Ounis. On the usefulness of query features for learning to rank. In Proc. of CIKM, pages 25592562, 2012. " >[35]</citation>
+
+<citation ref_id="5"  reference="[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. " >[5]</citation>
+
+<citation ref_id="43"  reference="[43] D. Sheldon, M. Shokouhi, M. Szummer, and N. Craswell. Lambdamerge: merging the results of query reformulations. In Proc. of WSDM, pages 795804, 2011. " >and for fusion [43]</citation>
+
+<citation ref_id="2"  reference="[2] G. Amati, C. Carpineto, and G. Romano. Query difficulty, robustness, and selective application of query expansion. In Proc. of ECIR, pages 127137, 2004. " >using predictors was not shown to be of much merit [2, 16]</citation>
+
+<citation ref_id="16"  reference="[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. " >using predictors was not shown to be of much merit [2, 16]</citation>
+
+<citation ref_id="33"  reference="[33] X. Liu and W. B. Croft. Cluster-based retrieval using language models. In Proc. of SIGIR, pages 186193, 2004. " >a query [33, 39]</citation>
+
+<citation ref_id="39"  reference="[39] F. Raiber and O. Kurland. Ranking document clusters using markov random fields. In Proc. of SIGIR, pages 333342, 2013. " >a query [33, 39]</citation>
+
+<citation ref_id="49"  reference="[49] K. Sparck Jones, S. Walker, and S. E. Robertson. A probabilistic model of information retrieval: development and comparative experiments - part 1. Information Processing and Management, 36(6):779808, 2000. " >hoc retrieval. In probabilistic retrieval methods [49]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >was predicted to fail [11]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >the of the query ranking [11]</citation>
+
+<citation ref_id="27"  reference="[27] O. Kurland, F. Raiber, and A. Shtok. Query-performance prediction and cluster ranking: Two sides of the same coin. In Proc. of CIKM, pages 24592462, 2012. " >cluster ranking was also stated elsewhere [27]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >[11]</citation>
+
+<citation ref_id="36"  reference="[36] D. Metzler and W. B. Croft. A Markov random field model for term dependencies. In Proc. of SIGIR, pages 472479, 2005. " >ments [36]</citation>
+
+<citation ref_id="36"  reference="[36] D. Metzler and W. B. Croft. A Markov random field model for term dependencies. In Proc. of SIGIR, pages 472479, 2005. " >[36]</citation>
+
+<citation ref_id="32"  reference="[32] T.-Y. Liu. Learning to Rank for Information Retrieval. Springer, 2011. " >ear combination of feature functions as in Equation 8 [32]</citation>
+
+<citation ref_id="36"  reference="[36] D. Metzler and W. B. Croft. A Markov random field model for term dependencies. In Proc. of SIGIR, pages 472479, 2005. " >similarly to work on using MRFs for document [36]</citation>
+
+<citation ref_id="39"  reference="[39] F. Raiber and O. Kurland. Ranking document clusters using markov random fields. In Proc. of SIGIR, pages 333342, 2013. " >ter [39]</citation>
+
+<citation ref_id="26"  reference="[26] T. Joachims. Training linear svms in linear time. In Proc. of KDD, pages 217226, 2006. " > ranking. In Section 4.1.1 we use SVM rank [26]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >SCQ predictor [53]</citation>
+
+<citation ref_id="53"  reference="[53] Y. Zhao, F. Scholer, and Y. Tsegay. Effective pre-retrieval query performance prediction using similarity and variability evidence. In Proc. of ECIR, pages 5264, 2008. " >which it appears [53]</citation>
+
+<citation ref_id="16"  reference="[16] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. A language modeling framework for selective query expansion. Technical Report IR-338, Center for Intelligent Information Retrieval, University of Massachusetts, 2004. " >[16]</citation>
+
+<citation ref_id="12"  reference="[12] D. Carmel, E. Yom-Tov, A. Darlow, and D. Pelleg. What makes a query difficult? In Proc. of SIGIR, pages 390397, 2006. " >retrieved list [12, 51]</citation>
+
+<citation ref_id="51"  reference="[51] V. Vinay, I. J. Cox, N. Milic-Frayling, and K. R. Wood. On ranking the effectiveness of searches. In Proc. of SIGIR, pages 398404, 2006. " >retrieved list [12, 51]</citation>
+
+<citation ref_id="40"  reference="[40] F. Raiber and O. Kurland. Using document-quality measures to predict web-search effectiveness. In Proc. of ECIR, pages 134145, 2013. " >on estimating document-list quality [40]</citation>
+
+<citation ref_id="8"  reference="[8] M. Bendersky, W. B. Croft, and Y. Diao. Quality-biased ranking of web documents. In Proc. of WSDM, pages 95104, 2011. " >[8]</citation>
+
+<citation ref_id="8"  reference="[8] M. Bendersky, W. B. Croft, and Y. Diao. Quality-biased ranking of web documents. In Proc. of WSDM, pages 95104, 2011. " >potentially indicates content breadth [8]</citation>
+
+<citation ref_id="1"  reference="[1] J. Allan, M. E. Connell, W. B. Croft, F.-F. Feng, D. Fisher, and X. Li. INQUERY and TREC-9. In Proc. of TREC-9, pages 551562, 2000. " >word list in our case [1]</citation>
+
+<citation ref_id="8"  reference="[8] M. Bendersky, W. B. Croft, and Y. Diao. Quality-biased ranking of web documents. In Proc. of WSDM, pages 95104, 2011. " >noisy Web collections [8]</citation>
+
+<citation ref_id="8"  reference="[8] M. Bendersky, W. B. Croft, and Y. Diao. Quality-biased ranking of web documents. In Proc. of WSDM, pages 95104, 2011. " >and therefore to content breadth [8]</citation>
+
+<citation ref_id="15"  reference="[15] S. Cronen-Townsend, Y. Zhou, and W. B. Croft. Predicting query performance. In Proc. of SIGIR, pages 299306, 2002. " >Clarity [15]</citation>
+
+<citation ref_id="30"  reference="[30] V. Lavrenko and W. B. Croft. Relevance-based language models. In Proc. of SIGIR, pages 120127, 2001. " >evance language model [30]</citation>
+
+<citation ref_id="24"  reference="[24] C. Hauff, V. Murdock, and R. A. Baeza-Yates. Improved query difficulty prediction for the web. In Proc. of CIKM, pages 439448, 2008. " >corpora [24]</citation>
+
+<citation ref_id="55"  reference="[55] Y. Zhou and B. Croft. Query performance prediction in web search environments. In Proc. of SIGIR, pages 543550, 2007. " >WIG [55]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >NQC [46]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >query drift, and thus with improved [46]</citation>
+
+<citation ref_id="45"  reference="[45] A. Shtok, O. Kurland, and D. Carmel. Using statistical decision theory and relevance models for query-performance prediction. In Proc. of SIGIR, 2010. " >The highly UEF prediction framework [45]</citation>
+
+<citation ref_id="13"  reference="[13] G. V. Cormack, M. D. Smucker, and C. L. A. Clarke. Efficient and effective spam filtering and re-ranking for large web datasets. Informaltiom Retrieval Journal, 14(5):441465, 2011. " >[13]</citation>
+
+<citation ref_id="13"  reference="[13] G. V. Cormack, M. D. Smucker, and C. L. A. Clarke. Efficient and effective spam filtering and re-ranking for large web datasets. Informaltiom Retrieval Journal, 14(5):441465, 2011. " >(70) by spam [13]</citation>
+
+<citation ref_id="1"  reference="[1] J. Allan, M. E. Connell, W. B. Croft, F.-F. Feng, D. Fisher, and X. Li. INQUERY and TREC-9. In Proc. of TREC-9, pages 551562, 2000. " >for experiments. Stopwords on the INQUERY list [1]</citation>
+
+<citation ref_id="48"  reference="[48] F. Song and W. B. Croft. A general language model for information retrieval (poster abstract). In Proc. of SIGIR, pages 279280, 1999. " >query likelihood (QL) retrieval model [48]</citation>
+
+<citation ref_id="55"  reference="[55] Y. Zhou and B. Croft. Query performance prediction in web search environments. In Proc. of SIGIR, pages 543550, 2007. " >retrieval predictor [55]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >values do not generalize well across queries [46]</citation>
+
+<citation ref_id="11"  reference="[11] D. Carmel and E. Yom-Tov. Estimating the Query Difficulty for Information Retrieval. Synthesis lectures on information concepts, retrieval, and services. Morgan & Claypool, 2010. " >Following common practice [11]</citation>
+
+<citation ref_id="26"  reference="[26] T. Joachims. Training linear svms in linear time. In Proc. of KDD, pages 217226, 2006. " >are learned in two separate phases. We use SVM rank [26]</citation>
+
+<citation ref_id="30"  reference="[30] V. Lavrenko and W. B. Croft. Relevance-based language models. In Proc. of SIGIR, pages 120127, 2001. " >To construct a relevance language model [30]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >100 [46]</citation>
+
+<citation ref_id="40"  reference="[40] F. Raiber and O. Kurland. Using document-quality measures to predict web-search effectiveness. In Proc. of ECIR, pages 134145, 2013. " >demonstrated elsewhere [40]</citation>
+
+<citation ref_id="3"  reference="[3] C. C. V. ant Garrison W. Cottrell. Fusion via linear combination of scores. Information Retrieval, 1(3):151173, 1999. " >is not in l. Linear fusion methods [3]</citation>
+
+<citation ref_id="47"  reference="[47] I. Soboroff, C. K. Nicholas, and P. Cahan. Ranking retrieval systems without relevance judgments. In Proc. of SIGIR, pages 6673, 2001. " >ing relatively short lists [47, 7]</citation>
+
+<citation ref_id="7"  reference="[7] S. M. Beitzel, E. C. Jensen, A. Chowdhury, O. Frieder, D. A. Grossman, and N. Goharian. Disproving the fusion hypothesis: An analysis of data fusion via effective information retrieval strategies. In Proc. of SAC, pages 823827, 2003. " >ing relatively short lists [47, 7]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >not be computed [46]</citation>
+
+<citation ref_id="46"  reference="[46] A. Shtok, O. Kurland, D. Carmel, F. Raiber, and G. Markovits. Predicting query performance by query-drift estimation. ACM Transactions on Information Systems, 30(2):11, 2012. " >UEF, document retrieval scores in the lists are used [46]</citation>
+
+<citation ref_id="20"  reference="[20] E. A. Fox and J. A. Shaw. Combination of multiple searches. In Proc. of TREC-2, 1994. " >sion method [20]</citation>
+
+<citation ref_id="26"  reference="[26] T. Joachims. Training linear svms in linear time. In Proc. of KDD, pages 217226, 2006. " >learned using SVM rank [26]</citation>
+
+<citation ref_id="43"  reference="[43] D. Sheldon, M. Shokouhi, M. Szummer, and N. Craswell. Lambdamerge: merging the results of query reformulations. In Proc. of WSDM, pages 795804, 2011. " >11 Learning-to-rank methods were used to fuse lists [43]</citation>
+
+<citation ref_id="5"  reference="[5] N. Balasubramanian and J. Allan. Learning to select rankers. In Proc. of SIGIR, pages 855856, 2010. " >to rank them [5]</citation>
+

@@ -6,7 +6,7 @@ class Document(models.Model):
 
 class UserDetails(models.Model):
 	"""docstring for rPapers"""
-	paperid = models.IntegerField()
+	paperid = models.FloatField()
 	userid = models.CharField(max_length= 100)
 	user_email = models.EmailField()
 	def __str__(self):
@@ -14,19 +14,21 @@ class UserDetails(models.Model):
 
 class Response(models.Model):
 	"""docstring for response"""
-	userdetails = models.ForeignKey(UserDetails)
-	title = models.IntegerField()
-	authorNames = models.IntegerField()
-	urls = models.IntegerField()
-	email = models.IntegerField()
-	affiliation = models.IntegerField()
-	references = models.IntegerField()
-	sections = models.IntegerField()
-	emailAuthMap = models.IntegerField()
-	figHeading = models.IntegerField()
-	Footnotes = models.IntegerField()
-	TableHeading = models.IntegerField()
-	citToRef = models.IntegerField()
+	# userdetails = models.ForeignKey(UserDetails)
+	paperid = models.IntegerField()
+	user_email = models.EmailField()
+	title = models.FloatField()
+	authorNames = models.FloatField()
+	urls = models.FloatField()
+	email = models.FloatField()
+	affiliation = models.FloatField()
+	# references = models.FloatField()
+	sections = models.FloatField()
+	emailAuthMap = models.FloatField()
+	figHeading = models.FloatField()
+	Footnotes = models.FloatField()
+	TableHeading = models.FloatField()
+	# citToRef = models.FloatField()
 
 	def __str__(self):
 		return self.title

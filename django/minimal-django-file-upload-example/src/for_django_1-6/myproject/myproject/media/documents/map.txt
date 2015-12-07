@@ -1,8 +1,0 @@
-<map>
-	Michael Whitzer 
-	ramar,mwhitzer,subhrabh@seas.upenn.edu
-<\map>
-<map>
-	Vijay Kumar 
-	kumar@seas.upenn.edu
-<\map>

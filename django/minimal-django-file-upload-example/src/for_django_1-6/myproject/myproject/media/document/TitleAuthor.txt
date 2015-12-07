@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+
+<title_author>
+
+	<title>
+	OCR++:  An  Open-Source  Framework  For  Extracting  Information  From  Scholarly  Articles  
+	</title>
+
+	<name>
+		<first_name> Samuel </first_name>
+
+		<last_name> Bushi </last_name>
+	</name>
+	<name>
+		<first_name> Kumar </first_name>
+
+		<last_name> Ayush </last_name>
+	</name>
+	<name>
+		<first_name> Barnopriyo </first_name>
+
+		<last_name> Barua </last_name>
+	</name>
+	<name>
+		<first_name> Krishna </first_name>
+
+		<middle_name> Sai </middle_name>
+
+		<last_name> Rohith </last_name>
+	</name>
+	<name>
+		<first_name> Manvi </first_name>
+
+		<last_name> Garg </last_name>
+	</name>
+	<name>
+		<first_name> Priyank </first_name>
+
+		<last_name> Palod </last_name>
+	</name>
+	<name>
+		<first_name> Tulasi </first_name>
+
+		<last_name> Gamidi </last_name>
+	</name>
+
+</title_author>
+
