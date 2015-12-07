@@ -1,0 +1,9 @@
+
+<<figure>>
+Fig. 1. Illustration of a swarm of robots entering an environment and attaining coverage. The hole shown on the right figure is something we would like to avoid.
+<<figure>>
+Fig. 3. Nine robots, their disks of visibility and the corresponding abstract simplicial complex, Rr v . 3409
+<<figure>>
+Fig. 4. The touch/contact sensors (gray protrusions) at the base of a robot (red). Contact with an obstacle or another robot triggers one or more touch sensors providing a rough estimate of the direction of contact. D. Local Bearing-Based Controller The robots are controlled using the bearing-based visual homing controller presented in [18]. This controller utilizes
+<<figure>>
+Fig. 7. {i, j, k

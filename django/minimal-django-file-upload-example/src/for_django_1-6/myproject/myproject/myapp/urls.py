@@ -4,4 +4,5 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('myproject.myapp.views',
     url(r'^list/$', 'list', name='list'),
     url(r'^list/runScript/$', 'runScript', name='runScript'),
+    url(r'^list/vote/$', 'vote', name='vote'),
 )

@@ -1,6 +1,6 @@
 author = "barno"
 
-directory = '/home/priyank/Desktop/SNLP_Project/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/'
+directory = '/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/'
 
 
 def comma(y):

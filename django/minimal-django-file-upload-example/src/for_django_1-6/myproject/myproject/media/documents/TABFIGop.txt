@@ -1,16 +1,11 @@
 <?xml version="1.0" ?>
 <Tables_Figures>
-	<Tables>
-		<table>Table 1: Basic Results </table>
-		<table>Table 2: Results for individual feature sets. </table>
-		<table>Table 3: Ablation study. Shown is the decrease in accuracy when we train a network that has all but the given set of features. The last line is shows the effect of removing the anchor, PageRank, and domain features, hence a model containing no network or link-based information whatsoever. </table>
-		<table>Table 4: fRank performance as feature sets are added. At each row, the feature set that gave the greatest increase in accuracy was added to the list of features (i.e., we conducted a greedy search over feature sets). </table>
-		<table>Table 6: URL functions used to compute the Popularity feature set. </table>
-		<table>Table 7: Effect of adding backoff to the popularity feature set </table>
-		<table>Table 5: Top ten URLs for PageRank vs. fRank </table>
-	</Tables>
+	<Tables/>
 	<Figures>
-		<figure>Figure 1: Relation between the amount of popularity data and the performance of the popularity feature set. Note the x-axis is a logarithmic scale. </figure>
+		<figure>Fig. 1. Illustration of a swarm of robots entering an environment and attaining coverage. The hole shown on the right figure is something we would like to avoid. </figure>
+		<figure>Fig. 3. Nine robots, their disks of visibility and the corresponding abstract simplicial complex, Rr v . 3409 </figure>
+		<figure>Fig. 4. The touch/contact sensors (gray protrusions) at the base of a robot (red). Contact with an obstacle or another robot triggers one or more touch sensors providing a rough estimate of the direction of contact. D. Local Bearing-Based Controller The robots are controlled using the bearing-based visual homing controller presented in [18]. This controller utilizes </figure>
+		<figure>Fig. 7. {i, j, k </figure>
 	</Figures>
 </Tables_Figures>
 

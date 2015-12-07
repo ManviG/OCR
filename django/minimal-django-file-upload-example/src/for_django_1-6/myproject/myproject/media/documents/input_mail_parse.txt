@@ -1,7 +1,4 @@
 0	0	0
-mattri@microsoft.com	1	0
-0	0	0
-amitp@microsoft.com	1	0
-0	0	0
-brill@microsoft.com	1	0
+[ramar,mwhitzer,subhrabh,	1	0
+kumar]@seas.upenn.edu.	1	0
 0	0	0

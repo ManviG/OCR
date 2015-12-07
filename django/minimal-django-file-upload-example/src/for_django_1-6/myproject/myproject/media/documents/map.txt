@@ -1,12 +1,8 @@
 <map>
-	Amit Prakash 
-	amitp@microsoft.com
+	Michael Whitzer 
+	ramar,mwhitzer,subhrabh@seas.upenn.edu
 <\map>
 <map>
-	Eric Brill 
-	brill@microsoft.com
-<\map>
-<map>
-	Matthew Richardson 
-	mattri@microsoft.com
+	Vijay Kumar 
+	kumar@seas.upenn.edu
 <\map>

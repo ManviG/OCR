@@ -2,7 +2,7 @@ flag = "0"   # to check if found the domain (1 => found)
 flag2 = "0"  # to check if we were in a email block (1=>yes) or we have a seperate email (0 => seperate email)
 emails = []
 filetoRead = raw_input().split(".")[0] + "_mail_parse.txt"#"final.txt"
-outfile = open(filetoRead.split("_mail_parse.txt")[0]+"_Allmails.txt",'w')
+outfile = open(filetoRead.split("_mail_parse.txt")[0]+"_Allmails.xml",'w')
 outfile.write("<?xml version=\"1.0\" ?>\n")
 with open(filetoRead,'r') as f:
     for line in f:

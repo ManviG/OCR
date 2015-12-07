@@ -1,4 +1,4 @@
-Directory=/home/priyank/Desktop/SNLP_Project/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents
+Directory=/var/www/html/OCR++/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents
 echo "script starts"
 #/home/barno/work/django/minimal-django-file-upload-example/src/for_django_1-6/myproject/myproject/media/documents/
 for f in $Directory/*.pdf
@@ -8,7 +8,7 @@ do
 	echo "pdftoxml done\n"
 done
 
-for f in $Directory/*.xml
+for f in $Directory/input.xml
 do
 	echo "filename = $f \n"
 	python $Directory/PrimaryCode.py <<EOF
