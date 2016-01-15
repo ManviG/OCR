@@ -1,0 +1,33 @@
+#unigram
+#word
+U0:%x[0,0]
+#prev word
+U1:%x[-1,0]
+#next word
+U2:%x[1,0]
+#is caps
+U3:%x[0,4]
+#prev word caps
+U4:%x[-1,4]
+#next word caps
+U5:%x[1,4]
+#is italic
+U6:%x[0,2]
+
+
+# bold/font-size
+U7:%x[-1,4]/%x[0,4]
+
+# font-size/previous font-size
+U8:%x[0,4]/%x[1,4]
+
+U9:%x[0,0]/%x[-1,0]
+U10:%x[0,0]/%x[1,0]
+#U9:%x[0,4]/%x[1,4]
+
+#window of font-sizes
+#U10:%x[-1,3]
+#U11:%x[-2,3]
+
+#Automatically create all bigram features
+B
